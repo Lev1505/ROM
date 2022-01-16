@@ -72,7 +72,7 @@ news_event = {
 	}
 }
 
-#Test Event GitHub | Dodik2003
+#Test Event GitHub | Dodik2003 | Pull request
 news_event = {
 	id = news_mongolia.4
 	title = news_mongolia.4.t
@@ -81,5 +81,17 @@ news_event = {
 	
 	option = {
 		name = news_mongolia.4.a
+	}
+}
+
+#Test Event GitHub | Dodik2003 | No pull request
+news_event = {
+	id = news_mongolia.5
+	title = news_mongolia.5.t
+	desc = news_mongolia.5.d
+	is_triggered_only = yes
+	
+	option = {
+		name = news_mongolia.5.a
 	}
 }
