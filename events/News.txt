@@ -59,3 +59,15 @@ news_event = {
 		}
 	}
 }
+
+#Test Event GitHub
+news_event = {
+	id = news_mongolia.3
+	title = news_mongolia.3.t
+	desc = news_mongolia.3.d
+	is_triggered_only = yes
+	
+	option = {
+		name = news_mongolia.2.a
+	}
+}
