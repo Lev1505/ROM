@@ -1,0 +1,7 @@
+UYG = "countries/Uighurstan.txt"
+BUR = "countries/Buryatia.txt"
+COM = "countries/Comi.txt"
+HAK = "countries/Hakasia.txt"
+HNM = "countries/Hanty_Mansiysk.txt"
+CHV = "countries/Chuvashia.txt"
+NSF = "countries/Northern Salvation Front.txt"

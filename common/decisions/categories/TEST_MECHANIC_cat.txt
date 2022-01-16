@@ -1,0 +1,2 @@
+MON_TEST_MECHANIC_CAT = {
+}

@@ -1,0 +1,28 @@
+defined_text = {
+	name = get330Controller #Ulaan-Bataar
+	text = {
+		trigger = {
+			check_variable = {GFX_MON_TEST = 1}
+		}
+		localization_key = "GFX_MON_330_red"
+
+	}
+	text = {
+		trigger = {
+			check_variable = {GFX_MON_TEST = 2}
+		}
+		localization_key = "GFX_MON_330_brown"
+	}
+	text = {
+		trigger = {
+			check_variable = {GFX_MON_TEST = 3}
+		}
+		localization_key = "GFX_MON_330_blue"
+	}
+	text = {
+		trigger = {
+			check_variable = {GFX_MON_TEST = 4}
+		}
+		localization_key = "GFX_MON_330_grey"
+	}
+}

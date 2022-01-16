@@ -1,0 +1,2349 @@
+ideas = {
+
+	country = {
+	
+		MON_hubsugul_spirit = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+		
+		MON_memory_about_heroes = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.1
+			}
+		}
+		
+		MON_mountful_procession = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.2
+				fascism_drift = 0.2
+			}
+		}
+		
+		MON_building_churches = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = -0.1
+				stability_weekly = 0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		MON_new_mongolia_spirit = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = 0.1
+			}
+		}
+		
+		MON_religion_propaganda = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.1
+				political_power_gain = 0.25
+				monthly_population = 0.5
+			}
+		}
+		
+		MON_tengri = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_weekly = 0.005
+				army_defence_factor = 0.2
+				army_org_factor = 0.2
+				justify_war_goal_time = -0.75
+				generate_wargoal_tension = 0.05
+				join_faction_tension = 0.05
+			}
+		}
+	
+		MON_khodoo_aj_akhui = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.2
+				repair_speed_infrastructure_factor = 0.2
+			}
+		}
+		
+		MON_old_infrastructure = { #has picture
+			allowed = {	
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = -0.5
+				production_speed_buildings_factor = -0.3
+				production_speed_infrastructure_factor = -0.3
+				stability_factor = -0.3
+			}
+		}
+		
+		MON_old_infrastructure_2 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = MON_old_infrastructure
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = -0.35
+				production_speed_buildings_factor = -0.2
+				production_speed_infrastructure_factor = -0.2
+				stability_factor = -0.2
+			}
+		}
+		
+		MON_old_infrastructure_3 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = MON_old_infrastructure
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = -0.2
+				production_speed_buildings_factor = -0.1
+				production_speed_infrastructure_factor = -0.1
+				stability_factor = -0.1
+			}
+		}
+		
+		MON_old_infrastructure_4 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = MON_old_infrastructure
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = -0.1
+				production_speed_buildings_factor = -0.05
+				production_speed_infrastructure_factor = -0.05
+				stability_factor = -0.05
+			}
+		}
+		
+		MON_plan1_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		
+		MON_plan2_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_start_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		
+		#Crisis after plan (First and second are decorative)
+		MON_crisis_after_plan1 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+			}
+		}
+		MON_crisis_after_plan2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+			}
+		}
+		
+		MON_crisis_after_plan1_1 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.25
+				production_speed_buildings_factor = -0.8
+				production_factory_efficiency_gain_factor = -0.8
+				production_factory_max_efficiency_factor = -0.8
+				production_factory_start_efficiency_factor = -0.8
+				industrial_capacity_factory = -0.8
+				stability_factor = -0.8
+				war_support_factor = -0.8
+			}
+		}
+		
+		MON_crisis_after_plan1_1 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.25
+				production_speed_buildings_factor = -0.8
+				production_factory_efficiency_gain_factor = -0.8
+				production_factory_max_efficiency_factor = -0.8
+				production_factory_start_efficiency_factor = -0.8
+				industrial_capacity_factory = -0.8
+				stability_factor = -0.8
+				war_support_factor = -0.8
+			}
+		}
+		
+		MON_crisis_after_plan1_2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.2
+				production_speed_buildings_factor = -0.7
+				production_factory_efficiency_gain_factor = -0.7
+				production_factory_max_efficiency_factor = -0.7
+				production_factory_start_efficiency_factor = -0.7
+				industrial_capacity_factory = -0.7
+				stability_factor = -0.7
+				war_support_factor = -0.7
+			}
+		}
+		
+		MON_crisis_after_plan1_3 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.15
+				production_speed_buildings_factor = -0.6
+				production_factory_efficiency_gain_factor = -0.6
+				production_factory_max_efficiency_factor = -0.6
+				production_factory_start_efficiency_factor = -0.6
+				industrial_capacity_factory = -0.6
+				stability_factor = -0.6
+				war_support_factor = -0.6
+			}
+		}
+		
+		MON_crisis_after_plan1_4 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.1
+				production_speed_buildings_factor = -0.5
+				production_factory_efficiency_gain_factor = -0.5
+				production_factory_max_efficiency_factor = -0.5
+				production_factory_start_efficiency_factor = -0.5
+				industrial_capacity_factory = -0.5
+				stability_factor = -0.5
+				war_support_factor = -0.5
+			}
+		}
+		
+		MON_crisis_after_plan1_5 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.05
+				production_speed_buildings_factor = -0.4
+				production_factory_efficiency_gain_factor = -0.4
+				production_factory_max_efficiency_factor = -0.4
+				production_factory_start_efficiency_factor = -0.4
+				industrial_capacity_factory = -0.4
+				stability_factor = -0.4
+				war_support_factor = -0.4
+			}
+		}
+		
+		MON_crisis_after_plan1_6 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.35
+				production_factory_efficiency_gain_factor = -0.35
+				production_factory_max_efficiency_factor = -0.35
+				production_factory_start_efficiency_factor = -0.35
+				industrial_capacity_factory = -0.35
+				stability_factor = -0.35
+				war_support_factor = -0.35
+			}
+		}
+		
+		MON_crisis_after_plan1_7 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.3
+				production_factory_efficiency_gain_factor = -0.3
+				production_factory_max_efficiency_factor = -0.3
+				production_factory_start_efficiency_factor = -0.3
+				industrial_capacity_factory = -0.3
+				stability_factor = -0.3
+				war_support_factor = -0.3
+			}
+		}
+		
+		MON_crisis_after_plan1_8 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.25
+				production_factory_efficiency_gain_factor = -0.25
+				production_factory_max_efficiency_factor = -0.25
+				production_factory_start_efficiency_factor = -0.25
+				industrial_capacity_factory = -0.25
+				stability_factor = -0.25
+				war_support_factor = -0.25
+			}
+		}
+		
+		MON_crisis_after_plan1_9 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.15
+				production_factory_max_efficiency_factor = -0.15
+				production_factory_start_efficiency_factor = -0.15
+				industrial_capacity_factory = -0.15
+				stability_factor = -0.15
+				war_support_factor = -0.15
+			}
+		}
+		
+		MON_crisis_after_plan1_10 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_start_efficiency_factor = -0.1
+				industrial_capacity_factory = -0.1
+				stability_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+		
+		MON_crisis_after_plan2_1 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.15
+				production_speed_buildings_factor = -0.5
+				production_factory_efficiency_gain_factor = -0.5
+				production_factory_max_efficiency_factor = -0.5
+				production_factory_start_efficiency_factor = -0.5
+				industrial_capacity_factory = -0.5
+				stability_factor = -0.5
+				war_support_factor = -0.5
+			}
+		}
+		
+		MON_crisis_after_plan2_2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.10
+				production_speed_buildings_factor = -0.4
+				production_factory_efficiency_gain_factor = -0.4
+				production_factory_max_efficiency_factor = -0.4
+				production_factory_start_efficiency_factor = -0.4
+				industrial_capacity_factory = -0.4
+				stability_factor = -0.4
+				war_support_factor = -0.4
+			}
+		}
+		
+		MON_crisis_after_plan2_3 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.05
+				production_speed_buildings_factor = -0.3
+				production_factory_efficiency_gain_factor = -0.3
+				production_factory_max_efficiency_factor = -0.3
+				production_factory_start_efficiency_factor = -0.3
+				industrial_capacity_factory = -0.3
+				stability_factor = -0.3
+				war_support_factor = -0.3
+			}
+		}
+		
+		MON_crisis_after_plan2_4 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.025
+				production_speed_buildings_factor = -0.2
+				production_factory_efficiency_gain_factor = -0.2
+				production_factory_max_efficiency_factor = -0.2
+				production_factory_start_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.2
+				stability_factor = -0.2
+				war_support_factor = -0.2
+			}
+		}
+		
+		MON_crisis_after_plan2_5 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_start_efficiency_factor = -0.1
+				industrial_capacity_factory = -0.1
+				stability_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+		
+		MON_crisis_after_plan2_6 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_start_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+		
+		MON_crisis_after_plan2_7 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+				production_factory_max_efficiency_factor = -0.025
+				production_factory_start_efficiency_factor = -0.025
+				industrial_capacity_factory = -0.025
+				stability_factor = -0.025
+				war_support_factor = -0.025
+			}
+		}
+		
+		MON_crisis_consequences = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = -0.01
+				production_factory_efficiency_gain_factor = -0.01
+				production_factory_max_efficiency_factor = -0.01
+				production_factory_start_efficiency_factor = -0.01
+				industrial_capacity_factory = -0.01
+				stability_factor = -0.01
+				war_support_factor = -0.01
+			}
+		}
+		
+		MON_monoglian_explorers = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.10
+			}
+		}
+		
+		MON_monoglian_archeologists = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.25
+			}
+		}
+		
+		MON_prepare_for_china_war_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				CHI = {
+					exists = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		
+		MON_prepare_for_raj_war_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				RAJ = {
+					exists = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = RAJ
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+		
+		MON_prepare_for_japan_war_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				JAP = {
+					exists = yes
+				}
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.5
+			}
+			
+			targeted_modifier = {
+				tag = MEN
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.5
+			}
+			
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.5
+			}
+		}
+		
+		MON_fanatics = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.025
+				conscription_factor = 0.15
+				army_org_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		
+		MON_fanatics2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+				conscription_factor = 0.2
+				army_org_factor = 0.15
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+		
+		MON_fanatics3 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.1
+				conscription_factor = 0.25
+				army_org_factor = 0.2
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+			}
+		}
+		
+		MON_window_to_europe_idea = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.15
+			}
+		}
+		
+		MON_mengkukuo_def = {
+			allowed = {
+				original_tag = MEN
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				defense_bonus_against = 0.15
+			}
+		}
+		
+		MON_mengkukuo_off = {
+			allowed = {
+				original_tag = MEN
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				attack_bonus_against = 0.15
+			}
+		}
+		
+		MON_manchukuo_def = {
+			allowed = {
+				original_tag = MAN
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				defense_bonus_against = 0.15
+			}
+		}
+		
+		MON_manchukuo_off = {
+			allowed = {
+				original_tag = MAN
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				attack_bonus_against = 0.15
+			}
+		}
+		
+		MON_contributions_from = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		MON_contributions_to = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		MON_big_contributions_from = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		MON_big_contributions_to = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		MON_purging_commies = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			available = {
+				communism < 0.01
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = -0.01
+				communism_drift = -0.2
+			}
+		}
+		
+		MON_fascist_paper = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				war_support_weekly = 0.005
+				fascism_drift = 0.1
+			}
+		}
+		
+		MON_agitation = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = -0.1
+				democratic_drift = -0.1
+			}
+		}
+		
+		MON_militarization_idea = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+				army_speed_factor = 0.25
+			}
+		}
+		
+		MON_Ungern_Sternberg_dead = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			available = {
+				has_civil_war = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = event_target:communist_mongolia_civil_war_2
+				attack_bonus_against = -0.25
+				defense_bonus_against = -0.25
+			}
+			
+			modifier = {
+				army_speed_factor = -0.5
+			}
+		}
+		
+		MON_not_org_army = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = MON_not_org_army_generic #GFX_idea_
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = -0.25
+				army_core_defence_factor = -0.25
+				planning_speed = -0.5
+				max_planning_factor = -0.5
+				army_morale_factor = -0.25
+				army_org_factor = -0.25
+				mobilization_speed = -0.5
+				armor_factor = -0.25
+				mobilization_laws_cost_factor = 0.5
+			}
+		}
+		
+		MON_not_org_army_2 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = GFX_idea_MON_not_org_army_generic
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = -0.2
+				army_core_defence_factor = -0.2
+				planning_speed = -0.4
+				max_planning_factor = -0.4
+				army_morale_factor = -0.2
+				army_org_factor = -0.2
+				mobilization_speed = -0.4
+				armor_factor = -0.2
+				mobilization_laws_cost_factor = 0.4
+			}
+		}
+		
+		MON_not_org_army_3 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = GFX_idea_MON_not_org_army_generic
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = -0.15
+				army_core_defence_factor = -0.15
+				planning_speed = -0.3
+				max_planning_factor = -0.3
+				army_morale_factor = -0.15
+				army_org_factor = -0.15
+				mobilization_speed = -0.3
+				armor_factor = -0.15
+				mobilization_laws_cost_factor = 0.3
+			}
+		}
+		
+		MON_not_org_army_4 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = GFX_idea_MON_not_org_army_generic
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+				planning_speed = -0.2
+				max_planning_factor = -0.2
+				army_morale_factor = -0.1
+				army_org_factor = -0.1
+				mobilization_speed = -0.2
+				armor_factor = -0.1
+				mobilization_laws_cost_factor = 0.2
+			}
+		}
+		
+		MON_not_org_army_5 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = GFX_idea_MON_not_org_army_generic
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+				planning_speed = -0.1
+				max_planning_factor = -0.1
+				army_morale_factor = -0.05
+				army_org_factor = -0.05
+				mobilization_speed = -0.1
+				armor_factor = -0.05
+				mobilization_laws_cost_factor = 0.1
+			}
+		}
+		
+		MON_new_uniform = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				winter_attrition_factor = -0.2
+				org_loss_when_moving = -0.5
+				heat_attrition = -0.2
+			}
+		}
+		
+		MON_improved_generals = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = general_staff
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				max_commander_army_size = 40
+				max_command_power = 200
+				army_leader_start_attack_level = 3
+				army_leader_start_defense_level = 3
+				army_leader_start_logistics_level = 3
+				army_leader_start_planning_level = 3
+			}
+		}
+		
+		MON_building_guns = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_war_preparation
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_infantry_attack_factor = 0.15
+				army_infantry_defence_factor = 0.15
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+		}
+		
+		MON_building_artillery = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_artillery_attack_factor = 0.15
+				army_artillery_defence_factor = 0.15
+			}
+			
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		
+		MON_building_anti_air = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				anti_air_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+		
+		MON_motorizing = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.05
+			}
+		}
+		
+		MON_motorizing_2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mechanize_army_light = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.1
+				army_armor_speed_factor = 0.2
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				light_tank_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mechanize_army_medium = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+				army_armor_attack_factor = 0.2
+				army_armor_defence_factor = 0.2
+				army_armor_speed_factor = 0.1
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				medium_tank_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mechanize_army_heavy = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				motorized_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+				army_armor_attack_factor = 0.25
+				army_armor_defence_factor = 0.25
+				army_armor_speed_factor = -0.1
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				heavy_tank_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+			equipment_bonus = {
+				mechanized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mongolian_tanks = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_license_production
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.05
+			}
+		}
+		
+		MON_mongolian_light_tanks = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_license_production
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.1
+				army_armor_speed_factor = 0.2
+			}
+			
+			equipment_bonus = {
+				light_tank_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mongolian_medium_tanks = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_license_production
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_attack_factor = 0.2
+				army_armor_defence_factor = 0.2
+				army_armor_speed_factor = 0.1
+			}
+			
+			equipment_bonus = {
+				medium_tank_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_mongolian_heavy_tanks = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_license_production
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_armor_attack_factor = 0.25
+				army_armor_defence_factor = 0.25
+				army_armor_speed_factor = -0.1
+			}
+			
+			equipment_bonus = {
+				heavy_tank_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		MON_poor_economy = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.5
+				political_power_factor = -0.4
+				trade_laws_cost_factor = 0.5
+				party_popularity_stability_factor = -0.3
+				production_speed_buildings_factor = -0.5
+				war_support_factor = -0.3
+			}
+		}
+		
+		MON_poor_economy_2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.4
+				political_power_factor = -0.3
+				trade_laws_cost_factor = 0.4
+				party_popularity_stability_factor = -0.25
+				production_speed_buildings_factor = -0.4
+				war_support_factor = -0.25
+			}
+		}
+		
+		MON_poor_economy_3 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.3
+				political_power_factor = -0.2
+				trade_laws_cost_factor = 0.3
+				party_popularity_stability_factor = -0.2
+				production_speed_buildings_factor = -0.3
+				war_support_factor = -0.2
+			}
+		}
+		
+		MON_poor_economy_4 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.2
+				political_power_factor = -0.1
+				trade_laws_cost_factor = 0.2
+				party_popularity_stability_factor = -0.15
+				production_speed_buildings_factor = -0.2
+				war_support_factor = -0.15
+			}
+		}
+		
+		MON_poor_economy_5 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_factor = -0.05
+				trade_laws_cost_factor = 0.1
+				party_popularity_stability_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+		
+		MON_poor_economy_6 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = great_depression
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_gain = -0.03
+				trade_laws_cost_factor = 0.05
+				party_popularity_stability_factor = -0.05
+				production_speed_buildings_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+		
+		MON_improved_economy = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_goods_red_bonus
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_factor = 0.05
+				party_popularity_stability_factor = 0.05
+				offensive_war_stability_factor = 0.05
+			}
+		}
+		
+		MON_improved_economy_2 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_goods_red_bonus
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				political_power_factor = 0.1
+				party_popularity_stability_factor = 0.1
+				offensive_war_stability_factor = 0.1
+			}
+		}
+		
+		MON_improved_economy_3 = { #has picture
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = generic_goods_red_bonus
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+				political_power_factor = 0.2
+				party_popularity_stability_factor = 0.2
+				offensive_war_stability_factor = 0.2
+			}
+		}
+		
+		MON_nuclear = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_nuclear_reactor_factor = 0.15
+				state_repair_speed_nuclear_reactor_factor = 0.15
+			}
+		}
+		
+		MON_nuclear_bombs = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				nuclear_production_factor = 0.3
+				production_speed_nuclear_reactor_factor = 0.3
+				state_repair_speed_nuclear_reactor_factor = 0.3
+			}
+		}
+		
+		MON_doctrine_improve = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.1
+			}
+		}
+		
+		MON_developing_science = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		
+		MON_developing_science_2 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		
+		MON_developing_science_3 = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		
+		MON_developing_science_4n = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.15
+			}
+			
+			research_bonus = {
+				nuclear = 0.15
+			}
+		}
+		
+		MON_developing_science_5n = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.2
+			}
+			
+			research_bonus = {
+				nuclear = 0.2
+			}
+		}
+		
+		MON_developing_science_6n = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			picture = jap_supremacy_of_technology
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.3
+			}
+			
+			research_bonus = {
+				nuclear = 0.3
+			}
+		}
+		
+		MON_red_research_idea = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.1
+				communism_drift = 0.05
+			}
+		}
+		
+		MON_crisis_in_CHI = {
+			allowed = {
+				original_tag = CHI
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_factory_max_efficiency_factor = -0.25
+				production_speed_buildings_factor = -0.5
+				production_factory_efficiency_gain_factor = -0.25
+			}
+		}
+		
+		MON_warlord_unloyality = {
+			allowed = {
+				original_tag = CHI
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_leader_start_level = -1
+				army_leader_start_attack_level = -2
+				army_leader_start_defense_level = -2
+				army_leader_start_planning_level = -2
+				army_leader_start_logistics_level = -2
+			}
+		}
+		
+		MON_money_to_raj = {
+			allowed = {
+				original_tag = RAJ
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		MON_mongolian_cipher_idea = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_intel_to_others = 0.0
+				civilian_intel_to_others = -15.0
+				airforce_intel_to_others = 0.0
+			}
+		}
+		
+		MON_kysyl_agreements_idea = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		MON_kysyl_agreements_idea2 = {
+			allowed = {
+				original_tag = MON
+				TAN = { exists = yes }
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		MON_help_to_cpc = {
+			allowed = {
+				original_tag = PRC
+				NOT = {
+					has_war_with = MON
+				}
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_attack_factor = 0.15
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		MON_helping_cpc = {
+			allowed = {
+				original_tag = MON
+				NOT = {
+					has_war_with = PRC
+				}
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		
+		MON_buddha_communism_idea = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.05
+				conscription_factor = 0.5
+				communism_drift = 0.15
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		MON_spreading_communism = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.1
+			}
+		}
+		
+		MON_people_uprisings = {
+			allowed = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.2
+			}
+		}
+		
+		MON_CPC_obey_to_MPRP_chi = {
+			allowed = {
+				original_tag = PRC
+				NOT = {
+					has_war_with = MON
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				cic_to_target_factor = 0.1
+				mic_to_target_factor = 0.1
+			}
+		}
+		
+		MON_CPC_obey_to_MPRP_chi2 = {
+			allowed = {
+				original_tag = PRC
+				NOT = {
+					has_war_with = MON
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MON
+				cic_to_target_factor = 0.25
+				mic_to_target_factor = 0.25
+			}
+		}
+		
+		MON_CPC_obey_to_MPRP_mon = {
+			allowed = {
+				original_tag = MON
+				NOT = {
+					has_war_with = PRC
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		MON_CPC_obey_to_MPRP_mon2 = {
+			allowed = {
+				original_tag = MON
+				NOT = {
+					has_war_with = PRC
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.25
+				production_speed_buildings_factor = 0.25
+			}
+		}
+	}
+	
+	political_advisor = {
+		pudge = {
+			
+			allowed = {
+				original_tag = MON
+			}
+			
+			traits = { chin_chopa }
+		}
+	}	
+	
+	industrial_concern = {
+		oyu_tolgoil = {
+			allowed = {
+				original_tag = MON
+			}
+			
+			available = {
+				has_completed_focus = MON_fuel
+			}
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+		}
+	}
+}

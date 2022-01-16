@@ -1,0 +1,23 @@
+state={
+	id=835
+	name="STATE_835"
+    manpower=56231
+    buildings_max_level_factor=1
+	
+	state_category=town
+
+	history={
+		owner = MON
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = MON  
+	}	  
+	
+	provinces={
+	    1774 4751 7843 10539
+    }
+	
+	local_supplies=0.0 
+}

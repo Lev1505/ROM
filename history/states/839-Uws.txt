@@ -1,0 +1,26 @@
+state={
+	id=839
+	name="STATE_839"
+	manpower=65000
+	buildings_max_level_factor=1
+	
+	state_category=town
+
+	history={
+		owner = MON
+		victory_points = {
+			7773 5 
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		7773 10669 12695
+	}
+	local_supplies=0.0 
+}

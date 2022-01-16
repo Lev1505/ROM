@@ -1,0 +1,161 @@
+leader_traits = {
+	chin_chopa = {
+		sprite = 10
+		random = no
+		justify_war_goal_time = -0.99
+		political_power_factor = 0.9
+		conscription = 0.5
+		stability_weekly = 0.05
+		war_support_weekly = 0.05
+	}
+	
+	war_specialist_mongolia = {
+		sprite = 10
+		random = yes
+		production_speed_arms_factory_factor = 0.2
+		production_speed_dockyard_factor = 0.2		
+		production_speed_fuel_silo_factor = 0.2
+	}
+	
+	boss_of_industry = {
+		sprite = 10
+		random = yes
+		production_speed_industrial_complex_factor = 0.2
+		production_speed_infrastructure_factor = 0.2
+		production_speed_synthetic_refinery_factor = 0.2
+		consumer_goods_factor = -0.05
+	}
+	
+	bloody_baron = {
+		random = no
+		resistance_damage_to_garrison = -0.5
+		foreign_subversive_activites = -0.6
+		non_core_manpower = 0.05
+		conscription = 0.075
+		recruitable_population_factor = 0.25
+	}
+	
+	god_of_war = {
+		random = no
+		attrition = -0.15
+		planning_speed = 0.2
+		army_attack_factor = 0.25
+		army_defence_factor = 0.25
+		conscription = 0.05
+	}
+	
+	minister_of_goods = {
+		random = no
+		sprite = 10
+		consumer_goods_factor = -0.1
+		production_speed_industrial_complex_factor = 0.15
+	}
+	
+	buddha_science = {
+		random = no
+		sprite = 14
+		fascism_drift = 0.05
+		neutrality_drift = 0.05
+		research_speed_factor = 0.1
+	}
+	
+	spirit_of_genghis = {
+		random = no
+		cavalry_attack_factor = 0.15
+	}
+	
+	borjigin = {
+		random = no
+		sprite = 17
+		cavalry_attack_factor = 0.2
+		cavalry_defence_factor = 0.2
+	}
+	
+	greater_baron = {
+		random = no
+		political_power_factor = 0.25
+		fascism_drift = 0.05
+	}
+	
+	collector_of_mongolian_earths = {
+		random = no
+		resistance_growth_on_our_occupied_states = -0.5
+	}
+	
+	revolutioner = {
+		random = no
+		stability_factor = 0.25
+		war_support_factor = 0.25
+		political_power_factor = 0.25
+		communism_drift = 0.2
+	}
+	
+	sect = {
+		random = no
+		political_power_factor = 0.25
+		research_speed_factor = -0.2
+	}
+	
+	demchugdongrub1 = {
+		random = no
+		stability_factor = -0.025
+		war_support_factor = -0.025
+		research_speed_factor = -0.025
+	}
+	
+	demchugdongrub2 = {
+		random = no
+		stability_factor = -0.05
+		war_support_factor = -0.05
+		research_speed_factor = -0.05
+	}
+	
+	demchugdongrub3 = {
+		random = no
+		stability_factor = -0.1
+		war_support_factor = -0.1
+		research_speed_factor = -0.1
+	}
+	
+	independent_man = {
+		random = no
+		sprite = 12
+		political_power_factor = 0.25
+		war_support_factor = 0.1
+	}
+	
+	anti_tengri = {
+		random = no
+		army_attack_factor = 0.15
+		army_defence_factor = 0.15
+	}
+	
+	loh = {
+		random = no
+		army_attack_factor = -0.15
+		army_defence_factor = -0.15
+	}
+	
+	mongolier = {
+		random = no
+		army_attack_factor = 0.3
+		army_defence_factor = 0.3
+	}
+	
+	occupation_government = {
+		random = no
+		resistance_growth = 0.25
+		resistance_garrison_penetration_chance = 0.25
+		resistance_damage_to_garrison = 0.25
+		required_garrison_factor = 0.15
+		recruitable_population_factor = -0.015
+		political_power_factor = -0.15
+	}
+	
+	antireligion_prop = {
+		random = no
+		sprite = 13
+		neutrality_drift = -0.05
+		research_speed_factor = 0.05
+	}
+}

@@ -1,0 +1,31 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_Khorlogiin_Choibalsan"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Khorlogiin_Choibalsan.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_Anandyn_Amar"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Anandyn_Amar.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar_Frame"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar_Frame.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar_Tick"
+		textureFile = "gfx/interface/power_struggle_gui/NOV_Election_GUI_Bar_Tick.dds"
+	}
+	progressbartype = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar"
+		textureFile1 = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar.dds"
+		textureFile2 = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar_bg.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 448
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+}

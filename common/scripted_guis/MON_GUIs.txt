@@ -1,0 +1,42 @@
+scripted_gui = {
+	MON_Power_Struggle_GUI = {
+		context_type = decision_category
+		window_name = "MON_Power_Struggle_GUI"
+		
+		visible = {
+			AND = {
+				tag = MON
+				OR = {
+					has_country_flag = MON_HC
+					has_country_flag = MON_RI
+				}
+			}
+		}
+		
+		effects = {
+			#MCD_button_click = {
+			#	if = {
+			#		limit = { NOT = { has_variable = global.open_door } }
+			#		set_variable = { global.open_door = 1 }
+			#	}
+			#	else = {
+			#		clear_variable = global.open_door
+			#	}
+			#}
+		}
+		
+		triggers = {
+		
+		}
+
+		properties = {
+			MON_Power_Struggle_GUI_ProgressBar = {
+				frame = choibalsan_influence
+			}
+			MON_Power_Struggle_GUI_Bar_Tick = { # Start is at x = 37 y = 263, end is at x = 481 y = 263
+				x = choibalsan_x_axis
+				y = 263
+			}
+		}
+	}
+}

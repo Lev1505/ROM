@@ -1,0 +1,26 @@
+state={
+	id=842
+	name="STATE_842"
+	manpower=250000
+	buildings_max_level_factor=1
+	
+	state_category=city
+
+	history={
+		owner = MON
+		victory_points = {
+			10647 20
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		4873 10575 10647 12629
+	}
+	local_supplies=0.0 
+}

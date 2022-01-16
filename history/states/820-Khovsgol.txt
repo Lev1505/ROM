@@ -1,0 +1,30 @@
+#Дундговь, а не Хувсгел
+state={
+	id=820
+	name="name_STATE_820"
+	manpower=185000
+	buildings_max_level_factor=1
+	state_category=large_town
+	
+	resources={
+		steel=6
+	}
+
+	history={
+		owner = MON
+		victory_points = {
+			12686 5
+		}
+		buildings = {
+			infrastructure = 4
+
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		4729 10632 12686 
+	}
+	local_supplies=0.0 
+}

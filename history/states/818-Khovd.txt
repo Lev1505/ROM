@@ -1,0 +1,26 @@
+#Баянхонгор
+state={
+	id=818
+	name="name_STATE_818"
+	manpower=30000
+	buildings_max_level_factor=1
+	
+	state_category=large_town
+
+	history={
+		owner = MON
+		victory_points = {
+			12614 5
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		1725 4786 7864 12541 12614
+	}
+	local_supplies=0.0 
+}

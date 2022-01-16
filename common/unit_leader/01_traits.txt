@@ -1,0 +1,12 @@
+leader_traits = {
+
+	pro_soviet_gen = {
+		type = all
+		trait_type = status_trait
+	}
+
+	independ_gen = {
+		type = all
+		trait_type = status_trait
+	}
+}

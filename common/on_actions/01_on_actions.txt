@@ -1,0 +1,173 @@
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = MON
+					CHI = { has_capitulated = yes }
+					OR = {
+						613 = { is_controlled_by = MON }
+						605 = { is_controlled_by = MON }
+						605 = { is_controlled_by = JAP }
+						613 = { is_controlled_by = JAP }
+					}
+					has_global_flag = MON_MJ_PACT_YES
+				}
+				MON = {
+					country_event = {
+						id = mongolia.48
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = MON
+					RAJ = { has_capitulated = yes }
+					OR = {
+						439 = { is_controlled_by = MON }
+						439 = { is_controlled_by = JAP }
+					}
+					has_global_flag = MON_MJ_PACT_YES
+				}
+				MON = {
+					country_event = {
+						id = mongolia.49
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = MON
+					has_civil_war = yes
+					has_global_flag = MON_CIVIL_WAR
+					NOT = { has_global_flag = MON_cw_ended }
+					842 = { is_controlled_by = ROOT }
+					838 = { is_controlled_by = ROOT }
+					FROM = {
+						OR = {
+							has_country_leader = {
+								ruling_only = yes
+								name = "Khorlogiin Choibalsan"
+							}
+							has_country_leader = {
+								ruling_only = yes
+								name = "Anandyn Amar"
+							}
+						}
+					}
+				}
+				FROM = {
+					save_event_target_as = mon_civ_loser
+				}
+				ROOT = {
+					country_event = {
+						id = mongolia.50
+						days = 1
+					}
+				}
+			}
+		}
+	}
+	
+	on_weekly = {
+		effect = {
+			330 = {
+				MON_plan1_clamp_var = yes
+			}
+			817 = {
+				MON_plan1_clamp_var = yes
+			}
+			818 = {
+				MON_plan1_clamp_var = yes
+			}
+			
+			
+			
+			if = { #Sending people, 0 stability
+				limit = {
+					original_tag = MON
+					has_stability < 0.005
+					OR = {
+						has_country_flag = MON_police_on_buildings
+						has_country_flag = MON_denied_weekends
+						has_country_flag = MON_increased_worktime
+					}
+				}
+				country_event = {
+					id = mongolia.228
+					days = 1
+				}
+			}
+			if = { #Anarchists Uprising, 0 stability
+				limit = {
+					original_tag = MON
+					has_stability < 0.005
+					has_idea = MON_crisis_after_plan1
+				}
+				country_event = {
+					id = mongolia.226
+					days = 1
+				}
+			}
+			if = { #Militarist Uprising, 0 war support
+				limit = {
+					original_tag = MON
+					has_war_support < 0.005
+					has_idea = MON_crisis_after_plan1
+				}
+				country_event = {
+					id = mongolia.227
+					days = 1
+				}
+			}
+			if = {
+				limit = {
+					original_tag = MON
+					any_state = {
+						#limit = {
+						OR = {
+							has_state_flag = STATE_has_leaflets
+							has_state_flag = STATE_has_anarchists
+							has_state_flag = STATE_has_influenced_anarchists
+							has_state_flag = STATE_has_encampment
+						}
+						#}
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							has_state_flag = STATE_has_leaflets
+							has_state_flag = STATE_has_anarchists
+							has_state_flag = STATE_has_influenced_anarchists
+							has_state_flag = STATE_has_encampment
+						}
+					}
+					set_state_flag = ANARCHISTS_STATE
+				}
+			}
+			
+			
+			330 = {
+				MON_plan1_clamp_var = yes
+			}
+			817 = {
+				MON_plan1_clamp_var = yes
+			}
+			818 = {
+				MON_plan1_clamp_var = yes
+			}
+			819 = {
+				MON_plan1_clamp_var = yes
+			}
+			820 = {
+				MON_plan1_clamp_var = yes
+			}
+			844 = {
+				MON_plan1_clamp_var = yes
+			}
+		}
+	}
+}

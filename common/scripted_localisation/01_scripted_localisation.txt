@@ -1,0 +1,51 @@
+defined_text = {
+	name = GetEventTitleName
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_HC_END
+		}
+		localization_key = mongolia.7.t.amar
+	}
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_RI_END
+		}
+		localization_key = mongolia.7.t.choibalsan
+	}
+}
+defined_text = {
+	name = GetEventDescName
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_HC_END
+		}
+		localization_key = mongolia.7.d.amar
+	}
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_RI_END
+		}
+		localization_key = mongolia.7.d.choibalsan
+	}
+}
+defined_text = {
+	name = GetEventOptionName
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_HC_END
+		}
+		localization_key = mongolia.7.a.amar
+	}
+	text = {
+		trigger = {
+			original_tag = MON
+			has_country_flag = MON_RI_END
+		}
+		localization_key = mongolia.7.a.choibalsan
+	}
+}

@@ -1,0 +1,113 @@
+﻿capital = 330
+
+set_stability = 0.5
+set_war_support = 0.5
+set_research_slots = 3
+set_cosmetic_tag = cosm_MON
+
+oob = "MON_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+	tech_support = 1
+	gw_artillery = 1
+}
+
+add_ideas = {
+	MON_old_infrastructure
+	MON_not_org_army
+	MON_poor_economy
+	mongolian_economic
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = construction_effort_2
+	complete_national_focus = production_effort_2
+	complete_national_focus = infrastructure_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "MON_1939"
+	set_technology = {
+		support_weapons = 1
+		gw_artillery = 1
+		
+		#doctrines
+		air_superiority = 1
+		
+		mass_assault = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	communism = 100
+}
+
+recruit_character = MON_peljidin_genden
+recruit_character = MON_khorlogiin_choibalsan
+recruit_character = MON_gelegdorjiin_demid
+recruit_character = MON_jamyangiin_lkhagwasuren
+recruit_character = MON_baurzhan_momyshul
+recruit_character = MON_choibalsan_cw
+recruit_character = MON_anandyn_amar
+recruit_character = MON_roman_von_ungern_sternberg
+recruit_character = MON_grigoriy_semyonov
+recruit_character = MON_tserendondovyn_navaanneren
+recruit_character = MON_tengri_cult
+recruit_character = MON_demchugdongrub
+recruit_character = MON_mongolian_council
+recruit_character = MON_collapsed_authority
+recruit_character = MON_military_administration
+recruit_character = MON_labour_commune
+	
+1939.1.1 = {
+	add_ideas = {
+		limited_conscription
+	}
+	MON_khorlogiin_choibalsan = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				ideology = stalinism
+				expire = "1965.1.1.1"
+				traits = {}
+			}
+		}
+	}
+}

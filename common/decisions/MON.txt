@@ -1,0 +1,7979 @@
+MON_power_struggle_cat = {
+
+	MON_ps_promise_improving_civil_life = { #1
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 10
+		cost = 10
+		days_re_enable = 15
+		modifier = {
+			stability_weekly = 0.01
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+			MON_ps_low_support_amar = yes
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+		}
+	}
+	
+	MON_ps_increase_salary_to_soldiers = { #2
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 10
+		cost = 10
+		days_re_enable = 15
+		modifier = {
+			war_support_weekly = 0.01
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+			MON_ps_low_support_amar = yes
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						has_id = 10000
+						has_id = 10001
+					}
+					NOT = {
+						has_trait = independ_gen
+					}
+				}
+				add_unit_leader_trait = independ_gen
+			}
+		}
+	}
+	
+	MON_ps_reabiltation_of_repressed = { #3
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 15
+		cost = 20
+		days_re_enable = 23
+		modifier = {
+			political_power_gain = 0.25
+			stability_weekly = 0.01
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+			MON_ps_medium_support_amar = yes
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+		}
+	}
+	
+	MON_ps_remove_choibalsans_from_army = { #4
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 15
+		cost = 20
+		days_re_enable = 23
+		modifier = {
+			war_support_weekly = 0.01
+			experience_gain_army = 0.5
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+			MON_ps_low_loss_choibalsan = yes
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+		}
+	}
+	
+	MON_ps_raid_on_choibalsans = { #5
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 20
+		cost = 30
+		days_re_enable = 30
+		modifier = {
+			war_support_weekly = 0.01
+			stability_weekly = 0.01
+			political_power_gain = 0.5
+			experience_gain_army = 0.5
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+			MON_ps_medium_loss_choibalsan = yes
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			add_stability = 0.1
+		}
+	}
+	
+	MON_ps_arrest_choibalsan = { #final
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_arrest_Choibalsan_tt
+				check_variable = { choibalsan_influence < 25 }
+			}
+			has_completed_focus = MON_retire_Choibalsan
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_remove = 5
+		fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			MON_ps_high_loss_choibalsan = yes
+			clr_country_flag = MON_PS_began
+			hidden_effect = {
+				clr_country_flag = MON_PS_began
+				clr_country_flag = MON_RI
+			}
+			set_country_flag = MON_RI_END
+			country_event = {
+				id = mongolia.6
+				hours = 3
+			}
+		}
+	}
+	
+	MON_ps_choibalsan_action = { #mission
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_RI
+			}
+		}
+		days_mission_timeout = 30
+		
+		cancel_if_not_visible = yes
+		is_good = yes
+		
+		timeout_effect = {
+			MON_ps_low_support_choibalsan = yes
+			hidden_effect = {
+				activate_mission = MON_ps_choibalsan_action
+			}
+		}
+	}
+	
+	MON_ps_encourage_reports = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 10
+		cost = 10
+		days_re_enable = 15
+		modifier = {
+			stability_weekly = -0.01
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			MON_ps_low_support_choibalsan = yes
+			country_event = {
+				id = mongolia.12
+				days = 1
+			}
+		}
+	}
+	
+	MON_ps_improve_army_loyality = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 10
+		cost = 10
+		days_re_enable = 15
+		modifier = {
+			war_support_weekly = -0.01
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			MON_ps_low_support_choibalsan = yes
+			country_event = {
+				id = mongolia.12
+				days = 1
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						has_id = 10000
+						has_id = 10001
+					}
+					NOT = {
+						has_trait = independ_gen
+					}
+				}
+				add_unit_leader_trait = pro_soviet_gen
+			}
+		}
+	}
+	
+	MON_ps_purge_party = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 15
+		cost = 20
+		days_re_enable = 23
+		modifier = {
+			political_power_gain = -0.25
+			stability_weekly = -0.01
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			MON_ps_low_loss_amar = yes
+			country_event = {
+				id = mongolia.12
+				days = 1
+			}
+		}
+	}
+
+	MON_ps_change_officers = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 15
+		cost = 20
+		days_re_enable = 23
+		modifier = {
+			war_support_weekly = -0.01
+			experience_gain_army = -0.5
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			MON_ps_low_loss_amar = yes
+			if = {
+				limit = {
+					has_unit_leader = 10001
+				}
+				remove_unit_leader = 10001
+			}
+			country_event = {
+				id = mongolia.12
+				days = 1
+			}
+		}
+	}
+	
+	MON_ps_mass_purges = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 20
+		cost = 30
+		days_re_enable = 30
+		modifier = {
+			war_support_weekly = -0.01
+			stability_weekly = -0.01
+			political_power_gain = -0.5
+			experience_gain_army = -0.5
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			MON_ps_medium_loss_amar = yes
+			country_event = {
+				id = mongolia.12
+				days = 1
+			}
+		}
+	}
+	
+	MON_ps_kill_amar = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_kill_Amar_tt
+				check_variable = { amar_support < 25 }
+			}
+			NOT = {
+				has_country_flag = MON_ps_action
+			}
+		}
+		visible = {
+			has_country_flag = MON_HC
+		}
+		days_remove = 5
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.1
+		}
+		complete_effect = {
+			set_country_flag = MON_ps_action
+		}
+		remove_effect = {
+			clr_country_flag = MON_ps_action
+			hidden_effect = {
+				clr_country_flag = MON_PS_began
+				clr_country_flag = MON_HC
+			}
+			set_country_flag = MON_HC_END
+			MON_ps_high_loss_amar = yes
+			country_event = {
+				id = mongolia.8
+				hours = 3
+			}
+		}
+	}
+	
+	MON_ps_amar_action = { #mission
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_country_flag = MON_HC
+			}
+		}
+		days_mission_timeout = 30
+		
+		cancel_if_not_visible = yes
+		is_good = yes
+		
+		timeout_effect = {
+			MON_ps_low_support_amar = yes
+			hidden_effect = {
+				activate_mission = MON_ps_amar_action
+			}
+		}
+	}
+	
+	MON_ps_results = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = MON_PS_began
+				}
+			}
+		}
+		activation = {
+			has_completed_focus = MON_retire_Genden
+			has_country_flag = MON_PS_began
+		}
+		visible = {
+			has_country_flag = MON_PS_began
+		}
+		days_mission_timeout = 182
+		
+		cancel_if_not_visible = yes
+		is_good = yes
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = MON_HC
+				}
+				set_country_flag = MON_HC_END
+			}
+			if = {
+				limit = {
+					has_country_flag = MON_RI
+				}
+				set_country_flag = MON_RI_END
+			}
+			hidden_effect = {
+				clr_country_flag = MON_PS_began
+				clr_country_flag = MON_HC
+				clr_country_flag = MON_RI
+			}
+			country_event = {
+				id = mongolia.6
+				hours = 3
+			}
+		}
+	}
+}
+
+MON_fp_cat = {
+
+	mon_fascist_news = {
+		allowed = {
+			original_tag = MON
+		}
+		days_remove = 45
+		remove_effect = {
+			add_ideas = { MON_fascist_paper }
+		}
+		cost = 100
+		fire_only_once = yes
+	}
+	
+	mon_agit = {
+		allowed = {
+			original_tag = MON
+		}
+		cost = 50
+		days_re_enable = 45
+		complete_effect = {
+			add_timed_idea = {
+				days = 15
+				idea = MON_agitation
+			}
+		}
+	}
+	
+	mon_speech = {
+		allowed = {
+			original_tag = MON
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+}
+
+MON_territorial_reform_cat = {
+
+	#First Reform#
+
+	mon_integrate_Tibet = { #Tibet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 322
+			controls_state = 758
+			controls_state = 757
+			controls_state = 323
+			controls_state = 324
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			322 = { add_core_of = MON }
+			758 = { add_core_of = MON }
+			757 = { add_core_of = MON }
+			323 = { add_core_of = MON }
+			324 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_Inner_Mongolia = { #Inner Mongolia
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 616
+			controls_state = 621
+			controls_state = 746
+			controls_state = 756
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			616 = { add_core_of = MON }
+			621 = { add_core_of = MON }
+			746 = { add_core_of = MON }
+			756 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_Tuva = { #Tannu-Tuva
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 329
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		cost = 10
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			329 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	#Second Reform#
+	
+	mon_integrate_Sinkiang = { #Sinkiang
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 617
+			controls_state = 618
+			controls_state = 619
+			controls_state = 759
+			controls_state = 760
+			controls_state = 287
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_south_crusade
+		}
+		cost = 50
+		days_remove = 100
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			617 = { add_core_of = MON }
+			618 = { add_core_of = MON }
+			619 = { add_core_of = MON }
+			759 = { add_core_of = MON }
+			760 = { add_core_of = MON }
+			287 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_Shanxi_PRC = { #Shanxi+PRC
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 615
+			controls_state = 622
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_south_crusade
+		}
+		cost = 25
+		days_remove = 50
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			615 = { add_core_of = MON }
+			622 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_XSM = { #XSM
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 753
+			controls_state = 754
+			controls_state = 755
+			controls_state = 604
+			controls_state = 283
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_south_crusade
+		}
+		cost = 50
+		days_remove = 70
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			753 = { add_core_of = MON }
+			754 = { add_core_of = MON }
+			755 = { add_core_of = MON }
+			604 = { add_core_of = MON }
+			283 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	#Third Reform#
+	
+	mon_form_great_mongolia = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			OR = {
+				has_completed_focus = MON_destroy_China
+				has_completed_focus = MON_way_to_India
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_cosmetic_tag = GREAT_UNGERN_MON
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 250
+		}
+	}
+	
+	mon_integrate_China = { #China
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_destroy_China
+		}
+		cost = 250
+		days_remove = 150
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			605 = { add_core_of = MON }
+			744 = { add_core_of = MON }
+			752 = { add_core_of = MON }
+			753 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_Raj = { #Raj
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_way_to_India
+		}
+		cost = 250
+		days_remove = 150
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			428 = { add_core_of = MON }
+			433 = { add_core_of = MON }
+			438 = { add_core_of = MON }
+			439 = { add_core_of = MON }
+			440 = { add_core_of = MON }
+			441 = { add_core_of = MON }
+			442 = { add_core_of = MON }
+			443 = { add_core_of = MON }
+			444 = { add_core_of = MON }
+			445 = { add_core_of = MON }
+			787 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+	
+	mon_integrate_IAI = { #Iraq+Iran+Afghanistan
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			controls_state = 410
+			controls_state = 411
+			controls_state = 412
+			controls_state = 413
+			controls_state = 414
+			controls_state = 415
+			controls_state = 416
+			controls_state = 417
+			controls_state = 418
+			controls_state = 419
+			controls_state = 420
+			controls_state = 421
+			controls_state = 266
+			controls_state = 267
+			controls_state = 291
+			controls_state = 675
+			controls_state = 676
+			NOT = {
+				has_country_flag = MON_integration_is_going
+			}
+		}
+		visible = {
+			has_completed_focus = MON_arabian_barrier
+		}
+		cost = 150
+		days_remove = 150
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = MON_integration_is_going
+			}
+		}
+		remove_effect = {
+			410 = { add_core_of = MON }
+			411 = { add_core_of = MON }
+			412 = { add_core_of = MON }
+			413 = { add_core_of = MON }
+			414 = { add_core_of = MON }
+			415 = { add_core_of = MON }
+			416 = { add_core_of = MON }
+			417 = { add_core_of = MON }
+			418 = { add_core_of = MON }
+			419 = { add_core_of = MON }
+			420 = { add_core_of = MON }
+			421 = { add_core_of = MON }
+			266 = { add_core_of = MON }
+			267 = { add_core_of = MON }
+			291 = { add_core_of = MON }
+			675 = { add_core_of = MON }
+			676 = { add_core_of = MON }
+			clr_country_flag = MON_integration_is_going
+		}
+	}
+}
+
+MON_investitions = {
+
+	mon_soviet_factories = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = factory_invest
+			}
+			has_completed_focus = MON_dictature_of_Choibalsan
+		}
+		cost = 50
+		complete_effect = {
+			SOV = {
+				country_event = mongolia.17
+			}
+			set_country_flag = factory_invest
+		}
+	}
+	
+	mon_soviet_militaries = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = military_invest
+			}
+			has_completed_focus = MON_dictature_of_Choibalsan
+		}
+		cost = 50
+		complete_effect = {
+			SOV = {
+				country_event = mongolia.18
+			}
+			set_country_flag = military_invest
+		}
+	}
+	
+	mon_soviet_infrastructure = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				#NOT = {
+				#	has_state_flag = state_max_infrasctructure
+				#}
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = infrastructure_invest
+			}
+			has_completed_focus = MON_dictature_of_Choibalsan
+		}
+		cost = 50
+		complete_effect = {
+			SOV = {
+				country_event = mongolia.19
+			}
+			set_country_flag = infrastructure_invest
+		}
+	}
+	
+	mon_soviet_dockyards = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = dockyard_invest
+			}
+			has_completed_focus = MON_dictature_of_Choibalsan
+		}
+		cost = 50
+		complete_effect = {
+			SOV = {
+				country_event = mongolia.20
+			}
+			set_country_flag = dockyard_invest
+		}
+	}
+	
+	mon_german_factories = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = factory_invest
+			}
+			has_completed_focus = MON_visit_in_Berlin
+		}
+		cost = 50
+		complete_effect = {
+			GER = {
+				country_event = mongolia.17
+			}
+			set_country_flag = factory_invest
+		}
+	}
+	
+	mon_german_militaries = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = military_invest
+			}
+			has_completed_focus = MON_visit_in_Berlin
+		}
+		cost = 50
+		complete_effect = {
+			GER = {
+				country_event = mongolia.18
+			}
+			set_country_flag = military_invest
+		}
+	}
+	
+	mon_german_infrastructure = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				#NOT = {
+				#	has_state_flag = state_max_infrasctructure
+				#}
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = infrastructure_invest
+			}
+			has_completed_focus = MON_visit_in_Berlin
+		}
+		cost = 50
+		complete_effect = {
+			GER = {
+				country_event = mongolia.19
+			}
+			set_country_flag = infrastructure_invest
+		}
+	}
+	
+	mon_german_dockyards = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = dockyard_invest
+			}
+			has_completed_focus = MON_visit_in_Berlin
+		}
+		cost = 50
+		complete_effect = {
+			GER = {
+				country_event = mongolia.20
+			}
+			set_country_flag = dockyard_invest
+		}
+	}
+	
+	mon_british_factories = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = factory_invest
+			}
+			NOT = {
+				has_completed_focus = MON_fascism_gov
+			}
+		}
+		cost = 50
+		complete_effect = {
+			ENG = {
+				country_event = mongolia.17
+			}
+			set_country_flag = factory_invest
+		}
+	}
+	
+	mon_british_militaries = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			NOT = {
+				has_country_flag = military_invest
+			}
+			NOT = {
+				has_completed_focus = MON_fascism_gov
+			}
+		}
+		cost = 50
+		complete_effect = {
+			ENG = {
+				country_event = mongolia.18
+			}
+			set_country_flag = military_invest
+		}
+	}
+	
+	mon_british_infrastructure = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				#NOT = {
+				#	has_state_flag = state_max_infrasctructure
+				#}
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = infrastructure_invest
+			}
+			NOT = {
+				has_completed_focus = MON_fascism_gov
+			}
+		}
+		cost = 50
+		complete_effect = {
+			ENG = {
+				country_event = mongolia.19
+			}
+			set_country_flag = infrastructure_invest
+		}
+	}
+	
+	mon_british_dockyards = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+			NOT = {
+				has_country_flag = dockyard_invest
+			}
+			NOT = {
+				has_completed_focus = MON_fascism_gov
+			}
+		}
+		cost = 50
+		complete_effect = {
+			ENG = {
+				country_event = mongolia.20
+			}
+			set_country_flag = dockyard_invest
+		}
+	}
+	
+	mon_factory_building = {
+		allowed = {	
+			original_tag = MON
+		}
+		available = {
+			always = no
+		}
+		visible = {
+		}
+		activation = {
+			OR = {
+				has_country_flag = soviet_factories
+				has_country_flag = german_factories
+				has_country_flag = british_factories
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 70
+		timeout_effect = {
+			
+			clr_country_flag = factory_invest
+			add_stability = 0.05
+			
+			#Soviet Union
+		
+			if = {
+				limit = {
+					has_country_flag = soviet_factories
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				clr_country_flag = soviet_factories
+			}
+			
+			#German Reich
+			
+			if = {
+				limit = {
+					has_country_flag = german_factories
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_factories
+			}
+			if = {
+				limit = {
+					has_country_flag = german_factories
+					has_completed_focus = MON_fascism_gov
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_factories
+			}
+			
+			#Great Britain
+			
+			if = {
+				limit = {
+					has_country_flag = british_factories
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = british_factories
+			}
+		}
+	}
+	
+	mon_military_building = {
+		allowed = {	
+			original_tag = MON
+		}
+		available = {
+			always = no
+		}
+		visible = {
+		}
+		activation = {
+			OR = {
+				has_country_flag = soviet_military
+				has_country_flag = german_military
+				has_country_flag = british_military
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 70
+		timeout_effect = {
+			
+			clr_country_flag = factory_invest
+			add_war_support = 0.05
+		
+			#Soviet Union
+		
+			if = {
+				limit = {
+					has_country_flag = soviet_military
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = soviet_military
+			}
+			
+			#German Reich
+			
+			if = {
+				limit = {
+					has_country_flag = german_military
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_military
+			}
+			if = {
+				limit = {
+					has_country_flag = german_military
+					has_completed_focus = MON_fascism_gov
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_military
+			}
+			
+			#Great Britain
+			
+			if = {
+				limit = {
+					has_country_flag = british_military
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = british_military
+			}
+			clr_country_flag = military_invest
+		}
+	}
+	
+	mon_infrastructure_building = {
+		allowed = {	
+			original_tag = MON
+		}
+		available = {
+			always = no
+			any_state = {
+				#NOT = {
+				#	has_state_flag = state_max_infrasctructure
+				#}
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+		}
+		activation = {
+			OR = {
+				has_country_flag = soviet_infrastructure
+				has_country_flag = german_infrastructure
+				has_country_flag = british_infrastructure
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 70
+		timeout_effect = {
+			
+			clr_country_flag = factory_invest
+			add_stability = 0.05
+		
+			#Soviet Union
+		
+			if = {
+				limit = {
+					has_country_flag = soviet_infrastructure
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = soviet_infrastructure
+			}
+			
+			#German Reich
+			
+			if = {
+				limit = {
+					has_country_flag = german_infrastructure
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_infrastructure
+			}
+			if = {
+				limit = {
+					has_country_flag = german_infrastructure
+					has_completed_focus = MON_fascism_gov
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_infrastructure
+			}
+			
+			#Great Britain
+			
+			if = {
+				limit = {
+					has_country_flag = british_infrastructure
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = british_infrastructure
+			}
+			clr_country_flag = infrastructure_invest
+		}
+	}
+	
+	mon_dockyards_building = {
+		allowed = {	
+			original_tag = MON
+		}
+		available = {
+			always = no
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = MON
+			}
+		}
+		visible = {
+		}
+		activation = {
+			OR = {
+				has_country_flag = soviet_dockyards
+				has_country_flag = german_dockyards
+				has_country_flag = british_dockyards
+			}
+		}
+		is_good = yes
+		days_mission_timeout = 70
+		timeout_effect = {
+			
+			clr_country_flag = factory_invest
+		
+			#Soviet Union
+		
+			if = {
+				limit = {
+					has_country_flag = soviet_dockyards
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = soviet_dockyards
+			}
+			
+			#German Reich
+			
+			if = {
+				limit = {
+					has_country_flag = german_dockyards
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_dockyards
+			}
+			if = {
+				limit = {
+					has_country_flag = german_military
+					has_completed_focus = MON_fascism_gov
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				clr_country_flag = german_military
+			}
+			
+			#Great Britain
+			
+			if = {
+				limit = {
+					has_country_flag = british_dockyards
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				clr_country_flag = british_dockyards
+			}
+			clr_country_flag = dockyard_invest
+		}
+	}
+	
+	mon_quit_germany = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			MON = {
+				is_in_faction_with = JAP
+			}
+		}
+		visible = {
+			has_completed_focus = MON_MJ_pact
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = MON_quit_germany
+			GER = { add_opinion_modifier = { target = MON modifier = MON_quited } }
+		}
+	}
+	
+	mon_japanese_invest = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			has_country_flag = MON_quit_germany
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = mon_japanese_invest_tt
+			set_country_flag = MON_japanese_invest_flag
+			JAP = { add_opinion_modifier = { target = MON modifier = MON_japan_mongol } }
+			add_opinion_modifier = { target = JAP modifier = MON_japan_mongol }
+		}
+	}
+	
+	mon_japanese_investitions = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			has_country_flag = MON_japanese_invest_flag
+		}
+		cost = 100
+		days_remove = 150
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						has_state_flag = state_max_infrasctructure
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+MON_battle_for_Raj_cat = {
+	MON_send_food = {
+		allowed = {
+			original_tag = MON
+		}
+		days_re_enable = 70
+		cost = 100
+		complete_effect = {
+			hidden_effect = {
+				add_to_variable = { raj_var_mongolian_inf = 5 } 
+				subtract_from_variable = { raj_var_english_inf = 5 }
+			}
+			custom_effect_tooltip = MON_increase_inf_5
+		}
+	}
+	MON_send_weapons = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_equipment = { infantry_equipment > 2500 }
+		}
+		days_re_enable = 45
+		cost = 75
+		complete_effect = {
+			send_equipment = {
+				type = infantry_equipment
+				target = RAJ
+				amount = 2500
+			}
+			hidden_effect = {
+				add_to_variable = { raj_var_mongolian_inf = 5 } 
+				subtract_from_variable = { raj_var_english_inf = 5 }
+			}
+			custom_effect_tooltip = MON_increase_inf_5
+		}
+	}
+	MON_send_money = {
+		allowed = {
+			original_tag = MON
+		}
+		days_re_enable = 135
+		cost = 75
+		complete_effect = {
+			RAJ = {
+				add_timed_idea = {
+					idea = MON_money_to_raj
+					days = 45
+				}
+			}
+			hidden_effect = {
+				add_to_variable = { raj_var_mongolian_inf = 10 } 
+				subtract_from_variable = { raj_var_english_inf = 10 }
+			}
+			custom_effect_tooltip = MON_increase_inf_10
+		}
+	}
+	MON_build_some_factories = {
+		allowed = {
+			original_tag = MON
+		}
+		days_re_enable = 45
+		cost = 75
+		complete_effect = {
+			RAJ = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				if = {
+					limit = {
+						has_variable = raj_built_factories
+					}
+					add_to_variable = { raj_built_factories = 2 }
+				}
+				else = {
+					set_variable = { raj_built_factories = 2 }
+				}
+			}
+			hidden_effect = {
+				add_to_variable = { raj_var_mongolian_inf = 7.5 } 
+				subtract_from_variable = { raj_var_english_inf = 7.5 }
+			}
+			custom_effect_tooltip = MON_increase_inf_75
+		}
+	}
+	MON_meet_leaders = {
+		allowed = {
+			original_tag = MON
+		}
+		days_re_enable = 45
+		cost = 50
+		complete_effect = {
+			RAJ = {
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = { raj_var_mongolian_inf = 2.5 } 
+				subtract_from_variable = { raj_var_english_inf = 2.5 }
+			}
+			custom_effect_tooltip = MON_increase_inf_25
+		}
+	}
+	MON_change_government = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			check_variable = { raj_var_mongolian_inf > 89 }
+			check_variable = { raj_var_english_inf < 11 }
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			random_list = {	
+				raj_var_mongolian_inf = {
+					RAJ = {
+						country_event = mongolia.201
+					}
+				}
+				raj_var_english_inf = {
+					RAJ = {
+						country_event = mongolia.203
+					}
+				}
+			}
+		}
+	}
+	MON_armed_uprising = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			check_variable = { raj_var_mongolian_inf > 64 }
+			check_variable = { raj_var_english_inf < 36 }
+		}
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			RAJ = {
+				country_event = mongolia.205
+			}
+		}
+	}
+	MON_invite_raj_dec = {
+		allowed = {
+			original_tag = MON
+		}
+		visible = {
+			has_completed_focus = MON_invite_raj
+		}
+		available = {
+			RAJ = {
+				is_puppet = no
+			}
+		}
+		fire_only_once = yes
+		cost = 100
+		complete_effect = {
+			add_to_faction = RAJ
+			set_country_flag = MON_raj_in_faction
+		}
+	}
+	MON_send_volunteers_to_raj = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			RAJ = {
+				has_civil_war = yes
+			}
+			has_manpower > 10000
+		}
+		days_re_enable = 30
+		cost = 50
+		complete_effect = {
+			RAJ = {
+				add_manpower = 10000
+			}
+		}
+	}
+}
+
+MON_sep_category = {
+	MON_sep_1 = { #Beginning Arms Help
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = { 
+					has_completed_focus = MON_tatar
+					has_completed_focus = MON_udmurt
+					has_completed_focus = MON_bashkir
+					has_completed_focus = MON_chuvash
+					has_completed_focus = MON_buryat
+					has_completed_focus = MON_tuva
+					has_completed_focus = MON_hakas
+					has_completed_focus = MON_yakut
+					has_completed_focus = MON_chukot
+					has_completed_focus = MON_yamnen
+					has_completed_focus = MON_comi
+					has_completed_focus = MON_hanman
+					has_completed_focus = MON_altay
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_weapon_1
+						has_country_flag = MON_help_to_BSK_weapon_1
+						has_country_flag = MON_help_to_BUR_weapon_1
+						has_country_flag = MON_help_to_COM_weapon_1
+						has_country_flag = MON_help_to_YAM_weapon_1
+						has_country_flag = MON_help_to_TAT_weapon_1
+						has_country_flag = MON_help_to_UDM_weapon_1
+						has_country_flag = MON_help_to_HAK_weapon_1
+						has_country_flag = MON_help_to_HNM_weapon_1
+						has_country_flag = MON_help_to_CHU_weapon_1
+						has_country_flag = MON_help_to_YAK_weapon_1
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.140
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_2 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_weapon_1
+					has_country_flag = MON_help_to_BSK_weapon_1
+					has_country_flag = MON_help_to_BUR_weapon_1
+					has_country_flag = MON_help_to_COM_weapon_1
+					has_country_flag = MON_help_to_YAM_weapon_1
+					has_country_flag = MON_help_to_TAT_weapon_1
+					has_country_flag = MON_help_to_UDM_weapon_1
+					has_country_flag = MON_help_to_HAK_weapon_1
+					has_country_flag = MON_help_to_HNM_weapon_1
+					has_country_flag = MON_help_to_CHU_weapon_1
+					has_country_flag = MON_help_to_YAK_weapon_1
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_weapon_2
+						has_country_flag = MON_help_to_BSK_weapon_2
+						has_country_flag = MON_help_to_BUR_weapon_2
+						has_country_flag = MON_help_to_COM_weapon_2
+						has_country_flag = MON_help_to_YAM_weapon_2
+						has_country_flag = MON_help_to_TAT_weapon_2
+						has_country_flag = MON_help_to_UDM_weapon_2
+						has_country_flag = MON_help_to_HAK_weapon_2
+						has_country_flag = MON_help_to_HNM_weapon_2
+						has_country_flag = MON_help_to_CHU_weapon_2
+						has_country_flag = MON_help_to_YAK_weapon_2
+					}
+				}
+			}
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.145
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_3 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_weapon_2
+					has_country_flag = MON_help_to_BSK_weapon_2
+					has_country_flag = MON_help_to_BUR_weapon_2
+					has_country_flag = MON_help_to_COM_weapon_2
+					has_country_flag = MON_help_to_YAM_weapon_2
+					has_country_flag = MON_help_to_TAT_weapon_2
+					has_country_flag = MON_help_to_UDM_weapon_2
+					has_country_flag = MON_help_to_HAK_weapon_2
+					has_country_flag = MON_help_to_HNM_weapon_2
+					has_country_flag = MON_help_to_CHU_weapon_2
+					has_country_flag = MON_help_to_YAK_weapon_2
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_weapon_3
+						has_country_flag = MON_help_to_BSK_weapon_3
+						has_country_flag = MON_help_to_BUR_weapon_3
+						has_country_flag = MON_help_to_COM_weapon_3
+						has_country_flag = MON_help_to_YAM_weapon_3
+						has_country_flag = MON_help_to_TAT_weapon_3
+						has_country_flag = MON_help_to_UDM_weapon_3
+						has_country_flag = MON_help_to_HAK_weapon_3
+						has_country_flag = MON_help_to_HNM_weapon_3
+						has_country_flag = MON_help_to_CHU_weapon_3
+						has_country_flag = MON_help_to_YAK_weapon_3
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.150
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_4 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_weapon_3
+					has_country_flag = MON_help_to_BSK_weapon_3
+					has_country_flag = MON_help_to_BUR_weapon_3
+					has_country_flag = MON_help_to_COM_weapon_3
+					has_country_flag = MON_help_to_YAM_weapon_3
+					has_country_flag = MON_help_to_TAT_weapon_3
+					has_country_flag = MON_help_to_UDM_weapon_3
+					has_country_flag = MON_help_to_HAK_weapon_3
+					has_country_flag = MON_help_to_HNM_weapon_3
+					has_country_flag = MON_help_to_CHU_weapon_3
+					has_country_flag = MON_help_to_YAK_weapon_3
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_weapon_4
+						has_country_flag = MON_help_to_BSK_weapon_4
+						has_country_flag = MON_help_to_BUR_weapon_4
+						has_country_flag = MON_help_to_COM_weapon_4
+						has_country_flag = MON_help_to_YAM_weapon_4
+						has_country_flag = MON_help_to_TAT_weapon_4
+						has_country_flag = MON_help_to_UDM_weapon_4
+						has_country_flag = MON_help_to_HAK_weapon_4
+						has_country_flag = MON_help_to_HNM_weapon_4
+						has_country_flag = MON_help_to_CHU_weapon_4
+						has_country_flag = MON_help_to_YAK_weapon_4
+					}
+				}
+			}
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.155
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_5 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_weapon_4
+					has_country_flag = MON_help_to_BSK_weapon_4
+					has_country_flag = MON_help_to_BUR_weapon_4
+					has_country_flag = MON_help_to_COM_weapon_4
+					has_country_flag = MON_help_to_YAM_weapon_4
+					has_country_flag = MON_help_to_TAT_weapon_4
+					has_country_flag = MON_help_to_UDM_weapon_4
+					has_country_flag = MON_help_to_HAK_weapon_4
+					has_country_flag = MON_help_to_HNM_weapon_4
+					has_country_flag = MON_help_to_CHU_weapon_4
+					has_country_flag = MON_help_to_YAK_weapon_4
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_weapon_5
+						has_country_flag = MON_help_to_BSK_weapon_5
+						has_country_flag = MON_help_to_BUR_weapon_5
+						has_country_flag = MON_help_to_COM_weapon_5
+						has_country_flag = MON_help_to_YAM_weapon_5
+						has_country_flag = MON_help_to_TAT_weapon_5
+						has_country_flag = MON_help_to_UDM_weapon_5
+						has_country_flag = MON_help_to_HAK_weapon_5
+						has_country_flag = MON_help_to_HNM_weapon_5
+						has_country_flag = MON_help_to_CHU_weapon_5
+						has_country_flag = MON_help_to_YAK_weapon_5
+					}
+				}
+			}
+		}
+		
+		cost = 100
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.160
+				hours = 1
+			}
+		}
+	}
+
+	MON_sep_6 = { #Beginning Industrial Help
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_weapon_5
+					has_country_flag = MON_help_to_BSK_weapon_5
+					has_country_flag = MON_help_to_BUR_weapon_5
+					has_country_flag = MON_help_to_COM_weapon_5
+					has_country_flag = MON_help_to_YAM_weapon_5
+					has_country_flag = MON_help_to_TAT_weapon_5
+					has_country_flag = MON_help_to_UDM_weapon_5
+					has_country_flag = MON_help_to_HAK_weapon_5
+					has_country_flag = MON_help_to_HNM_weapon_5
+					has_country_flag = MON_help_to_CHU_weapon_5
+					has_country_flag = MON_help_to_YAK_weapon_5
+				}
+				NOT = {
+					AND = {
+						has_country_flag = Industrial_help_to_ALT_1
+						has_country_flag = Industrial_help_to_BSK_1
+						has_country_flag = Industrial_help_to_BUR_1
+						has_country_flag = Industrial_help_to_COM_1
+						has_country_flag = Industrial_help_to_YAM_1
+						has_country_flag = Industrial_help_to_TAT_1
+						has_country_flag = Industrial_help_to_UDM_1
+						has_country_flag = Industrial_help_to_HAK_1
+						has_country_flag = Industrial_help_to_HNM_1
+						has_country_flag = Industrial_help_to_CHU_1
+						has_country_flag = Industrial_help_to_YAK_1
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.165
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_7 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = Industrial_help_to_ALT_1
+					has_country_flag = Industrial_help_to_BSK_1
+					has_country_flag = Industrial_help_to_BUR_1
+					has_country_flag = Industrial_help_to_COM_1
+					has_country_flag = Industrial_help_to_YAM_1
+					has_country_flag = Industrial_help_to_TAT_1
+					has_country_flag = Industrial_help_to_UDM_1
+					has_country_flag = Industrial_help_to_HAK_1
+					has_country_flag = Industrial_help_to_HNM_1
+					has_country_flag = Industrial_help_to_CHU_1
+					has_country_flag = Industrial_help_to_YAK_1
+				}
+				NOT = {
+					AND = {
+						has_country_flag = Industrial_help_to_ALT_2
+						has_country_flag = Industrial_help_to_BSK_2
+						has_country_flag = Industrial_help_to_BUR_2
+						has_country_flag = Industrial_help_to_COM_2
+						has_country_flag = Industrial_help_to_YAM_2
+						has_country_flag = Industrial_help_to_TAT_2
+						has_country_flag = Industrial_help_to_UDM_2
+						has_country_flag = Industrial_help_to_HAK_2
+						has_country_flag = Industrial_help_to_HNM_2
+						has_country_flag = Industrial_help_to_CHU_2
+						has_country_flag = Industrial_help_to_YAK_2
+					}
+				}
+			}
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.170
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_8 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = Industrial_help_to_ALT_2
+					has_country_flag = Industrial_help_to_BSK_2
+					has_country_flag = Industrial_help_to_BUR_2
+					has_country_flag = Industrial_help_to_COM_2
+					has_country_flag = Industrial_help_to_YAM_2
+					has_country_flag = Industrial_help_to_TAT_2
+					has_country_flag = Industrial_help_to_UDM_2
+					has_country_flag = Industrial_help_to_HAK_2
+					has_country_flag = Industrial_help_to_HNM_2
+					has_country_flag = Industrial_help_to_CHU_2
+					has_country_flag = Industrial_help_to_YAK_2
+				}
+				NOT = {
+					AND = {
+						has_country_flag = Industrial_help_to_ALT_3
+						has_country_flag = Industrial_help_to_BSK_3
+						has_country_flag = Industrial_help_to_BUR_3
+						has_country_flag = Industrial_help_to_COM_3
+						has_country_flag = Industrial_help_to_YAM_3
+						has_country_flag = Industrial_help_to_TAT_3
+						has_country_flag = Industrial_help_to_UDM_3
+						has_country_flag = Industrial_help_to_HAK_3
+						has_country_flag = Industrial_help_to_HNM_3
+						has_country_flag = Industrial_help_to_CHU_3
+						has_country_flag = Industrial_help_to_YAK_3
+					}
+				}
+			}
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.175
+				hours = 1
+			}
+		}
+	}
+	MON_sep_9 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = Industrial_help_to_ALT_3
+					has_country_flag = Industrial_help_to_BSK_3
+					has_country_flag = Industrial_help_to_BUR_3
+					has_country_flag = Industrial_help_to_COM_3
+					has_country_flag = Industrial_help_to_YAM_3
+					has_country_flag = Industrial_help_to_TAT_3
+					has_country_flag = Industrial_help_to_UDM_3
+					has_country_flag = Industrial_help_to_HAK_3
+					has_country_flag = Industrial_help_to_HNM_3
+					has_country_flag = Industrial_help_to_CHU_3
+					has_country_flag = Industrial_help_to_YAK_3
+				}
+				NOT = {
+					AND = {
+						has_country_flag = Industrial_help_to_ALT_4
+						has_country_flag = Industrial_help_to_BSK_4
+						has_country_flag = Industrial_help_to_BUR_4
+						has_country_flag = Industrial_help_to_COM_4
+						has_country_flag = Industrial_help_to_YAM_4
+						has_country_flag = Industrial_help_to_TAT_4
+						has_country_flag = Industrial_help_to_UDM_4
+						has_country_flag = Industrial_help_to_HAK_4
+						has_country_flag = Industrial_help_to_HNM_4
+						has_country_flag = Industrial_help_to_CHU_4
+						has_country_flag = Industrial_help_to_YAK_4
+					}
+				}
+			}
+		}
+		
+		cost = 75
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.180
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_10 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = Industrial_help_to_ALT_4
+					has_country_flag = Industrial_help_to_BSK_4
+					has_country_flag = Industrial_help_to_BUR_4
+					has_country_flag = Industrial_help_to_COM_4
+					has_country_flag = Industrial_help_to_YAM_4
+					has_country_flag = Industrial_help_to_TAT_4
+					has_country_flag = Industrial_help_to_UDM_4
+					has_country_flag = Industrial_help_to_HAK_4
+					has_country_flag = Industrial_help_to_HNM_4
+					has_country_flag = Industrial_help_to_CHU_4
+					has_country_flag = Industrial_help_to_YAK_4
+				}
+				NOT = {
+					AND = {
+						has_country_flag = Industrial_help_to_ALT_5
+						has_country_flag = Industrial_help_to_BSK_5
+						has_country_flag = Industrial_help_to_BUR_5
+						has_country_flag = Industrial_help_to_COM_5
+						has_country_flag = Industrial_help_to_YAM_5
+						has_country_flag = Industrial_help_to_TAT_5
+						has_country_flag = Industrial_help_to_UDM_5
+						has_country_flag = Industrial_help_to_HAK_5
+						has_country_flag = Industrial_help_to_HNM_5
+						has_country_flag = Industrial_help_to_CHU_5
+						has_country_flag = Industrial_help_to_YAK_5
+					}
+				}
+			}
+		}
+		
+		cost = 100
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.185
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_11 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = Industrial_help_to_ALT_5
+					has_country_flag = Industrial_help_to_BSK_5
+					has_country_flag = Industrial_help_to_BUR_5
+					has_country_flag = Industrial_help_to_COM_5
+					has_country_flag = Industrial_help_to_YAM_5
+					has_country_flag = Industrial_help_to_TAT_5
+					has_country_flag = Industrial_help_to_UDM_5
+					has_country_flag = Industrial_help_to_HAK_5
+					has_country_flag = Industrial_help_to_HNM_5
+					has_country_flag = Industrial_help_to_CHU_5
+					has_country_flag = Industrial_help_to_YAK_5
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_volunteers_1
+						has_country_flag = MON_help_to_BSK_volunteers_1
+						has_country_flag = MON_help_to_BUR_volunteers_1
+						has_country_flag = MON_help_to_COM_volunteers_1
+						has_country_flag = MON_help_to_YAM_volunteers_1
+						has_country_flag = MON_help_to_TAT_volunteers_1
+						has_country_flag = MON_help_to_UDM_volunteers_1
+						has_country_flag = MON_help_to_HAK_volunteers_1
+						has_country_flag = MON_help_to_HNM_volunteers_1
+						has_country_flag = MON_help_to_CHU_volunteers_1
+						has_country_flag = MON_help_to_YAK_volunteers_1
+					}
+				}
+			}
+		}
+		cost = 10
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.190
+				hours = 1
+			}
+		}
+	}
+	
+	MON_sep_12 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			AND = {
+				OR = {
+					has_country_flag = MON_help_to_ALT_volunteers_1
+					has_country_flag = MON_help_to_BSK_volunteers_1
+					has_country_flag = MON_help_to_BUR_volunteers_1
+					has_country_flag = MON_help_to_COM_volunteers_1
+					has_country_flag = MON_help_to_YAM_volunteers_1
+					has_country_flag = MON_help_to_TAT_volunteers_1
+					has_country_flag = MON_help_to_UDM_volunteers_1
+					has_country_flag = MON_help_to_HAK_volunteers_1
+					has_country_flag = MON_help_to_HNM_volunteers_1
+					has_country_flag = MON_help_to_CHU_volunteers_1
+					has_country_flag = MON_help_to_YAK_volunteers_1
+				}
+				NOT = {
+					AND = {
+						has_country_flag = MON_help_to_ALT_volunteers_2
+						has_country_flag = MON_help_to_BSK_volunteers_2
+						has_country_flag = MON_help_to_BUR_volunteers_2
+						has_country_flag = MON_help_to_COM_volunteers_2
+						has_country_flag = MON_help_to_YAM_volunteers_2
+						has_country_flag = MON_help_to_TAT_volunteers_2
+						has_country_flag = MON_help_to_UDM_volunteers_2
+						has_country_flag = MON_help_to_HAK_volunteers_2
+						has_country_flag = MON_help_to_HNM_volunteers_2
+						has_country_flag = MON_help_to_CHU_volunteers_2
+						has_country_flag = MON_help_to_YAK_volunteers_2
+					}
+				}
+			}
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			country_event = {
+				id = mongolia.195
+				hours = 1
+			}
+		}
+	}
+}
+
+MON_cm_agreements_cat = {
+}
+
+MON_first_3year_plan = {
+	MON_plan1_dec = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = 330_plan1_fac_tt
+					check_variable = { 330.var_plan1_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 330_plan1_mil_tt
+					check_variable = { 330.var_plan1_mil_x = 2 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 817_plan1_fac_tt
+					check_variable = { 817.var_plan1_fac_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 817_plan1_mil_tt
+					check_variable = { 817.var_plan1_mil_x = 1 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 818_plan1_fac_tt
+					check_variable = { 818.var_plan1_fac_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 818_plan1_mil_tt
+					check_variable = { 818.var_plan1_mil_x = 1 compare = greater_than_or_equals }
+				}
+			}
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+			is_ai = no
+		}
+		activation = {
+			has_idea = MON_plan1_idea
+			is_ai = no
+		}
+		
+		is_good = no
+		days_mission_timeout = 1095
+		fire_only_once = yes
+		
+		complete_effect = {
+			remove_ideas = MON_plan1_idea
+		}
+		
+		timeout_effect = {
+			remove_ideas = MON_plan1_idea
+			set_country_flag = MON_failed_first_plan
+			country_event = mongolia.224
+		}
+	}
+	MON_send_people1 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_manpower > 300
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+		}
+		custom_cost_trigger = {
+			has_manpower > 299
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.05
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.15
+			consumer_goods_factor = -0.05
+			conscription = -0.01
+			conscription_factor = -0.15
+		}
+		remove_effect = {
+			add_manpower = 300
+		}
+	}
+	MON_police_on_buildings1 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+		}
+		custom_cost_trigger = {
+			has_manpower > 999
+			has_equipment = { infantry_equipment > 999 }
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = MON_police_on_buildings
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.15
+			stability_weekly = -0.005
+			monthly_population = -0.1
+			conscription_factor = -0.15
+		}
+		remove_effect = {
+			clr_country_flag = MON_police_on_buildings
+		}
+	}
+	MON_deny_weekends1 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = MON_denied_weekends
+		}
+		cost = 100
+		modifier = {
+			production_speed_buildings_factor = 0.10
+			stability_weekly = -0.0025
+			conscription_factor = -0.1
+		}
+		remove_effect = {
+			clr_country_flag = MON_denied_weekends
+		}
+	}
+	MON_increase_worktime1 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = MON_increased_worktime
+		}
+		cost = 100
+		modifier = {
+			production_speed_buildings_factor = 0.1
+			industrial_capacity_factory = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			consumer_goods_factor = -0.05
+			conscription_factor = -0.1
+			stability_weekly = -0.0025
+		}
+		remove_effect = {
+			clr_country_flag = MON_increased_worktime
+		}
+	}
+}
+
+MON_second_3year_plan = {
+
+	MON_plan2_dec = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = 330_plan2_fac_tt
+					check_variable = { 330.var_plan2_fac_x = 10 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 330_plan2_mil_tt
+					check_variable = { 330.var_plan2_mil_x = 5 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 817_plan2_fac_tt
+					check_variable = { 817.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 817_plan2_mil_tt
+					check_variable = { 817.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 818_plan2_fac_tt
+					check_variable = { 818.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 818_plan2_mil_tt
+					check_variable = { 818.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 819_plan2_fac_tt
+					check_variable = { 819.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 819_plan2_mil_tt
+					check_variable = { 819.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 820_plan2_fac_tt
+					check_variable = { 820.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 820_plan2_mil_tt
+					check_variable = { 820.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 844_plan2_fac_tt
+					check_variable = { 844.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 844_plan2_mil_tt
+					check_variable = { 844.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+			}
+		}
+		visible = {
+			has_idea = MON_plan2_idea
+		}
+		activation = {
+			has_idea = MON_plan2_idea
+		}
+		
+		is_good = no
+		days_mission_timeout = 1095
+		fire_only_once = yes
+		
+		complete_effect = {
+			remove_ideas = MON_plan2_idea
+		}
+		
+		timeout_effect = {
+			remove_ideas = MON_plan2_idea
+			set_country_flag = MON_failed_second_plan
+			country_event = mongolia.224
+		}
+	}
+}
+
+MON_after_plans = {
+	MON_after_plan1_dec = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_crisis_is_going
+			}
+		}
+		visible = {
+			has_country_flag = MON_crisis_is_going
+		}
+		activation = {
+			has_country_flag = MON_failed_first_plan
+		}
+		
+		is_good = no
+		days_mission_timeout = 550
+		fire_only_once = yes
+		
+		complete_effect = {
+			hidden_effect = {
+				remove_ideas = {
+					MON_crisis_after_plan1_1
+					MON_crisis_after_plan1_2
+					MON_crisis_after_plan1_3
+					MON_crisis_after_plan1_4
+					MON_crisis_after_plan1_5
+					MON_crisis_after_plan1_6
+					MON_crisis_after_plan1_7
+					MON_crisis_after_plan1_8
+					MON_crisis_after_plan1_9
+					MON_crisis_after_plan1_10
+					MON_crisis_after_plan2_1
+					MON_crisis_after_plan2_2
+					MON_crisis_after_plan2_3
+					MON_crisis_after_plan2_4
+					MON_crisis_after_plan2_5
+					MON_crisis_after_plan2_6
+					MON_crisis_after_plan2_7
+				}
+			}
+			custom_effect_tooltip = MON_crisis_has_gone_good_tt
+		}
+		
+		timeout_effect = {
+			hidden_effect = {
+				remove_ideas = {
+					MON_crisis_after_plan1_1
+					MON_crisis_after_plan1_2
+					MON_crisis_after_plan1_3
+					MON_crisis_after_plan1_4
+					MON_crisis_after_plan1_5
+					MON_crisis_after_plan1_6
+					MON_crisis_after_plan1_7
+					MON_crisis_after_plan1_8
+					MON_crisis_after_plan1_9
+					MON_crisis_after_plan1_10
+				}
+				country_event = {
+					id = mongolia.229
+					days = 7
+				}
+			}
+			custom_effect_tooltip = MON_crisis_has_gone_bad_tt
+		}
+	}
+	MON_after_plan2_dec = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_crisis_is_going
+			}
+		}
+		visible = {
+			has_country_flag = MON_crisis_is_going
+		}
+		activation = {
+			has_country_flag = MON_failed_second_plan
+		}
+		
+		is_good = no
+		days_mission_timeout = 550
+		fire_only_once = yes
+		
+		complete_effect = {
+			hidden_effect = {
+				remove_ideas = {
+					MON_crisis_after_plan2_1
+					MON_crisis_after_plan2_2
+					MON_crisis_after_plan2_3
+					MON_crisis_after_plan2_4
+					MON_crisis_after_plan2_5
+					MON_crisis_after_plan2_6
+					MON_crisis_after_plan2_7
+				}
+			}
+			custom_effect_tooltip = MON_crisis_has_gone_good_tt
+		}
+		
+		timeout_effect = {
+			hidden_effect = {
+				remove_ideas = {
+					MON_crisis_after_plan2_1
+					MON_crisis_after_plan2_2
+					MON_crisis_after_plan2_3
+					MON_crisis_after_plan2_4
+					MON_crisis_after_plan2_5
+					MON_crisis_after_plan2_6
+					MON_crisis_after_plan2_7
+				}
+				country_event = {
+					id = mongolia.229
+					days = 7
+				}
+			}
+			custom_effect_tooltip = MON_crisis_has_gone_bad_tt
+		}
+	}
+	
+	MON_hospitals = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+			war_support_weekly = -0.01
+		}
+	}
+	
+	MON_army_food = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+			war_support_weekly = -0.01
+		}
+	}
+	
+	MON_food_talon = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+			war_support_weekly = -0.01
+		}
+	}
+	
+	MON_meet_workers = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.01
+			industrial_capacity_factory = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			consumer_goods_factor = -0.025
+		}
+	}
+	
+	MON_negotiation_with_labour_union = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.01
+			industrial_capacity_factory = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			consumer_goods_factor = -0.025
+		}
+	}
+	
+	MON_take_arms_factory = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = "MON"
+			}
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.01
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+		}
+	}
+	
+	MON_ambush_on_army = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 15
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.05
+			add_stability = 0.025
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1500
+				producer = "MON"
+			}
+			add_manpower = -1500
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 1
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_1
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.01
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+		}
+	}
+	
+	MON_clear_army = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 30
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.075
+			add_stability = 0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 2
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_2
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.02
+			army_org_factor = -0.1
+			army_defence_factor = -0.1
+			army_attack_factor = -0.1
+			consumer_goods_factor = -0.025
+			production_factory_max_efficiency_factor = 0.05
+			industrial_capacity_factory = 0.05
+		}
+	}
+	
+	MON_stop_financing_army = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 30
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.075
+			add_stability = 0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			subtract_from_variable = {
+				militarist_influence = 2
+			}
+			custom_effect_tooltip = increase_ai_1
+			custom_effect_tooltip = decrease_mi_2
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.02
+			army_org_factor = -0.15
+			army_defence_factor = -0.15
+			army_attack_factor = -0.15
+			consumer_goods_factor = -0.075
+			production_factory_max_efficiency_factor = 0.1
+			industrial_capacity_factory = 0.1
+		}
+	}
+	
+	MON_give_weapon_labours = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 45
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = -0.1
+			add_stability = 0.1
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -3000
+				producer = "MON"
+			}
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				anarchist_influence = 2
+			}
+			subtract_from_variable = {
+				militarist_influence = 2
+			}
+			custom_effect_tooltip = increase_ai_2
+			custom_effect_tooltip = decrease_mi_2
+			custom_effect_tooltip = danger_anarchist
+			custom_effect_tooltip = danger_militarist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			war_support_weekly = -0.025
+			army_org_factor = -0.2
+			army_defence_factor = -0.2
+			army_attack_factor = -0.2
+			consumer_goods_factor = -0.1
+			production_factory_max_efficiency_factor = 0.15
+			industrial_capacity_factory = 0.15
+		}
+	}
+	
+	MON_attack_labours = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_manpower > 149
+			has_equipment = { infantry_equipment > 149 }
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_max_efficiency_factor = -0.1
+			production_factory_start_efficiency_factor = -0.1
+			industrial_capacity_factory = -0.1
+			consumer_goods_factor = 0.05
+			monthly_population = -0.05
+		}
+	}
+	
+	MON_comendant_hour = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_manpower > 174
+			has_equipment = { infantry_equipment > 174 }
+		}
+		days_remove = 45
+		fire_only_once = yes
+		days_remove = 30
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_max_efficiency_factor = -0.1
+			industrial_capacity_factory = -0.1
+			consumer_goods_factor = 0.05
+		}
+	}
+	
+	MON_ambush_on_labours = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {	
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_manpower > 174
+			has_equipment = { infantry_equipment > 174 }
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_max_efficiency_factor = -0.1
+			industrial_capacity_factory = -0.1
+			consumer_goods_factor = 0.05
+			monthly_population = -0.15
+		}
+	}
+	
+	MON_break_into_labours_house = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 249 }
+			has_manpower > 249
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_speed_buildings_factor = -0.1
+			industrial_capacity_factory = -0.1
+			monthly_population = -0.05
+			consumer_goods_factor = 0.05
+		}
+	}
+
+	MON_eye_on_labours = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 499 }
+			has_manpower > 499
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_efficiency_gain_factor = -0.1
+			industrial_capacity_factory = -0.1
+			consumer_goods_factor = 0.05
+			political_power_gain = 0.15
+		}
+	}
+	
+	MON_disperse_strikes = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 499 }
+			has_manpower > 499
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_start_efficiency_factor = -0.15
+			industrial_capacity_factory = -0.15
+			monthly_population = -0.1
+		}
+	}
+	
+	MON_increase_financing_army = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 50
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_1
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_start_efficiency_factor = -0.15
+			production_factory_max_efficiency_factor = -0.15
+			production_factory_efficiency_gain_factor = -0.15
+			industrial_capacity_factory = -0.15
+			monthly_population = -0.1
+		}
+	}
+	
+	MON_emergency_situatuion = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+			has_manpower > 999
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 2
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_2
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_start_efficiency_factor = -0.15
+			production_factory_max_efficiency_factor = -0.15
+			production_factory_efficiency_gain_factor = -0.15
+			industrial_capacity_factory = -0.15
+		}
+	}
+	
+	MON_burn_factory = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 549 }
+			has_manpower > 549
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 1
+			}
+			subtract_from_variable = {
+				anarchist_influence = 2
+			}
+			custom_effect_tooltip = increase_mi_1
+			custom_effect_tooltip = decrease_ai_2
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+			random_owned_controlled_state = {
+				damage_building = { type = arms_factory damage = 1 }
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+		}
+	}
+	
+	MON_give_weapon_army = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_anticrisis_decisions_going
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 1999 }
+		}
+		days_remove = 45
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_stability = -0.05
+			set_country_flag = MON_anticrisis_decisions_going
+		}
+		remove_effect = {
+			add_to_variable = {
+				militarist_influence = 2
+			}
+			subtract_from_variable = {
+				anarchist_influence = 2
+			}
+			custom_effect_tooltip = increase_mi_2
+			custom_effect_tooltip = decrease_ai_2
+			custom_effect_tooltip = danger_militarist
+			custom_effect_tooltip = danger_anarchist
+			clr_country_flag = MON_anticrisis_decisions_going
+			if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_1
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_1
+					add_idea = MON_crisis_after_plan1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_2
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_2
+					add_idea = MON_crisis_after_plan1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_3
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_3
+					add_idea = MON_crisis_after_plan1_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_4
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_4
+					add_idea = MON_crisis_after_plan1_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_5
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_5
+					add_idea = MON_crisis_after_plan1_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_6
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_6
+					add_idea = MON_crisis_after_plan1_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_7
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_7
+					add_idea = MON_crisis_after_plan1_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_8
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_8
+					add_idea = MON_crisis_after_plan1_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = MON_crisis_after_plan1_9
+				}
+				swap_ideas = {
+					remove_idea = MON_crisis_after_plan1_9
+					add_idea = MON_crisis_after_plan1_10
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_1
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_1
+						add_idea = MON_crisis_after_plan2_2
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_2
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_2
+						add_idea = MON_crisis_after_plan2_3
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_3
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_3
+						add_idea = MON_crisis_after_plan2_4
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_4
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_4
+						add_idea = MON_crisis_after_plan2_5
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_5
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_5
+						add_idea = MON_crisis_after_plan2_6
+					}
+				}
+				else_if = {
+					limit = {
+						has_idea = MON_crisis_after_plan2_6
+					}
+					swap_ideas = {
+						remove_idea = MON_crisis_after_plan2_6
+						add_idea = MON_crisis_after_plan2_7
+					}
+				}
+				else = {
+					remove_ideas = MON_crisis_after_plan2_7
+					remove_ideas = MON_crisis_after_plan1_10
+					country_event = mongolia.225
+				}
+			}
+		}
+		modifier = {
+			stability_weekly = -0.01
+			production_factory_start_efficiency_factor = -0.2
+			production_factory_max_efficiency_factor = -0.2
+			production_factory_efficiency_gain_factor = -0.2
+			industrial_capacity_factory = -0.2
+			monthly_population = -0.2
+		}
+	}
+	
+	MON_create_comitte = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_mi_more_ai_tt
+				check_variable = {
+					militarist_influence > anarchist_influence
+				}
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 50
+		days_remove = -1
+        modifier = {
+            conscription_factor = 0.1
+        }
+        remove_trigger = {
+			custom_trigger_tooltip = {
+				tooltip = MON_mi_less_ai_tt
+				check_variable = {
+					militarist_influence < anarchist_influence
+				}
+			}
+        }
+		complete_effect = {
+			set_country_flag = MON_comitte_created
+		}
+		cancel_effect = {
+			clr_country_flag = MON_comitte_created
+		}
+	}
+	
+	MON_call_to_comitte = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_country_flag = MON_comitte_created
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 75
+        modifier = {
+            conscription_factor = 0.15
+        }
+		days_remove = -1
+        remove_trigger = {
+			NOT = {
+				has_country_flag = MON_comitte_created
+			}
+        }
+		complete_effect = {
+			set_country_flag = MON_comitte_called
+		}
+		cancel_effect = {
+			clr_country_flag = MON_comitte_called
+		}
+	}
+	
+	MON_big_call_to_comitte = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_country_flag = MON_comitte_called
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 100
+		days_remove = -1
+        modifier = {
+            conscription_factor = 0.2
+        }
+        remove_trigger = {
+			NOT = {
+				has_country_flag = MON_comitte_called
+			}
+        }
+		complete_effect = {
+			set_country_flag = MON_comitte_called_big
+		}
+		cancel_effect = {
+			clr_country_flag = MON_comitte_called_big
+		}
+	}
+	
+	MON_mass_call_to_comitte = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_country_flag = MON_comitte_called_big
+		}
+		visible = {
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		cost = 150
+		days_remove = -1
+        modifier = {
+            conscription = 0.025
+        }
+        remove_trigger = {
+			NOT = {
+				has_country_flag = MON_comitte_called_big
+			}
+        }
+		complete_effect = {
+			set_country_flag = MON_comitte_called_mass
+		}
+		cancel_effect = {
+			clr_country_flag = MON_comitte_called_mass
+		}
+	}
+}
+
+MON_divided_society = {
+	MON_take_control = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = MON_forgot_about_division
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = MON_took_control
+			add_political_power = 25
+		}
+	}
+	
+	MON_centralize_society = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		visible = {
+			has_country_flag = MON_took_control
+			NOT = {
+				has_country_flag = MON_strengthened_society_division
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = MON_centralized_society
+			add_political_power = 50
+		}
+	}
+	
+	MON_collect_loyal_units = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		visible = {
+			has_country_flag = MON_centralized_society
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		complete_effect = {
+			add_manpower = 5000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = "MON"
+			}
+			set_country_flag = MON_collected_units
+		}
+	}
+	
+	MON_destroy_leaflets_814 = {
+		
+		highlight_states = { highlight_states = { highlight_state_targets = { state = 814 } } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				has_state_flag = STATE_has_leaflets
+			}
+			has_country_flag = MON_collected_units
+		}
+		
+		custom_cost_trigger = {
+			has_manpower > 149
+			has_equipment = { infantry_equipment > 149 }
+		}
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				clr_state_flag = STATE_has_leaflets
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_catch_anarchists_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_leaflets
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				has_state_flag = STATE_has_anarchists
+			}
+		}
+		
+		custom_cost_trigger = {
+			has_manpower > 199
+			has_equipment = { infantry_equipment > 199 }
+		}
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 14
+		
+		remove_effect = {
+			814 = {
+				clr_state_flag = STATE_has_anarchists
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_arrest_anarchists_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_anarchists
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				has_state_flag = STATE_has_influenced_anarchists
+			}
+		}
+		
+		custom_cost_trigger = {
+			has_manpower > 149
+			has_equipment = { infantry_equipment > 149 }
+		}
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 14
+		
+		remove_effect = {
+			814 = {
+				clr_state_flag = STATE_has_influenced_anarchists
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_assault_anarchists_encampment_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_influenced_anarchists
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				has_state_flag = STATE_has_encampment
+			}
+		}
+		
+		custom_cost_trigger = {
+			has_manpower > 249
+			has_equipment = { infantry_equipment > 249 }
+		}
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				clr_state_flag = STATE_has_encampment
+			}
+			custom_effect_tooltip = decrease_ai_2
+			subtract_from_variable = {
+				anarchist_influence = 2
+			}
+			add_to_variable = {
+				gov_inf = 2
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_total_control_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_leaflets
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_anarchists
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_influenced_anarchists
+				}
+			}
+			NOT = {
+				814 = {
+					has_state_flag = STATE_has_encampment
+				}
+			}
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 35
+		
+		remove_effect = {
+			814 = {
+				set_state_flag = NO_ANARCHISTS
+			}
+			custom_effect_tooltip = decrease_ai_2
+			subtract_from_variable = {
+				anarchist_influence = 2
+			}
+			add_to_variable = {
+				gov_inf = 2
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+			custom_effect_tooltip = cant_spawn_anarchists
+		}
+	}
+	
+	MON_strengthen_society_division = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		visible = {
+			has_country_flag = MON_took_control
+			NOT = {
+				has_country_flag = MON_centralized_society
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = MON_strengthened_society_division
+			add_political_power = 50
+		}
+	}
+	
+	MON_glue_leaflets_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_leaflets
+				}
+			}
+			has_country_flag = MON_strengthened_society_division
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				set_state_flag = STATE_has_leaflets
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_strengthen_leaflets_effect_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_anarchists
+				}
+				has_state_flag = STATE_has_leaflets
+			}
+			has_country_flag = MON_strengthened_society_division
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				set_state_flag = STATE_has_anarchists
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_invite_anarchists_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_influenced_anarchists
+				}
+				has_state_flag = STATE_has_anarchists
+			}
+			has_country_flag = MON_strengthened_society_division
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				set_state_flag = STATE_has_influenced_anarchists
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_create_commune_814 = {
+		
+		highlight_states = { highlight_state_targets = { state = 814 } }
+
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MON_divided_society
+				check_variable = {
+					divided_society < 4
+				}
+			}
+		}
+		
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_encampment
+				}
+				has_state_flag = STATE_has_influenced_anarchists
+			}
+			has_country_flag = MON_strengthened_society_division
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			add_to_variable = {
+				divided_society = 1
+			}
+		}
+		
+		days_remove = 7
+		
+		remove_effect = {
+			814 = {
+				set_state_flag = STATE_has_encampment
+				#add_province_modifier = {
+				#	static_modifiers = { created_commune }
+				#	province = {
+				#		all_provinces = yes
+				#	}
+				#}
+				add_dynamic_modifier = {
+					modifier = created_commune
+				}
+			}
+			custom_effect_tooltip = decrease_ai_1
+			subtract_from_variable = {
+				anarchist_influence = 1
+			}
+			add_to_variable = {
+				gov_inf = 1
+			}
+			subtract_from_variable = {
+				divided_society = 1
+			}
+		}
+	}
+	
+	MON_forget_about_it = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = MON_took_control
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = MON_forgot_about_division
+			add_political_power = 25
+		}
+	}
+	
+	MON_sticking_leaflets_814 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = NO_ANARCHISTS
+				}
+				NOT = {
+					has_state_flag = STATE_has_leaflets
+				}
+			}
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		activation = {
+			814 = {
+				NOT = {
+					has_state_flag = NO_ANARCHISTS
+				}
+				NOT = {
+					has_state_flag = STATE_has_leaflets
+				}
+			}
+			OR = {
+				has_idea = MON_crisis_after_plan1_1
+				has_idea = MON_crisis_after_plan1_2
+				has_idea = MON_crisis_after_plan1_3
+				has_idea = MON_crisis_after_plan1_4
+				has_idea = MON_crisis_after_plan1_5
+				has_idea = MON_crisis_after_plan1_6
+				has_idea = MON_crisis_after_plan1_7
+				has_idea = MON_crisis_after_plan1_8
+				has_idea = MON_crisis_after_plan1_9
+				has_idea = MON_crisis_after_plan1_10
+				has_idea = MON_crisis_after_plan2_1
+				has_idea = MON_crisis_after_plan2_2
+				has_idea = MON_crisis_after_plan2_3
+				has_idea = MON_crisis_after_plan2_4
+				has_idea = MON_crisis_after_plan2_5
+				has_idea = MON_crisis_after_plan2_6
+				has_idea = MON_crisis_after_plan2_7
+			}
+		}
+		
+		is_good = no
+		days_mission_timeout = 14
+		complete_effect = {
+		}
+		timeout_effect = {
+			814 = {
+				set_state_flag = STATE_has_leaflets
+			}
+			custom_effect_tooltip = increase_ai_1
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+			hidden_effect = {
+				activate_mission = MON_arriving_anarchists_814
+			}
+		}
+	}
+	
+	MON_arriving_anarchists_814 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		visible = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_anarchists
+				}
+				has_state_flag = STATE_has_leaflets
+			}
+		}
+		activation = {
+			814 = {
+				NOT = {
+					has_state_flag = STATE_has_anarchists
+				}
+				has_state_flag = STATE_has_leaflets
+			}
+		}
+		
+		is_good = no
+		days_mission_timeout = 14
+		complete_effect = {
+		}
+		timeout_effect = {
+			814 = {
+				set_state_flag = STATE_has_anarchists
+			}
+			custom_effect_tooltip = increase_ai_1
+			add_to_variable = {
+				anarchist_influence = 1
+			}
+		}
+	}
+	
+	MON_arriving_influential_anarchists_814 = {
+	}
+	
+	MON_creating_commune_814 = {
+	}
+}
+
+MON_Genden_raids = { #563-567; 575
+	#563
+	MON_steal_plan_from_state_563 = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			563 = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = stolen_plans
+					}
+				}
+			}
+		}
+		
+		visible = {
+			has_completed_focus = MON_steal_plans
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			563 = {
+				set_state_flag = stealing_plans_from
+			}
+		}
+		
+		days_remove = 45
+		
+		remove_effect = {
+			random_list = {
+				var:mp_pos = {
+					country_event = mongolia_raids.1
+				}
+				var:mp_neg = {
+					country_event = mongolia_raids.2
+				}
+			}
+		}
+	}
+	
+	MON_begin_raid_in_state_563 = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			563 = {
+				has_dynamic_modifier = {
+					modifier = stolen_plans
+				}
+				NOT = {
+					is_demilitarized_zone = yes
+				}
+			}
+		}
+		
+		visible = {
+			has_completed_focus = MON_send_bandits
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			563 = {
+				set_state_flag = raiding_in
+			}
+			SOV = {
+				country_event = mongolia_raids.3
+			}
+		}
+	}
+	
+	#564
+	MON_steal_plan_from_state_564 = {
+	}
+	
+	MON_begin_raid_in_state_564 = {
+	}
+	
+	#565
+	MON_steal_plan_from_state_565 = {
+	}
+	
+	MON_begin_raid_in_state_565 = {
+	}
+	
+	#566
+	MON_steal_plan_from_state_566 = {
+	}
+	
+	MON_begin_raid_in_state_566 = {
+	}
+	
+	#567
+	MON_steal_plan_from_state_567 = {
+	}
+	
+	MON_begin_raid_in_state_567 = {
+	}
+	
+	#575
+	MON_steal_plan_from_state_575 = {
+	}
+	
+	MON_begin_raid_in_state_575 = {
+	}
+}

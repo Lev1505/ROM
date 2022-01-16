@@ -1,0 +1,61 @@
+add_namespace = news_mongolia
+#Regime Indulgence
+news_event = {
+	id = news_mongolia.1
+	title = news_mongolia.1.t
+	desc = news_mongolia.1.d
+	is_triggered_only = yes
+	
+	option = { #Mongolian Replic
+		name = news_mongolia.1.a
+		trigger = { original_tag = MON }
+		hidden_effect = {
+			country_event = { id = mongolia.1 days = 1 }
+		}
+	}
+	
+	option = { #Soviet Replic
+		name = news_mongolia.1.b
+		trigger = { original_tag = SOV }
+	}
+	
+	option = { #Random Country Replic
+		name = news_mongolia.1.c
+		trigger = {
+			NOT = {
+				original_tag = MON
+				original_tag = SOV
+			}
+		}
+	}
+}
+#Dictature Of Choibalsan
+news_event = {
+	id = news_mongolia.2
+	title = news_mongolia.2.t
+	desc = news_mongolia.2.d
+	is_triggered_only = yes
+	
+	option = { #Mongolian Replic
+		name = news_mongolia.2.a
+		trigger = { original_tag = MON }
+		hidden_effect = {
+			country_event = { id = mongolia.9 days = 1 }
+		}
+	}
+	
+	option = { #Soviet Replic
+		name = news_mongolia.2.b
+		trigger = { original_tag = SOV }
+	}
+	
+	option = { #Random Country Replic
+		name = news_mongolia.2.c
+		trigger = {
+			NOT = {
+				original_tag = MON
+				original_tag = SOV
+			}
+		}
+	}
+}

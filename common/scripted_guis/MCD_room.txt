@@ -1,0 +1,21 @@
+scripted_gui = {
+
+	MCD_room = {
+		context_type = player_context
+		window_name = "MCD_room"
+		
+		visible = {
+			tag = MON
+			MON = {
+				OR = {
+					has_country_flag = MON_HC
+					has_country_flag = MON_RI
+				}
+			}
+			has_variable = global.open_door
+		}
+		
+		triggers = {
+		}
+	}
+}

@@ -1,0 +1,157 @@
+MON_power_struggle_cat = {
+	icon = GFX_MON_power_struggle_cat
+	scripted_gui = MON_Power_Struggle_GUI
+	visible = {
+		has_country_flag = MON_PS_began
+	}
+	visible_when_empty = yes
+}
+MON_investitions = {
+	icon = GFX_mon_investitions
+	
+	visible = {
+		has_completed_focus = MON_serg_invest
+	}
+}
+MON_fp_cat = {
+	icon = GFX_MON_fp_cat
+	
+	visible = {
+		has_completed_focus = MON_fascist_propaganda
+		NOT = {
+			has_country_flag = MON_ungern_coup_going
+		}
+	}
+}
+MON_territorial_reform_cat = {
+	icon = GFX_MON_territorial_reform_cat
+	
+	visible = {
+		has_completed_focus = MON_territorial_reform
+	}
+}
+MON_battle_for_Raj_cat = {
+	icon = GFX_MON_battle_for_Raj_cat
+	
+	picture = GFX_MON_battle_for_Raj_cat_pic
+	
+	visible = {
+		OR = {
+			AND = {
+				has_completed_focus = MON_invite_raj
+				has_country_flag = MON_raj_in_faction
+			}
+			AND = {
+				has_country_flag = MON_raj_liberated
+				has_completed_focus = MON_support_nlm
+			}
+		}
+	}
+}
+MON_cm_agreements_cat = {
+	icon = GFX_MON_cm_agreements_cat
+	
+	picture = GFX_MON_cm_agreements_cat_pic
+	
+	visible = {
+		has_completed_focus = MON_cm_agreements
+	}
+}
+MON_bandits_in_sov_cat = {
+	icon = GFX_MON_banidts_in_sov_cat
+	
+	picture = GFX_MON_banidts_in_sov_cat_pic
+	
+	visible = {
+		has_completed_focus = MON_bandit_raids
+	}
+}
+MON_sep_category = { 
+	visible = {		
+		OR = { 
+			has_completed_focus = MON_tatar
+			has_completed_focus = MON_udmurt
+			has_completed_focus = MON_bashkir
+			has_completed_focus = MON_chuvash
+			has_completed_focus = MON_buryat
+			has_completed_focus = MON_tuva
+			has_completed_focus = MON_hakas
+			has_completed_focus = MON_yakut
+			has_completed_focus = MON_chukot
+			has_completed_focus = MON_yamnen
+			has_completed_focus = MON_comi
+			has_completed_focus = MON_hanman
+			has_completed_focus = MON_altay
+		}
+	}
+}
+MON_first_3year_plan = {
+	picture = GFX_MON_first_3year_plan_pic
+	visible = {
+		AND = {
+			has_idea = MON_plan1_idea
+			has_completed_focus = MON_first_three_years_plan
+		}
+	}
+}
+MON_second_3year_plan = {
+	picture = GFX_MON_second_3year_plan_pic
+	visible = {
+		AND = {
+			has_idea = MON_plan2_idea
+			has_completed_focus = MON_second_three_year_plan
+		}
+	}
+}
+MON_after_plans = {
+	visible = {
+		OR = {
+			has_idea = MON_crisis_after_plan1_1
+			has_idea = MON_crisis_after_plan1_2
+			has_idea = MON_crisis_after_plan1_3
+			has_idea = MON_crisis_after_plan1_4
+			has_idea = MON_crisis_after_plan1_5
+			has_idea = MON_crisis_after_plan1_6
+			has_idea = MON_crisis_after_plan1_7
+			has_idea = MON_crisis_after_plan1_8
+			has_idea = MON_crisis_after_plan1_9
+			has_idea = MON_crisis_after_plan1_10
+			has_idea = MON_crisis_after_plan2_1
+			has_idea = MON_crisis_after_plan2_2
+			has_idea = MON_crisis_after_plan2_3
+			has_idea = MON_crisis_after_plan2_4
+			has_idea = MON_crisis_after_plan2_5
+			has_idea = MON_crisis_after_plan2_6
+			has_idea = MON_crisis_after_plan2_7
+		}
+	}
+}
+MON_divided_society = {
+	visible = {
+		OR = {
+			has_idea = MON_crisis_after_plan1_1
+			has_idea = MON_crisis_after_plan1_2
+			has_idea = MON_crisis_after_plan1_3
+			has_idea = MON_crisis_after_plan1_4
+			has_idea = MON_crisis_after_plan1_5
+			has_idea = MON_crisis_after_plan1_6
+			has_idea = MON_crisis_after_plan1_7
+			has_idea = MON_crisis_after_plan1_8
+			has_idea = MON_crisis_after_plan1_9
+			has_idea = MON_crisis_after_plan1_10
+			has_idea = MON_crisis_after_plan2_1
+			has_idea = MON_crisis_after_plan2_2
+			has_idea = MON_crisis_after_plan2_3
+			has_idea = MON_crisis_after_plan2_4
+			has_idea = MON_crisis_after_plan2_5
+			has_idea = MON_crisis_after_plan2_6
+			has_idea = MON_crisis_after_plan2_7
+		}
+	}
+}
+MON_Genden_raids = {
+	visible = {
+		has_completed_focus = MON_steal_plans
+		has_completed_focus = MON_send_bandits
+	}
+}

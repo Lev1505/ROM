@@ -1,0 +1,32 @@
+state={
+	id=836
+	name="STATE_836"
+	manpower=120000
+	buildings_max_level_factor=1
+	
+	state_category=large_town
+	
+	resources={
+		steel=4
+	}
+
+	history={
+		owner = MON
+		victory_points = {
+			10623 5 
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+		add_core_of = MON
+
+	}
+
+	provinces={
+		1791 1834 4882 10623 12579 12649
+	}
+	local_supplies=0.0 
+}

@@ -1,0 +1,159 @@
+
+MON_ps_setup = {
+	if = {
+		limit = {
+			has_country_flag = MON_RI
+		}
+		set_variable = { choibalsan_influence = 55 }
+	}
+	else = {
+		set_variable = { choibalsan_influence = 45 }
+	}
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_low_support_amar = {
+	subtract_from_variable = { choibalsan_influence = 5 }
+	custom_effect_tooltip = MON_ps_low_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_medium_support_amar = {
+	subtract_from_variable = { choibalsan_influence = 10 }
+	custom_effect_tooltip = MON_ps_medium_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_high_support_amar = {
+	subtract_from_variable = { choibalsan_influence = 15 }
+	custom_effect_tooltip = MON_ps_high_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_low_loss_amar = {
+	add_to_variable = { choibalsan_influence = 5 }
+	custom_effect_tooltip = MON_ps_low_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_medium_loss_amar = {
+	add_to_variable = { choibalsan_influence = 10 }
+	custom_effect_tooltip = MON_ps_medium_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_high_loss_amar = {
+	add_to_variable = { choibalsan_influence = 15 }
+	custom_effect_tooltip = MON_ps_high_support_amar_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_low_support_choibalsan = {
+	add_to_variable = { choibalsan_influence = 5 }
+	custom_effect_tooltip = MON_ps_low_support_choibalsan_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_low_loss_choibalsan = {
+	subtract_from_variable = { choibalsan_influence = 5 }
+	custom_effect_tooltip = MON_ps_low_loss_choibalsan_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_medium_loss_choibalsan = {
+	subtract_from_variable = { choibalsan_influence = 10 }
+	custom_effect_tooltip = MON_ps_medium_loss_choibalsan_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_high_loss_choibalsan = {
+	subtract_from_variable = { choibalsan_influence = 15 }
+	custom_effect_tooltip = MON_ps_high_loss_choibalsan_tt
+	MON_ps_clamp_struggle_var = yes
+}
+MON_ps_clamp_struggle_var = {
+	round_variable = choibalsan_influence
+	clamp_variable = { var = choibalsan_influence min = 0 max = 100 }
+
+	set_variable = { amar_support = 100 } #only for display
+	subtract_from_variable = { amar_support = choibalsan_influence }
+	
+	set_variable = { choibalsan_x_axis = 4.44 } #(481-37)/100
+	multiply_variable = { choibalsan_x_axis = choibalsan_influence }
+	round_variable = choibalsan_x_axis
+	add_to_variable = { choibalsan_x_axis = 37 }
+}
+MON_plan1_setup = {
+	#X (Begin)
+	330 = { set_variable = { var_plan1_fac_x = 0 } } #ulanbataar set_variable = { var_plan1_330_fac_x = 0 } set_variable = { var_plan1_330_mil_x = 0 }
+	330 = { set_variable = { var_plan1_mil_x = 0 } }
+	817 = { set_variable = { var_plan1_fac_x = 0 } } #umnegov set_variable = { var_plan1_817_fac_x = 0 } set_variable = { var_plan1_817_mil_x = 0 }
+	817 = { set_variable = { var_plan1_mil_x = 0 } }
+	818 = { set_variable = { var_plan1_fac_x = 0 } } #bayanhongor set_variable = { var_plan1_818_fac_x = 0 } set_variable = { var_plan1_818_mil_x = 0 }
+	818 = { set_variable = { var_plan1_mil_x = 0 } }
+	#Y (Final)
+	330 = { set_variable = { var_plan1_fac_y = 0 } } #ulanbataar set_variable = { var_plan1_330_fac_y = 0 } set_variable = { var_plan1_330_mil_y = 0 }
+	330 = { set_variable = { var_plan1_mil_y = 0 } }
+	817 = { set_variable = { var_plan1_fac_y = 0 } } #umnegov set_variable = { var_plan1_817_fac_y = 0 } set_variable = { var_plan1_817_mil_y = 0 }
+	817 = { set_variable = { var_plan1_mil_y = 0 } }
+	818 = { set_variable = { var_plan1_fac_y = 0 } } #bayanhongor set_variable = { var_plan1_818_fac_y = 0 } set_variable = { var_plan1_818_mil_y = 0 }
+	818 = { set_variable = { var_plan1_mil_y = 0 } }
+}
+MON_plan1_clamp_var = {
+	set_variable = { THIS.var_plan1_fac_z = THIS.industrial_complex_level }
+	subtract_from_variable = { THIS.var_plan1_fac_z = THIS.var_plan1_fac_y }
+	if = {
+		limit = {
+			check_variable = { THIS.var_plan1_fac_z > THIS.var_plan1_fac_x }
+		}
+		add_to_variable = { THIS.var_plan1_fac_x = THIS.var_plan1_fac_z }
+	}
+	set_variable = { THIS.var_plan1_mil_z = THIS.industrial_complex_level }
+	subtract_from_variable = { THIS.var_plan1_mil_z = THIS.var_plan1_mil_y }
+	if = {
+		limit = {
+			check_variable = { THIS.var_plan1_mil_z > THIS.var_plan1_mil_x }
+		}
+		add_to_variable = { THIS.var_plan1_mil_x = THIS.var_plan1_mil_z }
+	}
+}
+MON_plan2_setup = {
+	#X (Begin)
+	330 = { set_variable = { var_plan2_fac_x = 0 } } #ulanbataar set_variable = { var_plan2_330_fac_x = 0 } set_variable = { var_plan2_330_mil_x = 0 }
+	330 = { set_variable = { var_plan2_mil_x = 0 } }
+	817 = { set_variable = { var_plan2_fac_x = 0 } } #umnegov set_variable = { var_plan2_817_fac_x = 0 } set_variable = { var_plan2_817_mil_x = 0 }
+	817 = { set_variable = { var_plan2_mil_x = 0 } }
+	818 = { set_variable = { var_plan2_fac_x = 0 } } #bayanhongor set_variable = { var_plan2_818_fac_x = 0 } set_variable = { var_plan2_818_mil_x = 0 }
+	818 = { set_variable = { var_plan2_mil_x = 0 } }
+	819 = { set_variable = { var_plan2_fac_x = 0 } } #uverhangaay
+	819 = { set_variable = { var_plan2_mil_x = 0 } }
+	820 = { set_variable = { var_plan2_fac_x = 0 } } #dungov
+	820 = { set_variable = { var_plan2_mil_x = 0 } }
+	844 = { set_variable = { var_plan2_fac_x = 0 } } #dorndgov
+	844 = { set_variable = { var_plan2_mil_x = 0 } }
+	#Y (Final)
+	330 = { set_variable = { var_plan2_fac_y = 0 } } #ulanbataar set_variable = { var_plan2_330_fac_y = 0 } set_variable = { var_plan2_330_mil_y = 0 }
+	330 = { set_variable = { var_plan2_mil_y = 0 } }
+	817 = { set_variable = { var_plan2_fac_y = 0 } } #umnegov set_variable = { var_plan2_817_fac_y = 0 } set_variable = { var_plan2_817_mil_y = 0 }
+	817 = { set_variable = { var_plan2_mil_y = 0 } }
+	818 = { set_variable = { var_plan2_fac_y = 0 } } #bayanhongor set_variable = { var_plan2_818_fac_y = 0 } set_variable = { var_plan2_818_mil_y = 0 }
+	818 = { set_variable = { var_plan2_mil_y = 0 } }
+	819 = { set_variable = { var_plan2_fac_y = 0 } } #uverhangaay
+	819 = { set_variable = { var_plan2_mil_y = 0 } }
+	820 = { set_variable = { var_plan2_fac_y = 0 } } #dungov
+	820 = { set_variable = { var_plan2_mil_y = 0 } }
+	844 = { set_variable = { var_plan2_fac_y = 0 } } #dorndgov
+	844 = { set_variable = { var_plan2_mil_y = 0 } }
+}
+MON_plan2_clamp_var = {
+	set_variable = { THIS.var_plan2_fac_z = THIS.industrial_complex_level }
+	subtract_from_variable = { THIS.var_plan2_fac_z = THIS.var_plan2_fac_y }
+	if = {
+		limit = {
+			check_variable = { THIS.var_plan2_fac_z > THIS.var_plan2_fac_x }
+		}
+		add_to_variable = { THIS.var_plan2_fac_x = THIS.var_plan2_fac_z }
+	}
+	set_variable = { THIS.var_plan2_mil_z = THIS.industrial_complex_level }
+	subtract_from_variable = { THIS.var_plan2_mil_z = THIS.var_plan2_mil_y }
+	if = {
+		limit = {
+			check_variable = { THIS.var_plan2_mil_z > THIS.var_plan2_mil_x }
+		}
+		add_to_variable = { THIS.var_plan2_mil_x = THIS.var_plan2_mil_z }
+	}
+}
+pizdec = {
+}
+help_to_seps = {
+}
