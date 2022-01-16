@@ -93,5 +93,6 @@ news_event = {
 	
 	option = {
 		name = news_mongolia.5.a
+		#XYINYA
 	}
 }
