@@ -1,2 +1,21 @@
+MON_TM_SETUP_CAT = {
+	visible = {
+		NOT = {
+			has_country_flag = MON_TM_SETUPPED
+		}
+	}
+}
+MON_TH_DEBUG = {
+	visible = {
+		NOT = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+	}
+}
 MON_TEST_MECHANIC_CAT = {
+	visible = {
+		has_country_flag = MON_TM_SETUPPED
+	}
+	scripted_gui = MON_TEST_MECHANIC_GUI
+	visible_when_empty = yes
 }

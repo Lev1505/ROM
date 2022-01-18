@@ -74,6 +74,10 @@ MON_ps_clamp_struggle_var = {
 	add_to_variable = { choibalsan_x_axis = 37 }
 }
 MON_plan1_setup = {
+	#Flags
+	330 = { set_state_flag = MON_plan_state_flag }
+	817 = { set_state_flag = MON_plan_state_flag }
+	818 = { set_state_flag = MON_plan_state_flag }
 	#X (Begin)
 	330 = { set_variable = { var_plan1_fac_x = 0 } } #ulanbataar set_variable = { var_plan1_330_fac_x = 0 } set_variable = { var_plan1_330_mil_x = 0 }
 	330 = { set_variable = { var_plan1_mil_x = 0 } }
@@ -107,7 +111,32 @@ MON_plan1_clamp_var = {
 		add_to_variable = { THIS.var_plan1_mil_x = THIS.var_plan1_mil_z }
 	}
 }
+MON_plan1_clear = {
+	330 = { clr_state_flag = MON_plan_state_flag }
+	330 = { clear_variable = var_plan1_fac_x }
+	330 = { clear_variable = var_plan1_mil_x }
+	330 = { clear_variable = var_plan1_fac_y }
+	330 = { clear_variable = var_plan1_mil_y }
+	817 = { clr_state_flag = MON_plan_state_flag }
+	817 = { clear_variable = var_plan1_fac_x }
+	817 = { clear_variable = var_plan1_mil_x }
+	817 = { clear_variable = var_plan1_fac_y }
+	817 = { clear_variable = var_plan1_mil_y }
+	818 = { clr_state_flag = MON_plan_state_flag }
+	818 = { clear_variable = var_plan1_fac_x }
+	818 = { clear_variable = var_plan1_mil_x }
+	818 = { clear_variable = var_plan1_fac_y }
+	818 = { clear_variable = var_plan1_mil_y }
+}
 MON_plan2_setup = {
+	#Flags
+	330 = { set_state_flag = MON_plan_state_flag }
+	817 = { set_state_flag = MON_plan_state_flag }
+	818 = { set_state_flag = MON_plan_state_flag }
+	819 = { set_state_flag = MON_plan_state_flag }
+	820 = { set_state_flag = MON_plan_state_flag }
+	836 = { set_state_flag = MON_plan_state_flag }
+	844 = { set_state_flag = MON_plan_state_flag }
 	#X (Begin)
 	330 = { set_variable = { var_plan2_fac_x = 0 } } #ulanbataar set_variable = { var_plan2_330_fac_x = 0 } set_variable = { var_plan2_330_mil_x = 0 }
 	330 = { set_variable = { var_plan2_mil_x = 0 } }
@@ -119,6 +148,8 @@ MON_plan2_setup = {
 	819 = { set_variable = { var_plan2_mil_x = 0 } }
 	820 = { set_variable = { var_plan2_fac_x = 0 } } #dungov
 	820 = { set_variable = { var_plan2_mil_x = 0 } }
+	836 = { set_variable = { var_plan2_fac_x = 0 } } #hoovsgel
+	836 = { set_variable = { var_plan2_mil_x = 0 } }
 	844 = { set_variable = { var_plan2_fac_x = 0 } } #dorndgov
 	844 = { set_variable = { var_plan2_mil_x = 0 } }
 	#Y (Final)
@@ -132,6 +163,8 @@ MON_plan2_setup = {
 	819 = { set_variable = { var_plan2_mil_y = 0 } }
 	820 = { set_variable = { var_plan2_fac_y = 0 } } #dungov
 	820 = { set_variable = { var_plan2_mil_y = 0 } }
+	836 = { set_variable = { var_plan2_fac_y = 0 } } #hoovsgel
+	836 = { set_variable = { var_plan2_mil_y = 0 } }
 	844 = { set_variable = { var_plan2_fac_y = 0 } } #dorndgov
 	844 = { set_variable = { var_plan2_mil_y = 0 } }
 }
@@ -153,7 +186,846 @@ MON_plan2_clamp_var = {
 		add_to_variable = { THIS.var_plan2_mil_x = THIS.var_plan2_mil_z }
 	}
 }
-pizdec = {
+MON_plan2_clear = {
+	330 = { clr_state_flag = MON_plan_state_flag }
+	330 = { clear_variable = var_plan1_fac_x }
+	330 = { clear_variable = var_plan1_mil_x }
+	330 = { clear_variable = var_plan1_fac_y }
+	330 = { clear_variable = var_plan1_mil_y }
+	817 = { clr_state_flag = MON_plan_state_flag }
+	817 = { clear_variable = var_plan1_fac_x }
+	817 = { clear_variable = var_plan1_mil_x }
+	817 = { clear_variable = var_plan1_fac_y }
+	817 = { clear_variable = var_plan1_mil_y }
+	818 = { clr_state_flag = MON_plan_state_flag }
+	818 = { clear_variable = var_plan1_fac_x }
+	818 = { clear_variable = var_plan1_mil_x }
+	818 = { clear_variable = var_plan1_fac_y }
+	818 = { clear_variable = var_plan1_mil_y }
+	819 = { clr_state_flag = MON_plan_state_flag }
+	819 = { clear_variable = var_plan1_fac_x }
+	819 = { clear_variable = var_plan1_mil_x }
+	819 = { clear_variable = var_plan1_fac_y }
+	819 = { clear_variable = var_plan1_mil_y }
+	820 = { clr_state_flag = MON_plan_state_flag }
+	820 = { clear_variable = var_plan1_fac_x }
+	820 = { clear_variable = var_plan1_mil_x }
+	820 = { clear_variable = var_plan1_fac_y }
+	820 = { clear_variable = var_plan1_mil_y }	
+	836 = { clr_state_flag = MON_plan_state_flag }
+	836 = { clear_variable = var_plan1_fac_x }
+	836 = { clear_variable = var_plan1_mil_x }
+	836 = { clear_variable = var_plan1_fac_y }
+	836 = { clear_variable = var_plan1_mil_y }
+	844 = { clr_state_flag = MON_plan_state_flag }
+	844 = { clear_variable = var_plan1_fac_x }
+	844 = { clear_variable = var_plan1_mil_x }
+	844 = { clear_variable = var_plan1_fac_y }
+	844 = { clear_variable = var_plan1_mil_y }
 }
-help_to_seps = {
+
+#After Crisis Effects#
+MON_ace_setup
+MON_increase_ai_low
+MON_increase_ai_med
+MON_increase_ai_high
+MON_decrease_ai_low
+MON_decrease_ai_med
+MON_decrease_ai_high
+MON_increase_mi_low
+MON_increase_mi_med
+MON_increase_mi_high
+MON_decrease_mi_low
+MON_decrease_mi_med
+MON_decrease_mi_high
+MON_ace_clamp_var
+MON_dissolution
+
+
+MON_separatist_uprising = {
+	set_country_flag = MON_separatist_uprising_happened
+	ALT = {
+		transfer_state = 40
+		transfer_state = 654
+	}
+	40 = { add_core_of = ALT }
+	654 = { add_core_of = ALT }
+	
+	BSK = {
+		transfer_state = 582
+		transfer_state = 651
+		transfer_state = 652
+	}
+	582 = { add_core_of = BSK }
+	651 = { add_core_of = BSK }
+	652 = { add_core_of = BSK }
+	
+	BYA = {
+		transfer_state = 563
+		transfer_state = 564
+		transfer_state = 566
+	}
+	563 = { add_core_of = BYA }
+	564 = { add_core_of = BYA }
+	566 = { add_core_of = BYA }
+	
+	KOM = {
+		transfer_state = 262
+		transfer_state = 397
+		transfer_state = 581
+	}
+	262 = { add_core_of = KOM }
+	397 = { add_core_of = KOM }
+	581 = { add_core_of = KOM }
+	
+	YAM = {
+		transfer_state = 579
+		transfer_state = 824
+		transfer_state = 825
+	}
+	579 = { add_core_of = YAM }
+	824 = { add_core_of = YAM }
+	825 = { add_core_of = YAM }
+	hidden_effect = {
+		825 = { remove_core_of = NEN }
+	}
+	
+	TAT = { transfer_state = 249 }
+	249 = { add_core_of = TAT }
+	
+	UDM = { transfer_state = 399 }
+	399 = { add_core_of = UDM }
+	
+	HAK = {
+		transfer_state = 568
+		transfer_state = 569
+	}
+	568 = { add_core_of = HAK }
+	569 = { add_core_of = HAK }
+	
+	HNM = {
+		transfer_state = 403
+		transfer_state = 577
+		transfer_state = 580
+	}
+	403 = { add_core_of = HNM }
+	577 = { add_core_of = HNM }
+	580 = { add_core_of = HNM }
+	
+	CHU = {
+		transfer_state = 256
+		transfer_state = 833
+	}
+	256 = { add_core_of = CHU }
+	833 = { add_core_of = CHU }
+	
+	CKK = {
+		transfer_state = 562
+		transfer_state = 637
+		transfer_state = 822
+	}
+	562 = { add_core_of = CKK }
+	637 = { add_core_of = CKK }
+	822 = { add_core_of = CKK }
+	
+	YAK = {
+		transfer_state = 565
+		transfer_state = 574
+		transfer_state = 575
+		transfer_state = 644
+	}
+	565 = { add_core_of = YAK }
+	574 = { add_core_of = YAK }
+	575 = { add_core_of = YAK }
+	644 = { add_core_of = YAK }
+	
+	if = {
+		limit = {
+			check_variable = { MON_TH_MON_INF > MON_TH_SOV_INF }
+		}
+		if = {
+			limit = {
+				TAN = { exists = no }
+			}
+			release = TAN
+		}
+		declare_war_on = {
+			target = MON
+			type = annex_everything
+		}
+	}
+	else = {
+		declare_war_on = {
+			target = MON
+			type = annex_everything
+		}
+	}
+	
+	every_country = {
+		limit = {
+			has_country_flag = MON_soviet_sep
+			NOT = {
+				tag = TAN
+			}
+		}
+		declare_war_on = {
+			target = SOV
+			type = annex_everything
+		}
+	}
+}
+
+#Helping Tannu-Tuva#
+MON_TH_SETUP = {
+	set_variable = { MON_TH_SOV_INF = 100 }
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_mon_inf = {
+	subtract_from_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_mon_inf_low = {
+	subtract_from_variable = { MON_TH_SOV_INF = 5 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_low_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_mon_inf_med = {
+	subtract_from_variable = { MON_TH_SOV_INF = 10 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_med_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_mon_inf_high = {
+	subtract_from_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_high_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_sov_inf = {
+	add_to_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_increase_sov_inf_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_increase_sov_inf_high = {
+	add_to_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_increase_sov_inf_high_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_decrease_mon_inf = {
+	add_to_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_decrease_mon_inf_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_decrease_mon_inf_high = {
+	add_to_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_decrease_mon_inf_high_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_decrease_sov_inf_low = {
+	subtract_from_variable = { MON_TH_SOV_INF = 5 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_low_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_decrease_sov_inf_med = {
+	subtract_from_variable = { MON_TH_SOV_INF = 10 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_med_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_decrease_sov_inf_high = {
+	subtract_from_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_high_tt
+	MON_TH_clamp_var = yes
+}
+MON_TH_clamp_var = {
+	round_variable = MON_TH_SOV_INF
+	clamp_variable = {
+		var = MON_TH_SOV_INF
+		min = 0
+		max = 100
+	}
+	
+	set_variable = { MON_TH_MON_INF = 100 }
+	subtract_from_variable = { MON_TH_MON_INF = MON_TH_SOV_INF }
+}
+
+MON_help_to_seps_effect = {
+	if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_weapon_1
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = 400
+			producer = MON
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_weapon_2
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = 800
+			producer = MON
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_weapon_3
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = 1200
+			producer = MON
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_weapon_4
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = 1600
+			producer = MON
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_weapon_5
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_2
+			amount = 2000
+			producer = MON
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = Industrial_help_to_sep_1
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = Industrial_help_to_sep_2
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = Industrial_help_to_sep_3
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = Industrial_help_to_sep_4
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = Industrial_help_to_sep_5
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_volunteers_1
+		}
+		MON_create_volunteer_template = yes
+		create_unit = {
+			division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
+			owner = THIS
+			count = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = MON_help_to_sep_volunteers_2
+		}
+		MON_create_volunteer_template = yes
+		create_unit = {
+			division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
+			owner = THIS
+			count = 2
+		}
+	}
+}
+MON_create_volunteer_template = {
+	division_template = {
+		name = "MONGOL VOLUNTEER"
+		is_locked = yes
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+		}
+	}
+}
+
+#TEST MECHANIC#
+#Setup#
+MON_tm_setup_var = {
+	set_country_flag = MON_TM_SETUPPED
+	set_variable = { CENTER_POP = 100 }
+	set_variable = { CENTER_FASCI = 20 }
+	set_variable = { CENTER_COMMIE = 40 }
+	set_variable = { CENTER_NEUTRA = 20 }
+	set_variable = { CENTER_DEMO = 20 }
+	set_variable = { EAST_POP = 100 }
+	set_variable = { EAST_FASCI = 20 }
+	set_variable = { EAST_COMMIE = 40 }
+	set_variable = { EAST_NEUTRA = 20 }
+	set_variable = { EAST_DEMO = 20 }
+	set_variable = { WEST_POP = 100 }
+	set_variable = { WEST_FASCI = 20 }
+	set_variable = { WEST_COMMIE = 40 }
+	set_variable = { WEST_NEUTRA = 20 }
+	set_variable = { WEST_DEMO = 20 }
+	MON_tm_clamp_var = yes
+}
+
+#Increase#
+MON_icf = {
+	add_to_variable = { CENTER_FASCI = 15 }
+	subtract_from_variable = { CENTER_COMMIE = 5 }
+	subtract_from_variable = { CENTER_DEMO = 5 }
+	subtract_from_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_icc = {
+	add_to_variable = { CENTER_COMMIE = 15 }
+	subtract_from_variable = { CENTER_FASCI = 5 }
+	subtract_from_variable = { CENTER_DEMO = 5 }
+	subtract_from_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_icn = {
+	add_to_variable = { CENTER_NEUTRA = 15 }
+	subtract_from_variable = { CENTER_FASCI = 5 }
+	subtract_from_variable = { CENTER_COMMIE = 5 }
+	subtract_from_variable = { CENTER_DEMO = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_icd = {
+	add_to_variable = { CENTER_DEMO = 15 }
+	subtract_from_variable = { CENTER_FASCI = 5 }
+	subtract_from_variable = { CENTER_COMMIE = 5 }
+	subtract_from_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_ief = {
+	add_to_variable = { EAST_FASCI = 15 }
+	subtract_from_variable = { EAST_COMMIE = 5 }
+	subtract_from_variable = { EAST_DEMO = 5 }
+	subtract_from_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_iec = {
+	add_to_variable = { EAST_COMMIE = 15 }
+	subtract_from_variable = { EAST_FASCI = 5 }
+	subtract_from_variable = { EAST_DEMO = 5 }
+	subtract_from_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_ien = {
+	add_to_variable = { EAST_NEUTRA = 15 }
+	subtract_from_variable = { EAST_FASCI = 5 }
+	subtract_from_variable = { EAST_COMMIE = 5 }
+	subtract_from_variable = { EAST_DEMO = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_ied = {
+	add_to_variable = { EAST_DEMO = 15 }
+	subtract_from_variable = { EAST_FASCI = 5 }
+	subtract_from_variable = { EAST_COMMIE = 5 }
+	subtract_from_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_iwf = {
+	add_to_variable = { WEST_FASCI = 15 }
+	subtract_from_variable = { WEST_COMMIE = 5 }
+	subtract_from_variable = { WEST_DEMO = 5 }
+	subtract_from_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_iwc = {
+	add_to_variable = { WEST_COMMIE = 15 }
+	subtract_from_variable = { WEST_FASCI = 5 }
+	subtract_from_variable = { WEST_DEMO = 5 }
+	subtract_from_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_iwn = {
+	add_to_variable = { WEST_NEUTRA = 15 }
+	subtract_from_variable = { WEST_FASCI = 5 }
+	subtract_from_variable = { WEST_COMMIE = 5 }
+	subtract_from_variable = { WEST_DEMO = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_iwd = {
+	add_to_variable = { WEST_DEMO = 15 }
+	subtract_from_variable = { WEST_FASCI = 5 }
+	subtract_from_variable = { WEST_COMMIE = 5 }
+	subtract_from_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+
+#Decrease#
+MON_dcf = {
+	subtract_from_variable = { CENTER_FASCI = 15 }
+	add_to_variable = { CENTER_COMMIE = 5 }
+	add_to_variable = { CENTER_DEMO = 5 }
+	add_to_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dcc = {
+	subtract_from_variable = { CENTER_COMMIE = 15 }
+	add_to_variable = { CENTER_FASCI = 5 }
+	add_to_variable = { CENTER_DEMO = 5 }
+	add_to_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dcn = {
+	subtract_from_variable = { CENTER_NEUTRA = 15 }
+	add_to_variable = { CENTER_COMMIE = 5 }
+	add_to_variable = { CENTER_DEMO = 5 }
+	add_to_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dcd = {
+	subtract_from_variable = { CENTER_DEMO = 15 }
+	add_to_variable = { CENTER_FASCI = 5 }
+	add_to_variable = { CENTER_COMMIE = 5 }
+	add_to_variable = { CENTER_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_def = {
+	subtract_from_variable = { EAST_FASCI = 15 }
+	add_to_variable = { EAST_COMMIE = 5 }
+	add_to_variable = { EAST_DEMO = 5 }
+	add_to_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dec = {
+	subtract_from_variable = { EAST_COMMIE = 15 }
+	add_to_variable = { EAST_FASCI = 5 }
+	add_to_variable = { EAST_DEMO = 5 }
+	add_to_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_den = {
+	subtract_from_variable = { EAST_NEUTRA = 15 }
+	add_to_variable = { EAST_FASCI = 5 }
+	add_to_variable = { EAST_COMMIE = 5 }
+	add_to_variable = { EAST_DEMO = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_ded = {
+	subtract_from_variable = { EAST_DEMO = 15 }
+	add_to_variable = { EAST_FASCI = 5 }
+	add_to_variable = { EAST_COMMIE = 5 }
+	add_to_variable = { EAST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dwf = {
+	subtract_from_variable = { WEST_FASCI = 15 }
+	add_to_variable = { WEST_COMMIE = 5 }
+	add_to_variable = { WEST_DEMO = 5 }
+	add_to_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dwc = {
+	subtract_from_variable = { WEST_COMMIE = 15 }
+	add_to_variable = { WEST_FASCI = 5 }
+	add_to_variable = { WEST_DEMO = 5 }
+	add_to_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dwn = {
+	subtract_from_variable = { WEST_NEUTRA = 15 }
+	add_to_variable = { WEST_FASCI = 5 }
+	add_to_variable = { WEST_COMMIE = 5 }
+	add_to_variable = { WEST_DEMO = 5 }
+	MON_tm_clamp_var = yes
+}
+MON_dwd = {
+	subtract_from_variable = { WEST_DEMO = 15 }
+	add_to_variable = { WEST_FASCI = 5 }
+	add_to_variable = { WEST_COMMIE = 5 }
+	add_to_variable = { WEST_NEUTRA = 5 }
+	MON_tm_clamp_var = yes
+}
+
+#Clamp#
+MON_tm_clamp_var = {
+	set_temp_variable = { CENTER_POP_TMP = CENTER_FASCI }
+	add_to_temp_variable = { CENTER_POP_TMP = CENTER_COMMIE }
+	add_to_temp_variable = { CENTER_POP_TMP = CENTER_NEUTRA }
+	add_to_temp_variable = { CENTER_POP_TMP = CENTER_DEMO }
+	set_variable = { CENTER_MAX = 0 }
+	set_variable = { EAST_MAX = 0 }
+	set_variable = { WEST_MAX = 0 }
+	MON_tm_sort_var = yes
+}
+
+#Sort#
+MON_tm_sort_var = {
+
+	#CENTER#
+	if = {
+		limit = {
+			check_variable = { CENTER_FASCI > CENTER_COMMIE }
+		}
+		if = {
+			limit = {
+				check_variable = { CENTER_FASCI > CENTER_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { CENTER_FASCI > CENTER_NEUTRA }
+				}
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_FASCI }
+			}
+			else = {
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { CENTER_DEMO > CENTER_NEUTRA }
+				}
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_DEMO }
+			}
+			else = {
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_NEUTRA }
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = { CENTER_COMMIE > CENTER_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { CENTER_COMMIE > CENTER_NEUTRA }
+				}
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_COMMIE }
+			}
+			else = {
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { CENTER_DEMO > CENTER_NEUTRA }
+				}
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_DEMO }
+			}
+			else = {
+				clear_variable = CENTER_MAX
+				set_variable = { CENTER_MAX = CENTER_NEUTRA }
+			}
+		}
+	}
+	
+	#EAST#
+	if = {
+		limit = {
+			check_variable = { EAST_FASCI > EAST_COMMIE }
+		}
+		if = {
+			limit = {
+				check_variable = { EAST_FASCI > EAST_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { EAST_FASCI > EAST_NEUTRA }
+				}
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_FASCI }
+			}
+			else = {
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { EAST_DEMO > EAST_NEUTRA }
+				}
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_DEMO }
+			}
+			else = {
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_NEUTRA }
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = { EAST_COMMIE > EAST_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { EAST_COMMIE > EAST_NEUTRA }
+				}
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_COMMIE }
+			}
+			else = {
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { EAST_DEMO > EAST_NEUTRA }
+				}
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_DEMO }
+			}
+			else = {
+				clear_variable = EAST_MAX
+				set_variable = { EAST_MAX = EAST_NEUTRA }
+			}
+		}
+	}
+	
+	#WEST#
+	if = {
+		limit = {
+			check_variable = { WEST_FASCI > WEST_COMMIE }
+		}
+		if = {
+			limit = {
+				check_variable = { WEST_FASCI > WEST_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { WEST_FASCI > WEST_NEUTRA }
+				}
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_FASCI }
+			}
+			else = {
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { WEST_DEMO > WEST_NEUTRA }
+				}
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_DEMO }
+			}
+			else = {
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_NEUTRA }
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = { WEST_COMMIE > WEST_DEMO }
+			}
+			if = {
+				limit = {
+					check_variable = { WEST_COMMIE > WEST_NEUTRA }
+				}
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_COMMIE }
+			}
+			else = {
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_NEUTRA }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { WEST_DEMO > WEST_NEUTRA }
+				}
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_DEMO }
+			}
+			else = {
+				clear_variable = WEST_MAX
+				set_variable = { WEST_MAX = WEST_NEUTRA }
+			}
+		}
+	}
 }

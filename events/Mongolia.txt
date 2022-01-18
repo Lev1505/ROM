@@ -171,16 +171,6 @@ country_event = {
 						has_war_with = ROOT
 						has_government = communism
 					}
-					MON_khorlogiin_choibalsan = {
-						add_country_leader_role = {
-							promote_leader = yes
-							country_leader = {
-								ideology = stalinism
-								expire = "1965.1.1.1"
-								traits = {}
-							}
-						}
-					}
 					set_party_name = {
 						ideology = communism
 						name = MON_HC_party
@@ -238,16 +228,6 @@ country_event = {
 						elections_allowed = no
 					}
 					set_cosmetic_tag = cosm_MON
-					MON_anandyn_amar = {
-						add_country_leader_role = {
-							promote_leader = yes
-							country_leader = {
-								ideology = marxism
-								expire = "1965.1.1.1"
-								traits = {}
-							}
-						}
-					}
 					set_party_name = {
 						ideology = communism
 						name = MON_RI_party
@@ -7878,7 +7858,7 @@ country_event = {
 	}
 }
 
-#CHi monarchy
+#Chineese monarchy
 country_event = {
 	id = mongolia.139
 	title = mongolia.139.t
@@ -7946,33 +7926,63 @@ country_event = {
 		name = mongolia.140.a
 		trigger = { 
 			has_completed_focus = MON_altay
-			NOT = {
-				has_country_flag = MON_help_to_ALT_weapon_1
+			ALT = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_weapon_1
+		ALT = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Башкирия
 		name = mongolia.140.b
 		trigger = { 
 			has_completed_focus = MON_bashkir
-			NOT = {
-				has_country_flag = MON_help_to_BSK_weapon_1
+			BSK = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_weapon_1
+		BSK = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Бурятия
 		name = mongolia.140.c
 		trigger = {
 			has_completed_focus = MON_buryat
-			NOT = {
-				has_country_flag = MON_help_to_BUR_weapon_1
+			BYA = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_weapon_1
+		BYA = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Вперёд
@@ -7996,22 +8006,42 @@ country_event = {
 		name = mongolia.141.b
 		trigger = {
 			has_completed_focus = MON_comi
-			NOT = {
-				has_country_flag = MON_help_to_COM_weapon_1
+			KOM = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_weapon_1
+		KOM = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Ненцы
 		name = mongolia.141.c
 		trigger = {
 			has_completed_focus = MON_yamnen
-			NOT = {
-				has_country_flag = MON_help_to_YAM_weapon_1
+			YAM = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_weapon_1
+		YAM = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Вперёд
@@ -8035,22 +8065,42 @@ country_event = {
 		name = mongolia.142.b
 		trigger = {
 			has_completed_focus = MON_tatar
-			NOT = {
-				has_country_flag = MON_help_to_TAT_weapon_1
+			TAT = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_weapon_1
+		TAT = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Удмурты
 		name = mongolia.142.c
 		trigger = {
 			has_completed_focus = MON_udmurt
-			NOT = {
-				has_country_flag = MON_help_to_UDM_weapon_1
+			UDM = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_weapon_1
+		UDM = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	
@@ -8075,11 +8125,21 @@ country_event = {
 		name = mongolia.143.b
 		trigger = {
 			has_completed_focus = MON_hakas
-			NOT = {
-				has_country_flag = MON_help_to_HAK_weapon_1
+			HAK = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_weapon_1
+		HAK = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	
@@ -8087,11 +8147,21 @@ country_event = {
 		name = mongolia.143.c
 		trigger = {
 			has_completed_focus = MON_hanman
-			NOT = {
-				has_country_flag = MON_help_to_HNM_weapon_1
+			HNM = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_weapon_1
+		HNM = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 	
 	option = { #Вперёд
@@ -8115,22 +8185,63 @@ country_event = {
 		name = mongolia.144.b
 		trigger = {
 			has_completed_focus = MON_chuvash
-			NOT = {
-				has_country_flag = MON_help_to_CHU_weapon_1
+			CHU = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_weapon_1
+		CHU = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
    	}
 
 	option = { #Якуты
 		name = mongolia.144.c
 		trigger = {
 			has_completed_focus = MON_yakut
-			NOT = {
-				has_country_flag = MON_help_to_YAK_weapon_1
+			YAK = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_weapon_1
+		YAK = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.144.d
+		trigger = {
+			has_completed_focus = MON_chukot
+			CKK = {
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_weapon_1
+						has_country_flag = MON_help_to_sep_weapon_2
+						has_country_flag = MON_help_to_sep_weapon_3
+						has_country_flag = MON_help_to_sep_weapon_4
+						has_country_flag = MON_help_to_sep_weapon_5
+					}
+				}
+			}
+		}
+		CKK = {
+			set_country_flag = MON_help_to_sep_weapon_1
+		}
 	}
 }
 
@@ -8142,35 +8253,50 @@ country_event = {
 	
 	option = { #Алтай
 		name = mongolia.145.a
-		trigger = { 
-			has_country_flag = MON_help_to_ALT_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_ALT_weapon_2
+		trigger = {
+			ALT = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_weapon_2
+		ALT = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Башкирия
 		name = mongolia.145.b
-		trigger = { 
-			has_country_flag = MON_help_to_BSK_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_BSK_weapon_2
+		trigger = {
+			BSK = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_weapon_2
+		BSK = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Бурятия
 		name = mongolia.145.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_BUR_weapon_2
+			BYA = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_weapon_2
+		BYA = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Вперёд
@@ -8193,23 +8319,33 @@ country_event = {
 	option = { #Коми
 		name = mongolia.146.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_COM_weapon_2
+			KOM = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_weapon_2
+		KOM = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Ненцы
 		name = mongolia.146.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_YAM_weapon_2
+			YAM = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_weapon_2
+		YAM = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Вперёд
@@ -8232,23 +8368,33 @@ country_event = {
 	option = {
 		name = mongolia.147.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_TAT_weapon_2
+			TAT = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_weapon_2
+		TAT = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = {
 		name = mongolia.147.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_UDM_weapon_2
+			UDM = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_weapon_2
+		UDM = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	
@@ -8272,24 +8418,34 @@ country_event = {
 	option = {
 		name = mongolia.148.b
 		trigger = {
-			has_country_flag = MON_help_to_HAK_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_HAK_weapon_2
+			HAK = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_weapon_2
+		HAK = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	
 	option = {
 		name = mongolia.148.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_HNM_weapon_2
+			HNM = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_weapon_2
+		HNM = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 	
 	option = { #Вперёд
@@ -8313,23 +8469,50 @@ country_event = {
 	option = {
 		name = mongolia.149.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_CHU_weapon_2
+			CHU = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_weapon_2
+		CHU = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
    	}
 
 	option = {
 		name = mongolia.149.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_weapon_1
-			NOT = {
-				has_country_flag = MON_help_to_YAK_weapon_2
+			YAK = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_weapon_2
+		YAK = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.149.d
+		trigger = {
+			has_completed_focus = MON_chukot
+			CKK = {
+				has_country_flag = MON_help_to_sep_weapon_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_2
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = MON_help_to_sep_weapon_1
+			set_country_flag = MON_help_to_sep_weapon_2
+		}
 	}
 }
 
@@ -8341,35 +8524,50 @@ country_event = {
 	
 	option = { #Алтай
 		name = mongolia.150.a
-		trigger = { 
-			has_country_flag = MON_help_to_ALT_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_ALT_weapon_3
+		trigger = {
+			ALT = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_weapon_3
+		ALT = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Башкирия
 		name = mongolia.150.b
-		trigger = { 
-			has_country_flag = MON_help_to_BSK_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_BSK_weapon_3
+		trigger = {
+			BSK = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_weapon_3
+		BSK = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Бурятия
 		name = mongolia.150.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_BUR_weapon_3
+			BYA = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_weapon_3
+		BYA = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Вперёд
@@ -8392,23 +8590,33 @@ country_event = {
 	option = { #Коми
 		name = mongolia.151.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_COM_weapon_3
+			KOM = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_weapon_3
+		KOM = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Ненцы
 		name = mongolia.151.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_YAM_weapon_3
+			YAM = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_weapon_3
+		YAM = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Вперёд
@@ -8431,23 +8639,33 @@ country_event = {
 	option = {
 		name = mongolia.152.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_TAT_weapon_3
+			TAT = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_weapon_3
+		TAT = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = {
 		name = mongolia.152.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_UDM_weapon_3
+			UDM = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_weapon_3
+		UDM = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	
@@ -8471,24 +8689,34 @@ country_event = {
 	option = {
 		name = mongolia.153.b
 		trigger = {
-			has_country_flag = MON_help_to_HAK_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_HAK_weapon_3
+			HAK = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_weapon_3
+		HAK = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	
 	option = {
 		name = mongolia.153.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_HNM_weapon_3
+			HNM = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_weapon_3
+		HNM = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 	
 	option = { #Вперёд
@@ -8511,23 +8739,49 @@ country_event = {
 	option = {
 		name = mongolia.154.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_CHU_weapon_3
+			CHU = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_weapon_3
+		CHU = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
    	}
 
 	option = {
 		name = mongolia.154.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_weapon_2
-			NOT = {
-				has_country_flag = MON_help_to_YAK_weapon_3
+			YAK = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_weapon_3
+		YAK = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.154.d
+		trigger = {
+			CKK = {
+				has_country_flag = MON_help_to_sep_weapon_2
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_3
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = MON_help_to_sep_weapon_2
+			set_country_flag = MON_help_to_sep_weapon_3
+		}
 	}
 }
 
@@ -8539,35 +8793,50 @@ country_event = {
 	
 	option = { #Алтай
 		name = mongolia.155.a
-		trigger = { 
-			has_country_flag = MON_help_to_ALT_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_ALT_weapon_4
+		trigger = {
+			ALT = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_weapon_4
+		ALT = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Башкирия
 		name = mongolia.155.b
-		trigger = { 
-			has_country_flag = MON_help_to_BSK_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_BSK_weapon_4
+		trigger = {
+			BSK = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_weapon_4
+		BSK = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Бурятия
 		name = mongolia.155.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_BUR_weapon_4
+			BYA = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_weapon_4
+		BYA = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Вперёд
@@ -8590,23 +8859,33 @@ country_event = {
 	option = { #Коми
 		name = mongolia.156.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_COM_weapon_4
+			KOM = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_weapon_4
+		KOM = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Ненцы
 		name = mongolia.156.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_YAM_weapon_4
+			YAM = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_weapon_4
+		YAM = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Вперёд
@@ -8629,23 +8908,33 @@ country_event = {
 	option = {
 		name = mongolia.157.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_TAT_weapon_4
+			TAT = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_weapon_4
+		TAT = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = {
 		name = mongolia.157.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_UDM_weapon_4
+			UDM = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_weapon_4
+		UDM = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	
@@ -8669,24 +8958,34 @@ country_event = {
 	option = {
 		name = mongolia.158.b 
 		trigger = {
-			has_country_flag = MON_help_to_HAK_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_HAK_weapon_4
+			HAK = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_weapon_4
+		HAK = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	
 	option = {
 		name = mongolia.158.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_HNM_weapon_4
+			HNM = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_weapon_4
+		HNM = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 	
 	option = { #Вперёд
@@ -8709,23 +9008,49 @@ country_event = {
 	option = {
 		name = mongolia.159.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_CHU_weapon_4
+			CHU = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_weapon_4
+		CHU = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
    	}
 
 	option = {
 		name = mongolia.159.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_weapon_3
-			NOT = {
-				has_country_flag = MON_help_to_YAK_weapon_4
+			YAK = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_weapon_4
+		YAK = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.159.d
+		trigger = {
+			CKK = {
+				has_country_flag = MON_help_to_sep_weapon_3
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_4
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = MON_help_to_sep_weapon_3
+			set_country_flag = MON_help_to_sep_weapon_4
+		}
 	}
 }
 
@@ -8738,35 +9063,50 @@ country_event = {
 	
 	option = { #Алтай
 		name = mongolia.160.a
-		trigger = { 
-			has_country_flag = MON_help_to_ALT_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_ALT_weapon_5
+		trigger = {
+			ALT = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_weapon_5
+		ALT = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Башкирия
 		name = mongolia.160.b
 		trigger = { 
-			has_country_flag = MON_help_to_BSK_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_BSK_weapon_5
+			BSK = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_weapon_5
+		BSK = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Бурятия
 		name = mongolia.160.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_BUR_weapon_5
+			BYA = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_weapon_5
+		BYA = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Вперёд
@@ -8789,23 +9129,33 @@ country_event = {
 	option = { #Коми
 		name = mongolia.161.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_COM_weapon_5
+			KOM = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_weapon_5
+		KOM = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Ненцы
 		name = mongolia.161.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_YAM_weapon_5
+			YAM = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_weapon_5
+		YAM = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Вперёд
@@ -8828,23 +9178,33 @@ country_event = {
 	option = {
 		name = mongolia.162.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_TAT_weapon_5
+			TAT = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_weapon_5
+		TAT = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = {
 		name = mongolia.162.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_UDM_weapon_5
+			UDM = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_weapon_5
+		UDM = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	
@@ -8868,24 +9228,34 @@ country_event = {
 	option = {
 		name = mongolia.163.b
 		trigger = {
-			has_country_flag = MON_help_to_HAK_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_HAK_weapon_5
+			HAK = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_weapon_5
+		HAK = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	
 	option = {
 		name = mongolia.163.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_HNM_weapon_5
+			HNM = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_weapon_5
+		HNM = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 	
 	option = { #Вперёд
@@ -8908,27 +9278,53 @@ country_event = {
 	option = {
 		name = mongolia.164.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_CHU_weapon_5
+			CHU = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_weapon_5
+		CHU = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
    	}
 
 	option = {
 		name = mongolia.164.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_weapon_4
-			NOT = {
-				has_country_flag = MON_help_to_YAK_weapon_5
+			YAK = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_weapon_5
+		YAK = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.164.d
+		trigger = {
+			CKK = {
+				has_country_flag = MON_help_to_sep_weapon_4
+				NOT = {
+					has_country_flag = MON_help_to_sep_weapon_5
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = MON_help_to_sep_weapon_4
+			set_country_flag = MON_help_to_sep_weapon_5
+		}
 	}
 }
 
-country_event = {
+country_event = { #Begin Industrial help
 	id = mongolia.165
 	title = mongolia.165.t
 	desc = mongolia.165.d
@@ -8937,34 +9333,64 @@ country_event = {
 	option = {
 		name = mongolia.165.a
 		trigger = {
-			has_country_flag = MON_help_to_ALT_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_ALT_1
+			ALT = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_ALT_1
+		ALT = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 
 	option = {
 		name = mongolia.165.b
 		trigger = {
-			has_country_flag = MON_help_to_BSK_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_BSK_1
+			BSK = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BSK_1
+		BSK = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
 		name = mongolia.165.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_BUR_1
+			BYA = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BUR_1
+		BYA = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	option = { #Вперёд
 		name = mongolia.165.x
@@ -8986,23 +9412,43 @@ country_event = {
 	option = {
 		name = mongolia.166.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_COM_1
+			KOM = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_COM_1
+		KOM = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
 		name = mongolia.166.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_YAM_1
+			YAM = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAM_1
+		YAM = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
@@ -9025,23 +9471,43 @@ country_event = {
 	option = {
 		name = mongolia.167.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_TAT_1
+			TAT = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_TAT_1
+		TAT = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
 		name = mongolia.167.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_UDM_1
+			UDM = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_UDM_1
+		UDM = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
@@ -9064,23 +9530,43 @@ country_event = {
 	option = {
 		name = mongolia.168.b
 		trigger = {
-			has_country_flag = MON_help_to_HAK_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_HAK_1
+			HAK = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HAK_1
+		HAK = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
 		name = mongolia.168.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_HNM_1
+			HNM = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HNM_1
+		HNM = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
@@ -9103,23 +9589,65 @@ country_event = {
 	option = {
 		name = mongolia.169.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_CHU_1
+			CHU = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_CHU_1
+		CHU = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 	
 	option = {
 		name = mongolia.169.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_weapon_5
-			NOT = {
-				has_country_flag = Industrial_help_to_YAK_1
+			YAK = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAK_1
+		YAK = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.169.d
+		trigger = {
+			has_completed_focus = MON_chukot
+			CKK = {
+				has_country_flag = MON_help_to_sep_weapon_5
+				NOT = {
+					OR = {
+						has_country_flag = Industrial_help_to_sep_1
+						has_country_flag = Industrial_help_to_sep_2
+						has_country_flag = Industrial_help_to_sep_3
+						has_country_flag = Industrial_help_to_sep_4
+						has_country_flag = Industrial_help_to_sep_5
+					}
+				}
+			}
+		}
+		CKK = {
+			set_country_flag = Industrial_help_to_sep_1
+		}
 	}
 }
 
@@ -9132,34 +9660,49 @@ country_event = {
 	option = {
 		name = mongolia.170.a
 		trigger = {
-			has_country_flag = Industrial_help_to_ALT_1
-			NOT = {
-				has_country_flag = Industrial_help_to_ALT_2
+			ALT = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_ALT_2
+		ALT = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.170.b
 		trigger = {
-			has_country_flag = Industrial_help_to_BSK_1
-			NOT = {
-				has_country_flag = Industrial_help_to_BSK_2
+			BSK = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BSK_2
+		BSK = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.170.c
 		trigger = {
-			has_country_flag = Industrial_help_to_BUR_1
-			NOT = {
-				has_country_flag = Industrial_help_to_BUR_2
+			BYA = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BUR_2
+		BYA = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
@@ -9182,23 +9725,33 @@ country_event = {
 	option = { 
 		name = mongolia.171.b
 		trigger = {
-			has_country_flag = Industrial_help_to_COM_1
-			NOT = {
-				has_country_flag = Industrial_help_to_COM_2
+			KOM = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_COM_2
+		KOM = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.171.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAM_1
-			NOT = {
-				has_country_flag = Industrial_help_to_YAM_2
+			YAM = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAM_2
+		YAM = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
@@ -9221,23 +9774,33 @@ country_event = {
 	option = {
 		name = mongolia.172.b
 		trigger = {
-			has_country_flag = Industrial_help_to_TAT_1
-			NOT = {
-				has_country_flag = Industrial_help_to_TAT_2
+			TAT = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_TAT_2
+		TAT = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.172.c
 		trigger = {
-			has_country_flag = Industrial_help_to_UDM_1
-			NOT = {
-				has_country_flag = Industrial_help_to_UDM_2
+			UDM = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_UDM_2
+		UDM = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
@@ -9260,23 +9823,33 @@ country_event = {
 	option = {
 		name = mongolia.173.b
 		trigger = {
-			has_country_flag = Industrial_help_to_HAK_1
-			NOT = {
-				has_country_flag = Industrial_help_to_HAK_2
+			HAK = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HAK_2
+		HAK = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.173.c
 		trigger = {
-			has_country_flag = Industrial_help_to_HNM_1
-			NOT = {
-				has_country_flag = Industrial_help_to_HNM_2
+			HNM = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HNM_2
+		HNM = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
@@ -9299,23 +9872,49 @@ country_event = {
 	option = {
 		name = mongolia.174.b
 		trigger = {
-			has_country_flag = Industrial_help_to_CHU_1
-			NOT = {
-				has_country_flag = Industrial_help_to_CHU_2
+			CHU = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_CHU_2
+		CHU = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 	
 	option = {
 		name = mongolia.174.c
-		trigger = { 
-			has_country_flag = Industrial_help_to_YAK_1
-			NOT = {
-				has_country_flag = Industrial_help_to_YAK_2
+		trigger = {
+			YAK = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAK_2
+		YAK = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.174.d
+		trigger = {
+			CKK = {
+				has_country_flag = Industrial_help_to_sep_1
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_2
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = Industrial_help_to_sep_1
+			set_country_flag = Industrial_help_to_sep_2
+		}
 	}
 }
 
@@ -9328,34 +9927,49 @@ country_event = {
 	option = {
 		name = mongolia.175.a
 		trigger = {
-			has_country_flag = Industrial_help_to_ALT_2
-			NOT = {
-				has_country_flag = Industrial_help_to_ALT_3
+			ALT = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_ALT_3
+		ALT = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.175.b
 		trigger = {
-			has_country_flag = Industrial_help_to_BSK_2
-			NOT = {
-				has_country_flag = Industrial_help_to_BSK_3
+			BSK = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BSK_3
+		BSK = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.175.c
 		trigger = {
-			has_country_flag = Industrial_help_to_BUR_2
-			NOT = {
-				has_country_flag = Industrial_help_to_BUR_3
+			BYA = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BUR_3
+		BYA = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
@@ -9378,23 +9992,33 @@ country_event = {
 	option = {
 		name = mongolia.176.b
 		trigger = {
-			has_country_flag = Industrial_help_to_COM_2
-			NOT = {
-				has_country_flag = Industrial_help_to_COM_3
+			KOM = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_COM_3
+		KOM = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.176.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAM_2
-			NOT = {
-				has_country_flag = Industrial_help_to_YAM_3
+			YAM = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAM_3
+		YAM = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
@@ -9417,23 +10041,33 @@ country_event = {
 	option = {
 		name = mongolia.177.b
 		trigger = {
-			has_country_flag = Industrial_help_to_TAT_2
-			NOT = {
-				has_country_flag = Industrial_help_to_TAT_3
+			TAT = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_TAT_3
+		TAT = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.177.c
 		trigger = {
-			has_country_flag = Industrial_help_to_UDM_2
-			NOT = {
-				has_country_flag = Industrial_help_to_UDM_3
+			UDM = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_UDM_3
+		UDM = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
@@ -9456,23 +10090,33 @@ country_event = {
 	option = {
 		name = mongolia.178.b
 		trigger = {
-			has_country_flag = Industrial_help_to_HAK_2
-			NOT = {
-				has_country_flag = Industrial_help_to_HAK_3
+			HAK = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HAK_3
+		HAK = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.178.c
 		trigger = {
-			has_country_flag = Industrial_help_to_HNM_2
-			NOT = {
-				has_country_flag = Industrial_help_to_HNM_3
+			HNM = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HNM_3
+		HNM = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
@@ -9495,23 +10139,49 @@ country_event = {
 	option = {
 		name = mongolia.179.b
 		trigger = {
-			has_country_flag = Industrial_help_to_CHU_2
-			NOT = {
-				has_country_flag = Industrial_help_to_CHU_3
+			CHU = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_CHU_3
+		CHU = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 	
 	option = {
 		name = mongolia.179.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAK_2
-			NOT = {
-				has_country_flag = Industrial_help_to_YAK_3
+			YAK = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAK_3
+		YAK = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
+	}
+
+	option = { #Чукотцы
+		name = mongolia.179.d
+		trigger = {
+			CKK = {
+				has_country_flag = Industrial_help_to_sep_2
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_3
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = Industrial_help_to_sep_2
+			set_country_flag = Industrial_help_to_sep_3
+		}
 	}
 }
 
@@ -9524,34 +10194,49 @@ country_event = {
 	option = {
 		name = mongolia.180.a
 		trigger = {
-			has_country_flag = Industrial_help_to_ALT_3
-			NOT = {
-				has_country_flag = Industrial_help_to_ALT_4
+			ALT = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_ALT_4
+		ALT = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.180.b
 		trigger = {
-			has_country_flag = Industrial_help_to_BSK_3
-			NOT = {
-				has_country_flag = Industrial_help_to_BSK_4
+			BSK = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BSK_4
+		BSK = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.180.c
 		trigger = {
-			has_country_flag = Industrial_help_to_BUR_3
-			NOT = {
-				has_country_flag = Industrial_help_to_BUR_4
+			BYA = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BUR_4
+		BYA = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
@@ -9574,23 +10259,33 @@ country_event = {
 	option = {
 		name = mongolia.181.b
 		trigger = {
-			has_country_flag = Industrial_help_to_COM_3
-			NOT = {
-				has_country_flag = Industrial_help_to_COM_4
+			KOM = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_COM_4
+		KOM = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.181.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAM_3
-			NOT = {
-				has_country_flag = Industrial_help_to_YAM_4
+			YAM = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAM_4
+		YAM = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
@@ -9613,23 +10308,33 @@ country_event = {
 	option = {
 		name = mongolia.182.b
 		trigger = {
-			has_country_flag = Industrial_help_to_TAT_3
-			NOT = {
-				has_country_flag = Industrial_help_to_TAT_4
+			TAT = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_TAT_4
+		TAT = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.182.c
 		trigger = {
-			has_country_flag = Industrial_help_to_UDM_3
-			NOT = {
-				has_country_flag = Industrial_help_to_UDM_4
+			UDM = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_UDM_4
+		UDM = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
@@ -9652,23 +10357,33 @@ country_event = {
 	option = {
 		name = mongolia.183.b
 		trigger = {
-			has_country_flag = Industrial_help_to_HAK_3
-			NOT = {
-				has_country_flag = Industrial_help_to_HAK_4
+			HAK = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HAK_4
+		HAK = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.183.c
 		trigger = {
-			has_country_flag = Industrial_help_to_HNM_3
-			NOT = {
-				has_country_flag = Industrial_help_to_HNM_4
+			HNM = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HNM_4
+		HNM = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
@@ -9691,23 +10406,49 @@ country_event = {
 	option = {
 		name = mongolia.184.b
 		trigger = {
-			has_country_flag = Industrial_help_to_CHU_3
-			NOT = {
-				has_country_flag = Industrial_help_to_CHU_4
+			CHU = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_CHU_4
+		CHU = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 	
 	option = {
 		name = mongolia.184.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAK_3
-			NOT = {
-				has_country_flag = Industrial_help_to_YAK_4
+			YAK = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAK_4
+		YAK = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
+	}
+	
+	option = {
+		name = mongolia.184.d
+		trigger = {
+			CKK = {
+				has_country_flag = Industrial_help_to_sep_3
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_4
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = Industrial_help_to_sep_3
+			set_country_flag = Industrial_help_to_sep_4
+		}
 	}
 }
 
@@ -9720,34 +10461,49 @@ country_event = {
 	option = {
 		name = mongolia.185.a
 		trigger = {
-			has_country_flag = Industrial_help_to_ALT_4
-			NOT = {
-				has_country_flag = Industrial_help_to_ALT_5
+			ALT = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_ALT_5
+		ALT = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.185.b
 		trigger = {
-			has_country_flag = Industrial_help_to_BSK_4
-			NOT = {
-				has_country_flag = Industrial_help_to_BSK_5
+			BSK = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BSK_5
+		BSK = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.185.c
 		trigger = {
-			has_country_flag = Industrial_help_to_BUR_4
-			NOT = {
-				has_country_flag = Industrial_help_to_BUR_5
+			BYA = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_BUR_5
+		BYA = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
@@ -9770,23 +10526,33 @@ country_event = {
 	option = {
 		name = mongolia.186.b
 		trigger = {
-			has_country_flag = Industrial_help_to_COM_4
-			NOT = {
-				has_country_flag = Industrial_help_to_COM_5
+			KOM = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_COM_5
+		KOM = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.186.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAM_4
-			NOT = {
-				has_country_flag = Industrial_help_to_YAM_5
+			YAM = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAM_5
+		YAM = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
@@ -9809,23 +10575,33 @@ country_event = {
 	option = {
 		name = mongolia.187.b
 		trigger = {
-			has_country_flag = Industrial_help_to_TAT_4
-			NOT = {
-				has_country_flag = Industrial_help_to_TAT_5
+			TAT = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_TAT_5
+		TAT = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.187.c
 		trigger = {
-			has_country_flag = Industrial_help_to_UDM_4
-			NOT = {
-				has_country_flag = Industrial_help_to_UDM_5
+			UDM = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_UDM_5
+		UDM = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
@@ -9848,23 +10624,33 @@ country_event = {
 	option = {
 		name = mongolia.188.b
 		trigger = {
-			has_country_flag = Industrial_help_to_HAK_4
-			NOT = {
-				has_country_flag = Industrial_help_to_HAK_5
+			HAK = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HAK_5
+		HAK = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.188.c
 		trigger = {
-			has_country_flag = Industrial_help_to_HNM_4
-			NOT = {
-				has_country_flag = Industrial_help_to_HNM_5
+			HNM = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_HNM_5
+		HNM = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
@@ -9887,23 +10673,49 @@ country_event = {
 	option = {
 		name = mongolia.189.b
 		trigger = {
-			has_country_flag = Industrial_help_to_CHU_4
-			NOT = {
-				has_country_flag = Industrial_help_to_CHU_5
+			CHU = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_CHU_5
+		CHU = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 	
 	option = {
 		name = mongolia.189.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAK_4
-			NOT = {
-				has_country_flag = Industrial_help_to_YAK_5
+			YAK = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
 			}
 		}
-		set_country_flag = Industrial_help_to_YAK_5
+		YAK = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
+	}
+	
+	option = {
+		name = mongolia.189.d
+		trigger = {
+			CKK = {
+				has_country_flag = Industrial_help_to_sep_4
+				NOT = {
+					has_country_flag = Industrial_help_to_sep_5
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = Industrial_help_to_sep_4
+			set_country_flag = Industrial_help_to_sep_5
+		}
 	}
 }
 
@@ -9916,34 +10728,55 @@ country_event = {
 	option = {
 		name = mongolia.190.a
 		trigger = {
-			has_country_flag = Industrial_help_to_ALT_5
-			NOT = {
-				has_country_flag = MON_help_to_ALT_volunteers_1
+			ALT = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_volunteers_1
+		ALT = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.190.b
 		trigger = {
-			has_country_flag = Industrial_help_to_BSK_5
-			NOT = {
-				has_country_flag = MON_help_to_BSK_volunteers_1
+			BSK = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_volunteers_1
+		BSK = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.190.c
 		trigger = {
-			has_country_flag = Industrial_help_to_BUR_5
-			NOT = {
-				has_country_flag = MON_help_to_BUR_volunteers_1
+			BYA = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_volunteers_1
+		BYA = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
@@ -9966,23 +10799,37 @@ country_event = {
 	option = {
 		name = mongolia.191.b
 		trigger = {
-			has_country_flag = Industrial_help_to_COM_5
-			NOT = {
-				has_country_flag = MON_help_to_COM_volunteers_1
+			KOM = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_volunteers_1
+		KOM = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.191.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAM_5
-			NOT = {
-				has_country_flag = MON_help_to_YAM_volunteers_1
+			YAM = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_volunteers_1
+		YAM = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
@@ -10005,23 +10852,37 @@ country_event = {
 	option = {
 		name = mongolia.192.b
 		trigger = {
-			has_country_flag = Industrial_help_to_TAT_5
-			NOT = {
-				has_country_flag = MON_help_to_TAT_volunteers_1
+			TAT = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_volunteers_1
+		TAT = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.192.c
 		trigger = {
-			has_country_flag = Industrial_help_to_UDM_5
-			NOT = {
-				has_country_flag = MON_help_to_UDM_volunteers_1
+			UDM = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_volunteers_1
+		UDM = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
@@ -10044,23 +10905,37 @@ country_event = {
 	option = {
 		name = mongolia.193.b
 		trigger = {
-			has_country_flag = Industrial_help_to_HAK_5
-			NOT = {
-				has_country_flag = MON_help_to_HAK_volunteers_1
+			HAK = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_volunteers_1
+		HAK = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.193.c
 		trigger = {
-			has_country_flag = Industrial_help_to_HNM_5
-			NOT = {
-				has_country_flag = MON_help_to_HNM_volunteers_1
+			HNM = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_volunteers_1
+		HNM = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
@@ -10083,23 +10958,55 @@ country_event = {
 	option = {
 		name = mongolia.194.b
 		trigger = {
-			has_country_flag = Industrial_help_to_CHU_5
-			NOT = {
-				has_country_flag = MON_help_to_CHU_volunteers_1
+			CHU = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_volunteers_1
+		CHU = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 	
 	option = {
 		name = mongolia.194.c
 		trigger = {
-			has_country_flag = Industrial_help_to_YAK_5
-			NOT = {
-				has_country_flag = MON_help_to_YAK_volunteers_1
+			YAK = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_volunteers_1
+		YAK = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
+	}
+	
+	option = {
+		name = mongolia.194.d
+		trigger = {
+			CKK = {
+				has_country_flag = Industrial_help_to_sep_5
+				NOT = {
+					OR = {
+						has_country_flag = MON_help_to_sep_volunteers_1
+						has_country_flag = MON_help_to_sep_volunteers_2
+					}
+				}
+			}
+		}
+		CKK = {
+			set_country_flag = MON_help_to_sep_volunteers_1
+		}
 	}
 }
 	
@@ -10112,34 +11019,49 @@ country_event = {
 	option = {
 		name = mongolia.195.a
 		trigger = {
-			has_country_flag = MON_help_to_ALT_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_ALT_volunteers_2
+			ALT = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_ALT_volunteers_2
+		ALT = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.195.b
 		trigger = {
-			has_country_flag = MON_help_to_BSK_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_BSK_volunteers_2
+			BSK = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BSK_volunteers_2
+		BSK = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.195.c
 		trigger = {
-			has_country_flag = MON_help_to_BUR_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_BUR_volunteers_2
+			BYA = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_BUR_volunteers_2
+		BYA = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
@@ -10162,23 +11084,33 @@ country_event = {
 	option = {
 		name = mongolia.196.b
 		trigger = {
-			has_country_flag = MON_help_to_COM_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_COM_volunteers_2
+			KOM = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_COM_volunteers_2
+		KOM = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.196.c
 		trigger = {
-			has_country_flag = MON_help_to_YAM_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_YAM_volunteers_2
+			YAM = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAM_volunteers_2
+		YAM = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
@@ -10201,23 +11133,33 @@ country_event = {
 	option = {
 		name = mongolia.197.b
 		trigger = {
-			has_country_flag = MON_help_to_TAT_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_TAT_volunteers_2
+			TAT = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_TAT_volunteers_2
+		TAT = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.197.c
 		trigger = {
-			has_country_flag = MON_help_to_UDM_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_UDM_volunteers_2
+			UDM = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_UDM_volunteers_2
+		UDM = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
@@ -10240,23 +11182,33 @@ country_event = {
 	option = {
 		name = mongolia.198.b
 		trigger = {
-			has_country_flag = MON_help_to_HAK_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_HAK_volunteers_2
+			HAK = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HAK_volunteers_2
+		HAK = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.198.c
 		trigger = {
-			has_country_flag = MON_help_to_HNM_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_HNM_volunteers_2
+			HNM = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_HNM_volunteers_2
+		HNM = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
@@ -10279,23 +11231,49 @@ country_event = {
 	option = {
 		name = mongolia.199.b
 		trigger = {
-			has_country_flag = MON_help_to_CHU_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_CHU_volunteers_2
+			CHU = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_CHU_volunteers_2
+		CHU = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 	
 	option = {
 		name = mongolia.199.c
 		trigger = {
-			has_country_flag = MON_help_to_YAK_volunteers_1
-			NOT = {
-				has_country_flag = MON_help_to_YAK_volunteers_2
+			YAK = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
 			}
 		}
-		set_country_flag = MON_help_to_YAK_volunteers_2
+		YAK = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
+	}
+	
+	option = {
+		name = mongolia.199.d
+		trigger = {
+			CKK = {
+				has_country_flag = MON_help_to_sep_volunteers_1
+				NOT = {
+					has_country_flag = MON_help_to_sep_volunteers_2
+				}
+			}
+		}
+		CKK = {
+			clr_country_flag = MON_help_to_sep_volunteers_1
+			set_country_flag = MON_help_to_sep_volunteers_2
+		}
 	}
 }
 #Dissolve USSR
@@ -10307,7 +11285,7 @@ country_event = {
 	
 	option = { #Pizdec
 		name = mongolia.200.a
-		pizdec = yes
+		MON_separatist_uprising = yes
 	}
 }
 
@@ -10957,7 +11935,7 @@ country_event = {
 	
 	option = {
 		name = mongolia.223.a
-		help_to_seps = yes
+		MON_help_to_seps_effect = yes
 	}
 }
 
@@ -11024,6 +12002,16 @@ country_event = {
 #Generals are taking states! (0 war support)
 
 #People Uprising! (Bad reforms)
+country_event = {
+	id = mongolia.228
+	title = mongolia.228.t
+	desc = mongolia.228.d
+	is_triggered_only = yes
+	
+	option = {
+		name = mongolia.228.a
+	}
+}
 
 #Anarchists Uprising! (After Crisis)
 country_event = {
@@ -11132,6 +12120,18 @@ country_event = {
 
 #Civil war ends
 
+country_event = {
+	id = mongolia.300
+	title = mongolia.300.t
+	desc = mongolia.300.d
+	is_triggered_only = yes
+	
+	option = {
+		name = mongolia.300.a
+		set_country_flag = MON_TUVA_HELPING
+		MON_TH_SETUP = yes
+	}
+}
 
 #Raids
 #Plans are stolen!

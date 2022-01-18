@@ -83,6 +83,28 @@ on_actions = {
 				MON_plan1_clamp_var = yes
 			}
 			
+			330 = {
+				MON_plan2_clamp_var = yes
+			}
+			817 = {
+				MON_plan2_clamp_var = yes
+			}
+			818 = {
+				MON_plan2_clamp_var = yes
+			}
+			819 = {
+				MON_plan2_clamp_var = yes
+			}
+			820 = {
+				MON_plan2_clamp_var = yes
+			}
+			836 = {
+				MON_plan2_clamp_var = yes
+			}
+			844 = {
+				MON_plan2_clamp_var = yes
+			}
+			
 			
 			
 			if = { #Sending people, 0 stability
@@ -147,26 +169,6 @@ on_actions = {
 					}
 					set_state_flag = ANARCHISTS_STATE
 				}
-			}
-			
-			
-			330 = {
-				MON_plan1_clamp_var = yes
-			}
-			817 = {
-				MON_plan1_clamp_var = yes
-			}
-			818 = {
-				MON_plan1_clamp_var = yes
-			}
-			819 = {
-				MON_plan1_clamp_var = yes
-			}
-			820 = {
-				MON_plan1_clamp_var = yes
-			}
-			844 = {
-				MON_plan1_clamp_var = yes
 			}
 		}
 	}

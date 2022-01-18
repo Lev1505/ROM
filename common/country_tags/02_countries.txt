@@ -1,7 +1,16 @@
-UYG = "countries/Uighurstan.txt"
-BUR = "countries/Buryatia.txt"
-COM = "countries/Comi.txt"
+#Soviet Seps#
+#ALT
+#BSK
+#BYA
+#KOM
+#YAM
+#TAT
+#UDM
 HAK = "countries/Hakasia.txt"
 HNM = "countries/Hanty_Mansiysk.txt"
-CHV = "countries/Chuvashia.txt"
+#CHU
+#YAK
+#CKK
+
 NSF = "countries/Northern Salvation Front.txt"
+UYG = "countries/Uighurstan.txt"

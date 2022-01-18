@@ -39,4 +39,60 @@ scripted_gui = {
 			}
 		}
 	}
+	
+	MON_TEST_MECHANIC_GUI = {
+		context_type = decision_category
+		window_name = "MON_TEST_MECHANIC_GUI"
+		
+		visible = {
+			has_country_flag = MON_TM_SETUPPED
+		}
+		
+		effects = {
+		}
+		
+		triggers = {
+		
+		}
+
+		properties = {
+			MON_CENTER = {
+				image = "[getCENTERController]"
+			}
+			MON_EAST = {
+				image = "[getEASTController]"
+			}
+			MON_WEST = {
+				image = "[getWESTController]"
+			}
+		}
+	}
+	
+	MON_TUVA_HELP_GUI = {
+		context_type = decision_category
+		window_name = "MON_TUVA_HELP_GUI"
+		
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		
+		effects = {
+		}
+		
+		triggers = {
+		
+		}
+
+		properties = {
+			MON_TH_TOP_FLAG = {
+				image = "[getTOPFlag]"
+			}
+			MON_TH_BOT_FLAG = {
+				image = "[getBOTFlag]"
+			}
+			MON_TH_TUVA_ASSET = {
+				image = "[getTuva]"
+			}
+		}
+	}
 }

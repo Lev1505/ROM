@@ -3,34 +3,6 @@ NSF = {
 	color = rgb { 102 0 0 }
 	color_ui = rgb { 51 0 0 }
 }
-ALT = {
-	color = rgb { 143 188 143 }
-	color_ui = rgb { 123 168 123 }
-}
-BSK = {
-	color = rgb { 107 142 35 }
-	color_ui = rgb { 87 122 15 }
-}
-BUR = {
-	color = rgb { 0 191 255 }
-	color_ui = rgb { 0 171 235 }
-}
-COM = {
-	color = rgb { 238 232 170 }
-	color_ui = rgb { 218 212 150 }
-}
-NEN = {
-	color = rgb { 255 69 0 }
-	color_ui = rgb { 235 49 0 }
-}
-TAT = {
-	color = rgb { 34 139 34 }
-	color_ui = rgb { 14 119 14 }
-}
-UDM = {
-	color = rgb { 107 142 35 }
-	color_ui = rgb { 87 122 15 }
-}
 HAK = {
 	color = rgb { 189 183 107 }
 	color_ui = rgb { 169 163 87 }
@@ -38,14 +10,6 @@ HAK = {
 HNM = {
 	color = rgb { 255 160 122 }
 	color_ui = rgb { 235 140 102 }
-}
-CHV = {
-	color = rgb { 147 112 219 }
-	color_ui = rgb { 127 92 199 }
-}
-YAK = {
-	color = rgb { 254 254 34 }
-	color_ui = rgb { 234 234 14 }
 }
 UYG = {
 	color = rgb { 29 73 37 }

@@ -1,0 +1,53 @@
+add_namespace = nec
+country_event = {
+	id = nec.1
+	desc = nec.1.d
+	title = nec.1.t
+	is_triggered_only = yes
+	
+	option = {
+		name = nec.1.a
+		BAY = {
+			set_country_flag = nec_flag
+		}
+	}
+}
+country_event = {
+	id = nec.2
+	desc = nec.2.d
+	title = nec.2.t
+	is_triggered_only = yes
+	
+	option = {
+		name = nec.2.a
+		BAY = {
+			transfer_state = 52
+			transfer_state = 53
+			transfer_state = 54
+		}
+		52 = { add_core_of = BAY }
+		53 = { add_core_of = BAY }
+		54 = { add_core_of = BAY }
+	}
+}
+country_event = {
+	id = nec.3
+	desc = nec.3.d
+	title = nec.3.t
+	is_triggered_only = yes
+	
+	option = {
+		name = nec.3.a
+		BAY = {
+			if = {
+				limit = {
+					has_country_flag = nec_flag
+				}
+				add_ideas = { fascist_influence }
+			}
+			else = {
+				add_ideas = { communist_influence }
+			}
+		}
+	}
+}

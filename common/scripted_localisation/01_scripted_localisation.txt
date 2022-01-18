@@ -49,3 +49,211 @@ defined_text = {
 		localization_key = mongolia.7.a.choibalsan
 	}
 }
+
+defined_text = {
+	name = getTOPFlag
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF > MON_TH_SOV_INF }
+		}
+		localization_key = "GFX_MON_TH_MON_FLAG"
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF > MON_TH_MON_INF }
+		}
+		localization_key = [getSOVFlag]
+	}
+}
+
+defined_text = {
+	name = getBOTFlag
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF < MON_TH_SOV_INF }
+		}
+		localization_key = "GFX_MON_TH_MON_FLAG"
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF < MON_TH_MON_INF }
+		}
+		localization_key = [getSOVFlag]
+	}
+}
+
+defined_text = {
+	name = getSOVFlag
+	text = {
+		trigger = {
+			MON = {
+				has_government = fascism
+			}
+		}
+		localization_key = "GFX_MON_TH_SOV_F_FLAG"
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = communism
+			}
+		}
+		localization_key = "GFX_MON_TH_SOV_C_FLAG"
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = democratic
+			}
+		}
+		localization_key = "GFX_MON_TH_SOV_D_FLAG"
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = neutrality
+			}
+		}
+		localization_key = "GFX_MON_TH_SOV_N_FLAG"
+	}
+}
+
+defined_text = {
+	name = getTOPCountryName
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF > MON_TH_SOV_INF }
+		}
+		localization_key = chingisid_MON_neutrality_DEF
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF = MON_TH_SOV_INF }
+		}
+		localization_key = chingisid_MON_neutrality_DEF
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF > MON_TH_MON_INF }
+		}
+		localization_key = [getSOVName]
+	}
+}
+
+defined_text = {
+	name = getBOTCountryName
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF < MON_TH_SOV_INF }
+		}
+		localization_key = chingisid_MON_neutrality_DEF
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF = MON_TH_MON_INF }
+		}
+		localization_key = [getSOVName]
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF < MON_TH_MON_INF }
+		}
+		localization_key = [getSOVName]
+	}
+}
+
+defined_text = {
+	name = getSOVName
+	text = {
+		trigger = {
+			MON = {
+				has_government = fascism
+			}
+		}
+		localization_key = SOV_fascism
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = communism
+			}
+		}
+		localization_key = SOV_communism
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = democratic
+			}
+		}
+		localization_key = SOV_democratic
+	}
+	text = {
+		trigger = {
+			MON = {
+				has_government = neutrality
+			}
+		}
+		localization_key = SOV_neutrality
+	}
+}
+
+defined_text = {
+	name = getTOPInfluence
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF > MON_TH_SOV_INF }
+		}
+		localization_key = MON_TH_MON_INF_loc
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF = MON_TH_SOV_INF }
+		}
+		localization_key = MON_TH_MON_INF_loc
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF > MON_TH_MON_INF }
+		}
+		localization_key = [?MON_TH_SOV_INF]
+	}
+}
+
+defined_text = {
+	name = getBOTInfluence
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF < MON_TH_SOV_INF }
+		}
+		localization_key = [?MON_TH_MON_INF]
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF = MON_TH_MON_INF }
+		}
+		localization_key = [?MON_TH_SOV_INF]
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF < MON_TH_MON_INF }
+		}
+		localization_key = [?MON_TH_SOV_INF]
+	}
+}
+
+defined_text = {
+	name = getTuva
+	text = {
+		trigger = {
+			check_variable = { MON_TH_MON_INF > MON_TH_SOV_INF }
+		}
+		localization_key = "GFX_MON_TH_TUVA_GREY"
+	}
+	text = {
+		trigger = {
+			check_variable = { MON_TH_SOV_INF > MON_TH_MON_INF }
+		}
+		localization_key = "GFX_MON_TH_TUVA_RED"
+	}
+}

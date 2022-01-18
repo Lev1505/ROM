@@ -170,7 +170,7 @@ MON_power_struggle_cat = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MON_arrest_Choibalsan_tt
-				check_variable = { choibalsan_influence < 25 }
+				check_variable = { choibalsan_influence < 24 }
 			}
 			has_completed_focus = MON_retire_Choibalsan
 			NOT = {
@@ -409,7 +409,7 @@ MON_power_struggle_cat = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MON_kill_Amar_tt
-				check_variable = { amar_support < 25 }
+				check_variable = { amar_support < 24 }
 			}
 			NOT = {
 				has_country_flag = MON_ps_action
@@ -1851,40 +1851,33 @@ MON_sep_category = {
 		}
 		visible = {
 			AND = {
-				OR = { 
+				OR = {
+					has_completed_focus = MON_altay
+					has_completed_focus = MON_bashkir
+					has_completed_focus = MON_buryat
+					has_completed_focus = MON_comi
+					has_completed_focus = MON_yamnen
 					has_completed_focus = MON_tatar
 					has_completed_focus = MON_udmurt
-					has_completed_focus = MON_bashkir
-					has_completed_focus = MON_chuvash
-					has_completed_focus = MON_buryat
-					has_completed_focus = MON_tuva
 					has_completed_focus = MON_hakas
-					has_completed_focus = MON_yakut
-					has_completed_focus = MON_chukot
-					has_completed_focus = MON_yamnen
-					has_completed_focus = MON_comi
 					has_completed_focus = MON_hanman
-					has_completed_focus = MON_altay
+					has_completed_focus = MON_chuvash
+					has_completed_focus = MON_yakut
+					has_completed_focus = MON_tuva
+					has_completed_focus = MON_chukot
 				}
-				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_weapon_1
-						has_country_flag = MON_help_to_BSK_weapon_1
-						has_country_flag = MON_help_to_BUR_weapon_1
-						has_country_flag = MON_help_to_COM_weapon_1
-						has_country_flag = MON_help_to_YAM_weapon_1
-						has_country_flag = MON_help_to_TAT_weapon_1
-						has_country_flag = MON_help_to_UDM_weapon_1
-						has_country_flag = MON_help_to_HAK_weapon_1
-						has_country_flag = MON_help_to_HNM_weapon_1
-						has_country_flag = MON_help_to_CHU_weapon_1
-						has_country_flag = MON_help_to_YAK_weapon_1
+				any_country = {
+					has_country_flag = MON_soviet_sep
+					NOT = {
+						has_country_flag = MON_help_to_sep_weapon_1
 					}
 				}
 			}
 		}
 		
-		cost = 10
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -1902,39 +1895,18 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_weapon_1
-					has_country_flag = MON_help_to_BSK_weapon_1
-					has_country_flag = MON_help_to_BUR_weapon_1
-					has_country_flag = MON_help_to_COM_weapon_1
-					has_country_flag = MON_help_to_YAM_weapon_1
-					has_country_flag = MON_help_to_TAT_weapon_1
-					has_country_flag = MON_help_to_UDM_weapon_1
-					has_country_flag = MON_help_to_HAK_weapon_1
-					has_country_flag = MON_help_to_HNM_weapon_1
-					has_country_flag = MON_help_to_CHU_weapon_1
-					has_country_flag = MON_help_to_YAK_weapon_1
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_weapon_1
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_weapon_2
-						has_country_flag = MON_help_to_BSK_weapon_2
-						has_country_flag = MON_help_to_BUR_weapon_2
-						has_country_flag = MON_help_to_COM_weapon_2
-						has_country_flag = MON_help_to_YAM_weapon_2
-						has_country_flag = MON_help_to_TAT_weapon_2
-						has_country_flag = MON_help_to_UDM_weapon_2
-						has_country_flag = MON_help_to_HAK_weapon_2
-						has_country_flag = MON_help_to_HNM_weapon_2
-						has_country_flag = MON_help_to_CHU_weapon_2
-						has_country_flag = MON_help_to_YAK_weapon_2
-					}
+					has_country_flag = MON_help_to_sep_weapon_2
 				}
 			}
 		}
 		
-		cost = 25
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -1952,39 +1924,18 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_weapon_2
-					has_country_flag = MON_help_to_BSK_weapon_2
-					has_country_flag = MON_help_to_BUR_weapon_2
-					has_country_flag = MON_help_to_COM_weapon_2
-					has_country_flag = MON_help_to_YAM_weapon_2
-					has_country_flag = MON_help_to_TAT_weapon_2
-					has_country_flag = MON_help_to_UDM_weapon_2
-					has_country_flag = MON_help_to_HAK_weapon_2
-					has_country_flag = MON_help_to_HNM_weapon_2
-					has_country_flag = MON_help_to_CHU_weapon_2
-					has_country_flag = MON_help_to_YAK_weapon_2
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_weapon_2
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_weapon_3
-						has_country_flag = MON_help_to_BSK_weapon_3
-						has_country_flag = MON_help_to_BUR_weapon_3
-						has_country_flag = MON_help_to_COM_weapon_3
-						has_country_flag = MON_help_to_YAM_weapon_3
-						has_country_flag = MON_help_to_TAT_weapon_3
-						has_country_flag = MON_help_to_UDM_weapon_3
-						has_country_flag = MON_help_to_HAK_weapon_3
-						has_country_flag = MON_help_to_HNM_weapon_3
-						has_country_flag = MON_help_to_CHU_weapon_3
-						has_country_flag = MON_help_to_YAK_weapon_3
-					}
+					has_country_flag = MON_help_to_sep_weapon_3
 				}
 			}
 		}
 		
-		cost = 50
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -2002,39 +1953,18 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_weapon_3
-					has_country_flag = MON_help_to_BSK_weapon_3
-					has_country_flag = MON_help_to_BUR_weapon_3
-					has_country_flag = MON_help_to_COM_weapon_3
-					has_country_flag = MON_help_to_YAM_weapon_3
-					has_country_flag = MON_help_to_TAT_weapon_3
-					has_country_flag = MON_help_to_UDM_weapon_3
-					has_country_flag = MON_help_to_HAK_weapon_3
-					has_country_flag = MON_help_to_HNM_weapon_3
-					has_country_flag = MON_help_to_CHU_weapon_3
-					has_country_flag = MON_help_to_YAK_weapon_3
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_weapon_3
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_weapon_4
-						has_country_flag = MON_help_to_BSK_weapon_4
-						has_country_flag = MON_help_to_BUR_weapon_4
-						has_country_flag = MON_help_to_COM_weapon_4
-						has_country_flag = MON_help_to_YAM_weapon_4
-						has_country_flag = MON_help_to_TAT_weapon_4
-						has_country_flag = MON_help_to_UDM_weapon_4
-						has_country_flag = MON_help_to_HAK_weapon_4
-						has_country_flag = MON_help_to_HNM_weapon_4
-						has_country_flag = MON_help_to_CHU_weapon_4
-						has_country_flag = MON_help_to_YAK_weapon_4
-					}
+					has_country_flag = MON_help_to_sep_weapon_4
 				}
 			}
 		}
 		
-		cost = 75
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -2052,39 +1982,18 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_weapon_4
-					has_country_flag = MON_help_to_BSK_weapon_4
-					has_country_flag = MON_help_to_BUR_weapon_4
-					has_country_flag = MON_help_to_COM_weapon_4
-					has_country_flag = MON_help_to_YAM_weapon_4
-					has_country_flag = MON_help_to_TAT_weapon_4
-					has_country_flag = MON_help_to_UDM_weapon_4
-					has_country_flag = MON_help_to_HAK_weapon_4
-					has_country_flag = MON_help_to_HNM_weapon_4
-					has_country_flag = MON_help_to_CHU_weapon_4
-					has_country_flag = MON_help_to_YAK_weapon_4
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_weapon_4
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_weapon_5
-						has_country_flag = MON_help_to_BSK_weapon_5
-						has_country_flag = MON_help_to_BUR_weapon_5
-						has_country_flag = MON_help_to_COM_weapon_5
-						has_country_flag = MON_help_to_YAM_weapon_5
-						has_country_flag = MON_help_to_TAT_weapon_5
-						has_country_flag = MON_help_to_UDM_weapon_5
-						has_country_flag = MON_help_to_HAK_weapon_5
-						has_country_flag = MON_help_to_HNM_weapon_5
-						has_country_flag = MON_help_to_CHU_weapon_5
-						has_country_flag = MON_help_to_YAK_weapon_5
-					}
+					has_country_flag = MON_help_to_sep_weapon_5
 				}
 			}
 		}
 		
-		cost = 100
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -2102,34 +2011,15 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_weapon_5
-					has_country_flag = MON_help_to_BSK_weapon_5
-					has_country_flag = MON_help_to_BUR_weapon_5
-					has_country_flag = MON_help_to_COM_weapon_5
-					has_country_flag = MON_help_to_YAM_weapon_5
-					has_country_flag = MON_help_to_TAT_weapon_5
-					has_country_flag = MON_help_to_UDM_weapon_5
-					has_country_flag = MON_help_to_HAK_weapon_5
-					has_country_flag = MON_help_to_HNM_weapon_5
-					has_country_flag = MON_help_to_CHU_weapon_5
-					has_country_flag = MON_help_to_YAK_weapon_5
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_weapon_5
 				NOT = {
-					AND = {
-						has_country_flag = Industrial_help_to_ALT_1
-						has_country_flag = Industrial_help_to_BSK_1
-						has_country_flag = Industrial_help_to_BUR_1
-						has_country_flag = Industrial_help_to_COM_1
-						has_country_flag = Industrial_help_to_YAM_1
-						has_country_flag = Industrial_help_to_TAT_1
-						has_country_flag = Industrial_help_to_UDM_1
-						has_country_flag = Industrial_help_to_HAK_1
-						has_country_flag = Industrial_help_to_HNM_1
-						has_country_flag = Industrial_help_to_CHU_1
-						has_country_flag = Industrial_help_to_YAK_1
-					}
+					has_country_flag = Industrial_help_to_sep_1
+					has_country_flag = Industrial_help_to_sep_2
+					has_country_flag = Industrial_help_to_sep_3
+					has_country_flag = Industrial_help_to_sep_4
+					has_country_flag = Industrial_help_to_sep_5
 				}
 			}
 		}
@@ -2152,34 +2042,11 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = Industrial_help_to_ALT_1
-					has_country_flag = Industrial_help_to_BSK_1
-					has_country_flag = Industrial_help_to_BUR_1
-					has_country_flag = Industrial_help_to_COM_1
-					has_country_flag = Industrial_help_to_YAM_1
-					has_country_flag = Industrial_help_to_TAT_1
-					has_country_flag = Industrial_help_to_UDM_1
-					has_country_flag = Industrial_help_to_HAK_1
-					has_country_flag = Industrial_help_to_HNM_1
-					has_country_flag = Industrial_help_to_CHU_1
-					has_country_flag = Industrial_help_to_YAK_1
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = Industrial_help_to_sep_1
 				NOT = {
-					AND = {
-						has_country_flag = Industrial_help_to_ALT_2
-						has_country_flag = Industrial_help_to_BSK_2
-						has_country_flag = Industrial_help_to_BUR_2
-						has_country_flag = Industrial_help_to_COM_2
-						has_country_flag = Industrial_help_to_YAM_2
-						has_country_flag = Industrial_help_to_TAT_2
-						has_country_flag = Industrial_help_to_UDM_2
-						has_country_flag = Industrial_help_to_HAK_2
-						has_country_flag = Industrial_help_to_HNM_2
-						has_country_flag = Industrial_help_to_CHU_2
-						has_country_flag = Industrial_help_to_YAK_2
-					}
+					has_country_flag = Industrial_help_to_sep_2
 				}
 			}
 		}
@@ -2202,34 +2069,11 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = Industrial_help_to_ALT_2
-					has_country_flag = Industrial_help_to_BSK_2
-					has_country_flag = Industrial_help_to_BUR_2
-					has_country_flag = Industrial_help_to_COM_2
-					has_country_flag = Industrial_help_to_YAM_2
-					has_country_flag = Industrial_help_to_TAT_2
-					has_country_flag = Industrial_help_to_UDM_2
-					has_country_flag = Industrial_help_to_HAK_2
-					has_country_flag = Industrial_help_to_HNM_2
-					has_country_flag = Industrial_help_to_CHU_2
-					has_country_flag = Industrial_help_to_YAK_2
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = Industrial_help_to_sep_2
 				NOT = {
-					AND = {
-						has_country_flag = Industrial_help_to_ALT_3
-						has_country_flag = Industrial_help_to_BSK_3
-						has_country_flag = Industrial_help_to_BUR_3
-						has_country_flag = Industrial_help_to_COM_3
-						has_country_flag = Industrial_help_to_YAM_3
-						has_country_flag = Industrial_help_to_TAT_3
-						has_country_flag = Industrial_help_to_UDM_3
-						has_country_flag = Industrial_help_to_HAK_3
-						has_country_flag = Industrial_help_to_HNM_3
-						has_country_flag = Industrial_help_to_CHU_3
-						has_country_flag = Industrial_help_to_YAK_3
-					}
+					has_country_flag = Industrial_help_to_sep_3
 				}
 			}
 		}
@@ -2251,34 +2095,11 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = Industrial_help_to_ALT_3
-					has_country_flag = Industrial_help_to_BSK_3
-					has_country_flag = Industrial_help_to_BUR_3
-					has_country_flag = Industrial_help_to_COM_3
-					has_country_flag = Industrial_help_to_YAM_3
-					has_country_flag = Industrial_help_to_TAT_3
-					has_country_flag = Industrial_help_to_UDM_3
-					has_country_flag = Industrial_help_to_HAK_3
-					has_country_flag = Industrial_help_to_HNM_3
-					has_country_flag = Industrial_help_to_CHU_3
-					has_country_flag = Industrial_help_to_YAK_3
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = Industrial_help_to_sep_3
 				NOT = {
-					AND = {
-						has_country_flag = Industrial_help_to_ALT_4
-						has_country_flag = Industrial_help_to_BSK_4
-						has_country_flag = Industrial_help_to_BUR_4
-						has_country_flag = Industrial_help_to_COM_4
-						has_country_flag = Industrial_help_to_YAM_4
-						has_country_flag = Industrial_help_to_TAT_4
-						has_country_flag = Industrial_help_to_UDM_4
-						has_country_flag = Industrial_help_to_HAK_4
-						has_country_flag = Industrial_help_to_HNM_4
-						has_country_flag = Industrial_help_to_CHU_4
-						has_country_flag = Industrial_help_to_YAK_4
-					}
+					has_country_flag = Industrial_help_to_sep_4
 				}
 			}
 		}
@@ -2301,34 +2122,11 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = Industrial_help_to_ALT_4
-					has_country_flag = Industrial_help_to_BSK_4
-					has_country_flag = Industrial_help_to_BUR_4
-					has_country_flag = Industrial_help_to_COM_4
-					has_country_flag = Industrial_help_to_YAM_4
-					has_country_flag = Industrial_help_to_TAT_4
-					has_country_flag = Industrial_help_to_UDM_4
-					has_country_flag = Industrial_help_to_HAK_4
-					has_country_flag = Industrial_help_to_HNM_4
-					has_country_flag = Industrial_help_to_CHU_4
-					has_country_flag = Industrial_help_to_YAK_4
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = Industrial_help_to_sep_4
 				NOT = {
-					AND = {
-						has_country_flag = Industrial_help_to_ALT_5
-						has_country_flag = Industrial_help_to_BSK_5
-						has_country_flag = Industrial_help_to_BUR_5
-						has_country_flag = Industrial_help_to_COM_5
-						has_country_flag = Industrial_help_to_YAM_5
-						has_country_flag = Industrial_help_to_TAT_5
-						has_country_flag = Industrial_help_to_UDM_5
-						has_country_flag = Industrial_help_to_HAK_5
-						has_country_flag = Industrial_help_to_HNM_5
-						has_country_flag = Industrial_help_to_CHU_5
-						has_country_flag = Industrial_help_to_YAK_5
-					}
+					has_country_flag = Industrial_help_to_sep_5
 				}
 			}
 		}
@@ -2351,38 +2149,20 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = Industrial_help_to_ALT_5
-					has_country_flag = Industrial_help_to_BSK_5
-					has_country_flag = Industrial_help_to_BUR_5
-					has_country_flag = Industrial_help_to_COM_5
-					has_country_flag = Industrial_help_to_YAM_5
-					has_country_flag = Industrial_help_to_TAT_5
-					has_country_flag = Industrial_help_to_UDM_5
-					has_country_flag = Industrial_help_to_HAK_5
-					has_country_flag = Industrial_help_to_HNM_5
-					has_country_flag = Industrial_help_to_CHU_5
-					has_country_flag = Industrial_help_to_YAK_5
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = Industrial_help_to_sep_5
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_volunteers_1
-						has_country_flag = MON_help_to_BSK_volunteers_1
-						has_country_flag = MON_help_to_BUR_volunteers_1
-						has_country_flag = MON_help_to_COM_volunteers_1
-						has_country_flag = MON_help_to_YAM_volunteers_1
-						has_country_flag = MON_help_to_TAT_volunteers_1
-						has_country_flag = MON_help_to_UDM_volunteers_1
-						has_country_flag = MON_help_to_HAK_volunteers_1
-						has_country_flag = MON_help_to_HNM_volunteers_1
-						has_country_flag = MON_help_to_CHU_volunteers_1
-						has_country_flag = MON_help_to_YAK_volunteers_1
-					}
+					has_country_flag = MON_help_to_sep_volunteers_1
+					has_country_flag = MON_help_to_sep_volunteers_2
 				}
 			}
 		}
-		cost = 10
+		
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+			has_manpower > 399
+		}
 		
 		complete_effect = {
 			country_event = {
@@ -2400,45 +2180,531 @@ MON_sep_category = {
 			always = yes
 		}
 		visible = {
-			AND = {
-				OR = {
-					has_country_flag = MON_help_to_ALT_volunteers_1
-					has_country_flag = MON_help_to_BSK_volunteers_1
-					has_country_flag = MON_help_to_BUR_volunteers_1
-					has_country_flag = MON_help_to_COM_volunteers_1
-					has_country_flag = MON_help_to_YAM_volunteers_1
-					has_country_flag = MON_help_to_TAT_volunteers_1
-					has_country_flag = MON_help_to_UDM_volunteers_1
-					has_country_flag = MON_help_to_HAK_volunteers_1
-					has_country_flag = MON_help_to_HNM_volunteers_1
-					has_country_flag = MON_help_to_CHU_volunteers_1
-					has_country_flag = MON_help_to_YAK_volunteers_1
-				}
+			any_country = {
+				has_country_flag = MON_soviet_sep
+				has_country_flag = MON_help_to_sep_volunteers_1
 				NOT = {
-					AND = {
-						has_country_flag = MON_help_to_ALT_volunteers_2
-						has_country_flag = MON_help_to_BSK_volunteers_2
-						has_country_flag = MON_help_to_BUR_volunteers_2
-						has_country_flag = MON_help_to_COM_volunteers_2
-						has_country_flag = MON_help_to_YAM_volunteers_2
-						has_country_flag = MON_help_to_TAT_volunteers_2
-						has_country_flag = MON_help_to_UDM_volunteers_2
-						has_country_flag = MON_help_to_HAK_volunteers_2
-						has_country_flag = MON_help_to_HNM_volunteers_2
-						has_country_flag = MON_help_to_CHU_volunteers_2
-						has_country_flag = MON_help_to_YAK_volunteers_2
-					}
+					has_country_flag = MON_help_to_sep_volunteers_2
 				}
 			}
 		}
 		
-		cost = 25
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 399 }
+			has_manpower > 399
+		}
 		
 		complete_effect = {
 			country_event = {
 				id = mongolia.195
 				hours = 1
 			}
+		}
+	}
+	
+	MON_send_help_to_seps = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_pizdec_happened
+			}
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = MON_soviet_sep
+				}
+				country_event = {
+					id = mongolia.223
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+MON_TUVA_HELP_CAT = {
+	MON_TH_weapons_TAN = { #5 to Mongolia
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			has_equipment = { infantry_equipment > 99 }
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		
+		days_remove = 10
+		days_re_enable = 5
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -100
+			}
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_increase_mon_inf_low = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_teach_TAN = { #5 to Mongolia
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			has_manpower > 49
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 10
+		days_re_enable = 55
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_manpower = -50
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_increase_mon_inf_low = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_low_raids_TAN = { #5 from Soviet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			has_manpower > 99
+			has_equipment = { infantry_equipment > 99 }
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 10
+		days_re_enable = 55
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -50
+			}
+			add_manpower = -100
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -100
+			}
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_decrease_sov_inf_low = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_agitprop_TAN = { #5 from Soviet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 10
+		days_re_enable = 55
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_decrease_sov_inf_low = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_populise_anti_soviet_TAN = { #10 from Soviet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = MON_TH_more_than_30
+				check_variable = { MON_TH_MON_INF > 29 }
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 20
+		days_re_enable = 90
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_decrease_sov_inf_med = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_more_weapons_TAN = { #10 to Mongolia
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = MON_TH_more_than_30
+				check_variable = { MON_TH_MON_INF > 29 }
+			}
+			has_equipment = { infantry_equipment > 199 }
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 20
+		days_re_enable = 90
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -50
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_increase_mon_inf_med = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_burn_factories_TAN = { #10 from Soviet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = MON_TH_more_than_30
+				check_variable = { MON_TH_MON_INF > 29 }
+			}
+			has_manpower > 149
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 20
+		days_re_enable = 90
+		custom_cost_trigger = {
+			command_power > 49
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -50
+			}
+			add_manpower = -150
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_decrease_sov_inf_med = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_medium_raid_TAN = { #10 from Soviet
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = MON_TH_more_than_30
+				check_variable = { MON_TH_MON_INF > 29 }
+			}
+			has_manpower > 199
+			has_equipment = { infantry_equipment > 199 }
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_remove = 20
+		days_re_enable = 90
+		custom_cost_trigger = {
+			command_power > 74
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -75
+			}
+			add_manpower = -200
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -200
+			}
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			MON_TH_decrease_sov_inf_med = yes
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	MON_TH_border_war_TAN = { #15 to winner
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			NOT = {
+				has_country_flag = MON_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = MON_TH_more_than_65
+				check_variable = { MON_TH_MON_INF > 64 }
+			}
+		}
+		visible = {
+		}
+		days_remove = 30
+		days_re_enable = 150
+		cost = 50
+		complete_effect = {
+			set_country_flag = MON_helping_tuva_right_now
+		}
+		remove_effect = {
+			clr_country_flag = MON_helping_tuva_right_now
+		}
+	}
+	
+	#Soviet Decisions#
+	
+	SOV_TH_operation_mongol = { #12.5 to Soviet
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			NOT = {
+				has_country_flag = SOV_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_TH_less_than_70
+				check_variable = { MON_TH_SOV_INF < 71 }
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_re_enable = 50
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 499 }
+			has_manpower > 499
+		}
+		
+		complete_effect = {
+			set_country_flag = SOV_helping_tuva_right_now
+			set_global_flag = SOV_OP_MONGOL
+			MON = {
+				activate_mission = MON_TH_SOVIET_OP_MONGOL
+			}
+		}
+	}
+	
+	MON_TH_SOVIET_OP_MONGOL = {
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_global_flag = SOV_OP_MONGOL
+			}
+		}
+		cancel_if_not_visible = yes
+		#activation = {
+		#	has_global_flag = SOV_OP_MONGOL
+		#}
+		days_mission_timeout = 30
+		timeout_effect = {
+			MON_TH_decrease_mon_inf = yes
+			SOV = {
+				clr_country_flag = SOV_helping_tuva_right_now
+			}
+			clr_global_flag = SOV_OP_MONGOL
+		}
+	}
+	
+	SOV_TH_strengh_nkvd = { #12.5 to Soviet
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			NOT = {
+				has_country_flag = SOV_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_TH_less_than_70
+				check_variable = { MON_TH_SOV_INF < 71 }
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_re_enable = 50
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 299 }
+			has_manpower > 299
+		}
+		
+		complete_effect = {
+			set_country_flag = SOV_helping_tuva_right_now
+			set_country_flag = SOV_TURN
+			MON = {
+				activate_mission = MON_TH_SOVIET_TURN
+			}
+		}
+	}
+	
+	SOV_TH_tuvan_nkvd = { #12.5 to Soviet
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			NOT = {
+				has_country_flag = SOV_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_TH_less_than_70
+				check_variable = { MON_TH_SOV_INF < 71 }
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_re_enable = 50
+		cost = 75
+		
+		complete_effect = {
+			set_country_flag = SOV_helping_tuva_right_now
+			set_country_flag = SOV_TURN
+			MON = {
+				activate_mission = MON_TH_SOVIET_TURN
+			}
+		}
+	}
+	
+	SOV_TH_give_money_tuvan_army = { #12.5 to Soviet
+		allowed = {
+			original_tag = SOV
+		}
+		available = {
+			NOT = {
+				has_country_flag = SOV_helping_tuva_right_now
+			}
+			custom_trigger_tooltip = {
+				tooltip = SOV_TH_less_than_70
+				check_variable = { MON_TH_SOV_INF < 71 }
+			}
+		}
+		visible = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+		days_re_enable = 50
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = SOV_helping_tuva_right_now
+			set_country_flag = SOV_TURN
+			MON = {
+				activate_mission = MON_TH_SOVIET_TURN
+			}
+		}
+	}
+	
+	MON_TH_SOVIET_TURN = {
+		allowed = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				has_global_flag = SOV_TURN
+			}
+		}
+		cancel_if_not_visible = yes
+		activation = {
+			has_global_flag = SOV_TURN
+		}
+		days_mission_timeout = 30
+		timeout_effect = {
+			MON_TH_increase_sov_inf = yes
+			SOV = {
+				clr_country_flag = SOV_helping_tuva_right_now
+			}
+			clr_global_flag = SOV_TURN
 		}
 	}
 }
@@ -2627,11 +2893,11 @@ MON_second_3year_plan = {
 			AND = {
 				custom_trigger_tooltip = {
 					tooltip = 330_plan2_fac_tt
-					check_variable = { 330.var_plan2_fac_x = 10 compare = greater_than_or_equals }
+					check_variable = { 330.var_plan2_fac_x = 6 compare = greater_than_or_equals }
 				}
 				custom_trigger_tooltip = {
 					tooltip = 330_plan2_mil_tt
-					check_variable = { 330.var_plan2_mil_x = 5 compare = greater_than_or_equals }
+					check_variable = { 330.var_plan2_mil_x = 4 compare = greater_than_or_equals }
 				}
 				custom_trigger_tooltip = {
 					tooltip = 817_plan2_fac_tt
@@ -2666,6 +2932,14 @@ MON_second_3year_plan = {
 					check_variable = { 820.var_plan2_mil_x = 3 compare = greater_than_or_equals }
 				}
 				custom_trigger_tooltip = {
+					tooltip = 836_plan2_fac_tt
+					check_variable = { 836.var_plan2_fac_x = 4 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
+					tooltip = 836_plan2_mil_tt
+					check_variable = { 836.var_plan2_mil_x = 3 compare = greater_than_or_equals }
+				}
+				custom_trigger_tooltip = {
 					tooltip = 844_plan2_fac_tt
 					check_variable = { 844.var_plan2_fac_x = 4 compare = greater_than_or_equals }
 				}
@@ -2688,12 +2962,127 @@ MON_second_3year_plan = {
 		
 		complete_effect = {
 			remove_ideas = MON_plan2_idea
+			MON_plan2_clear = yes
 		}
 		
 		timeout_effect = {
 			remove_ideas = MON_plan2_idea
 			set_country_flag = MON_failed_second_plan
 			country_event = mongolia.224
+			MON_plan2_clear = yes
+		}
+	}
+	MON_send_people2 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_manpower > 300
+		}
+		visible = {
+			has_idea = MON_plan2_idea
+		}
+		custom_cost_trigger = {
+			has_manpower > 599
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.1
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.2
+			consumer_goods_factor = -0.075
+			conscription = -0.015
+			conscription_factor = -0.2
+		}
+		remove_effect = {
+			add_manpower = 600
+		}
+	}
+	MON_police_on_buildings2 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan1_idea
+		}
+		custom_cost_trigger = {
+			has_manpower > 1487
+			has_equipment = { infantry_equipment > 1487 }
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.1
+			set_country_flag = MON_police_on_buildings
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.2
+			stability_weekly = -0.01
+			monthly_population = -0.15
+			conscription_factor = -0.2
+		}
+		remove_effect = {
+			clr_country_flag = MON_police_on_buildings
+		}
+	}
+	MON_deny_weekends2 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan2_idea
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.1
+			set_country_flag = MON_denied_weekends
+		}
+		cost = 100
+		modifier = {
+			production_speed_buildings_factor = 0.15
+			stability_weekly = -0.005
+			conscription_factor = -0.15
+		}
+		remove_effect = {
+			clr_country_flag = MON_denied_weekends
+		}
+	}
+	MON_increase_worktime2 = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			has_stability > 0
+		}
+		visible = {
+			has_idea = MON_plan2_idea
+		}
+		days_remove = 180
+		days_re_enable = 185
+		complete_effect = {
+			add_stability = -0.05
+			set_country_flag = MON_increased_worktime
+		}
+		cost = 100
+		modifier = {
+			production_speed_buildings_factor = 0.15
+			industrial_capacity_factory = 0.15
+			production_factory_max_efficiency_factor = 0.15
+			consumer_goods_factor = -0.075
+			conscription_factor = -0.15
+			stability_weekly = -0.005
+		}
+		remove_effect = {
+			clr_country_flag = MON_increased_worktime
 		}
 	}
 }
@@ -2732,13 +3121,6 @@ MON_after_plans = {
 					MON_crisis_after_plan1_8
 					MON_crisis_after_plan1_9
 					MON_crisis_after_plan1_10
-					MON_crisis_after_plan2_1
-					MON_crisis_after_plan2_2
-					MON_crisis_after_plan2_3
-					MON_crisis_after_plan2_4
-					MON_crisis_after_plan2_5
-					MON_crisis_after_plan2_6
-					MON_crisis_after_plan2_7
 				}
 			}
 			custom_effect_tooltip = MON_crisis_has_gone_good_tt
@@ -7097,6 +7479,8 @@ MON_after_plans = {
 }
 
 MON_divided_society = {
+	
+	###TAKE CONTROL###
 	MON_take_control = {
 		allowed = {
 			original_tag = MON
@@ -7116,6 +7500,7 @@ MON_divided_society = {
 		}
 	}
 	
+	#NO DIVISION#
 	MON_centralize_society = {
 		allowed = {
 			original_tag = MON
@@ -7153,7 +7538,7 @@ MON_divided_society = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 5000
-				producer = "MON"
+				producer = MON
 			}
 			set_country_flag = MON_collected_units
 		}
@@ -7161,7 +7546,7 @@ MON_divided_society = {
 	
 	MON_destroy_leaflets_814 = {
 		
-		highlight_states = { highlight_states = { highlight_state_targets = { state = 814 } } }
+		highlight_states = { highlight_state_targets = { state = 814 } }
 
 		on_map_mode = map_only
 		
@@ -7466,6 +7851,7 @@ MON_divided_society = {
 		}
 	}
 	
+	#MORE DIVISION#
 	MON_strengthen_society_division = {
 		allowed = {
 			original_tag = MON
@@ -7718,25 +8104,38 @@ MON_divided_society = {
 		}
 	}
 	
-	MON_forget_about_it = {
+	###LEFT DIVISION###
+	MON_leave_this = {
 		allowed = {
 			original_tag = MON
 		}
-		
-		visible = {
-			NOT = {
+		available = {
+			hidden_trigger = {
 				has_country_flag = MON_took_control
 			}
 		}
+		activation = {
+			has_country_flag = MON_crisis_is_going
+		}
+		is_good = yes
+		visible = {
+			NOT = {
+				has_country_flag = MON_forgot_about_division
+			}
+			has_country_flag = MON_crisis_is_going
+		}
+		cancel_if_not_visible = yes
 		
+		days_mission_timeout = 60
 		fire_only_once = yes
 		
 		complete_effect = {
+		}
+		
+		timeout_effect = {
 			set_country_flag = MON_forgot_about_division
-			add_political_power = 25
 		}
 	}
-	
 	MON_sticking_leaflets_814 = {
 		allowed = {
 			original_tag = MON
@@ -7753,25 +8152,7 @@ MON_divided_society = {
 					has_state_flag = STATE_has_leaflets
 				}
 			}
-			OR = {
-				has_idea = MON_crisis_after_plan1_1
-				has_idea = MON_crisis_after_plan1_2
-				has_idea = MON_crisis_after_plan1_3
-				has_idea = MON_crisis_after_plan1_4
-				has_idea = MON_crisis_after_plan1_5
-				has_idea = MON_crisis_after_plan1_6
-				has_idea = MON_crisis_after_plan1_7
-				has_idea = MON_crisis_after_plan1_8
-				has_idea = MON_crisis_after_plan1_9
-				has_idea = MON_crisis_after_plan1_10
-				has_idea = MON_crisis_after_plan2_1
-				has_idea = MON_crisis_after_plan2_2
-				has_idea = MON_crisis_after_plan2_3
-				has_idea = MON_crisis_after_plan2_4
-				has_idea = MON_crisis_after_plan2_5
-				has_idea = MON_crisis_after_plan2_6
-				has_idea = MON_crisis_after_plan2_7
-			}
+			has_country_flag = MON_crisis_is_going
 		}
 		activation = {
 			814 = {
@@ -7782,25 +8163,7 @@ MON_divided_society = {
 					has_state_flag = STATE_has_leaflets
 				}
 			}
-			OR = {
-				has_idea = MON_crisis_after_plan1_1
-				has_idea = MON_crisis_after_plan1_2
-				has_idea = MON_crisis_after_plan1_3
-				has_idea = MON_crisis_after_plan1_4
-				has_idea = MON_crisis_after_plan1_5
-				has_idea = MON_crisis_after_plan1_6
-				has_idea = MON_crisis_after_plan1_7
-				has_idea = MON_crisis_after_plan1_8
-				has_idea = MON_crisis_after_plan1_9
-				has_idea = MON_crisis_after_plan1_10
-				has_idea = MON_crisis_after_plan2_1
-				has_idea = MON_crisis_after_plan2_2
-				has_idea = MON_crisis_after_plan2_3
-				has_idea = MON_crisis_after_plan2_4
-				has_idea = MON_crisis_after_plan2_5
-				has_idea = MON_crisis_after_plan2_6
-				has_idea = MON_crisis_after_plan2_7
-			}
+			has_country_flag = MON_crisis_is_going
 		}
 		
 		is_good = no

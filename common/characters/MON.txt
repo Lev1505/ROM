@@ -117,7 +117,6 @@ characters={
 			}
 		}
 		advisor={
-			cost=150
 			slot=political_advisor
 			idea_token=darizavyn_losol
 			allowed={

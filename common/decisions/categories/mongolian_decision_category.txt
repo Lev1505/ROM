@@ -85,6 +85,13 @@ MON_sep_category = {
 		}
 	}
 }
+MON_TUVA_HELP_CAT = {
+	visible = {
+		has_country_flag = MON_TUVA_HELPING
+	}
+	scripted_gui = MON_TUVA_HELP_GUI
+	visible_when_empty = yes
+}
 MON_first_3year_plan = {
 	picture = GFX_MON_first_3year_plan_pic
 	visible = {

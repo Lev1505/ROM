@@ -1,0 +1,63 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_MON_CENTER_red"
+		texturefile = "gfx/interface/test_mechanic_gui/CENTER_red.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_CENTER_grey"
+		texturefile = "gfx/interface/test_mechanic_gui/CENTER_grey.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_CENTER_brown"
+		texturefile = "gfx/interface/test_mechanic_gui/CENTER_brown.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_CENTER_blue"
+		texturefile = "gfx/interface/test_mechanic_gui/CENTER_blue.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_EAST_red"
+		texturefile = "gfx/interface/test_mechanic_gui/EAST_red.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_EAST_grey"
+		texturefile = "gfx/interface/test_mechanic_gui/EAST_grey.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_EAST_brown"
+		texturefile = "gfx/interface/test_mechanic_gui/EAST_brown.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_EAST_blue"
+		texturefile = "gfx/interface/test_mechanic_gui/EAST_blue.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_WEST_red"
+		texturefile = "gfx/interface/test_mechanic_gui/WEST_red.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_WEST_grey"
+		texturefile = "gfx/interface/test_mechanic_gui/WEST_grey.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_WEST_brown"
+		texturefile = "gfx/interface/test_mechanic_gui/WEST_brown.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_WEST_blue"
+		texturefile = "gfx/interface/test_mechanic_gui/WEST_blue.dds"
+		transparencecheck = yes
+	}
+}

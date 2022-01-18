@@ -84,7 +84,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MON_retire_Choibalsan_tt
-				check_variable = { amar_support > 55 }
+				check_variable = { amar_support > 54 }
 			}
 		}
 		prerequisite = { focus = MON_regime_indulgence }
@@ -106,7 +106,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MON_stay_in_Mongolia_tt
-				check_variable = { amar_support > 55 }
+				check_variable = { amar_support > 54 }
 			}
 		}
 		prerequisite = { focus = MON_regime_indulgence }
@@ -128,7 +128,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MON_distance_from_Moscow_tt
-				check_variable = { amar_support > 55 }
+				check_variable = { amar_support > 54 }
 			}
 		}
 		prerequisite = { focus = MON_regime_indulgence }
@@ -1459,6 +1459,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_buryat_tt
+			hidden_effect = {
+				BYA = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1487,6 +1492,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_tuva_tt
+			SOV = {
+				country_event = {
+					id = mongolia.300
+					days = 1
+				}
+			}
+			MON = {
+				country_event = {
+					id = mongolia.300
+					days = 1
+				}
+			}
 		}
 	}
 	
@@ -1503,6 +1520,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_hakas_tt
+			hidden_effect = {
+				HAK = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1519,6 +1541,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_altay_tt
+			hidden_effect = {
+				ALT = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1536,6 +1563,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_hanman_tt
+			hidden_effect = {
+				HNM = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1552,6 +1584,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_bashkir_tt
+			hidden_effect = {
+				BSK = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1568,6 +1605,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_tatar_tt
+			hidden_effect = {
+				TAT = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1584,6 +1626,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_chuvash_tt
+			hidden_effect = {
+				CHU = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1600,6 +1647,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_udmurt_tt
+			hidden_effect = {
+				UDM = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1616,6 +1668,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_yakut_tt
+			hidden_effect = {
+				YAK = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1632,6 +1689,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_chukot_tt
+			hidden_effect = {
+				CKK = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1648,6 +1710,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_yamnen_tt
+			hidden_effect = {
+				YAM = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -1664,6 +1731,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MON_comi_tt
+			hidden_effect = {
+				KOM = {
+					set_country_flag = MON_soviet_sep
+				}
+			}
 		}
 	}
 	
@@ -3667,16 +3739,16 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			810 = {
+			838 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			814 = {
+			842 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			815 = {
+			843 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			816 = {
+			844 = {
 				add_extra_state_shared_building_slots = 2
 			}
 		}
@@ -3736,19 +3808,19 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			807 = {
+			835 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			809 = {
+			837 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			811 = {
+			839 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			812 = {
+			840 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			813 = {
+			841 = {
 				add_extra_state_shared_building_slots = 2
 			}
 		}
@@ -3781,7 +3853,7 @@ focus_tree = {
 			820 = {
 				add_extra_state_shared_building_slots = 2
 			}
-			808 = {
+			836 = {
 				add_extra_state_shared_building_slots = 2
 			}
 		}
@@ -3913,7 +3985,9 @@ focus_tree = {
 					idea = MON_plan1_idea
 					days = 1095
 				}
-				MON_plan1_setup = yes
+				hidden_effect = {
+					MON_plan1_setup = yes
+				}
 			}
 			else = {
 				add_tech_bonus = {
@@ -3955,22 +4029,55 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
 				}
-			}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}	
 		}
 	}
 	
@@ -3986,12 +4093,45 @@ focus_tree = {
 			factor = 8
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -4092,17 +4232,17 @@ focus_tree = {
 			factor = 7
 		}
 		completion_reward = {
-			#if = {
-			#	limit = {
-			#		is_ai = no
-			#	}
-			#	add_timed_idea = {
-			#		idea = MON_plan2_idea
-			#		days = 1098
-			#	}
-			#	MON_plan2_setup = yes
-			#}
-			#else = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				add_timed_idea = {
+					idea = MON_plan2_idea
+					days = 1098
+				}
+				MON_plan2_setup = yes
+			}
+			else = {
 				add_tech_bonus = {
 					category = industry
 					bonus = 1
@@ -4126,7 +4266,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-			#}
+			}
 		}
 	}
 	
@@ -4142,20 +4282,53 @@ focus_tree = {
 			factor = 15
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -4173,28 +4346,74 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -4213,28 +4432,74 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = { MON_old_infrastructure_4 }
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					is_ai = no
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = {
+							has_state_flag = MON_plan_state_flag
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			else = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
 				}
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -4983,7 +5248,7 @@ focus_tree = {
 			focus = MON_develop_heavy_tanks_2
 		}
 		relative_position_id = MON_motorization_3
-		x = 2
+		x = 0
 		y = 2
 		cost = 5
 		ai_will_do = {
@@ -5002,7 +5267,9 @@ focus_tree = {
 				swap_ideas = {
 					add_idea = MON_mechanize_army_light
 					remove_idea = MON_mongolian_light_tanks
-					remove_idea = MON_motorizing_2
+				}
+				hidden_effect = {
+					remove_ideas = { MON_motorizing_2 }
 				}
 			}
 			else_if = {
@@ -5012,14 +5279,18 @@ focus_tree = {
 				swap_ideas = {
 					add_idea = MON_mechanize_army_medium
 					remove_idea = MON_mongolian_medium_tanks
-					remove_idea = MON_motorizing_2
+				}
+				hidden_effect = {
+					remove_ideas = { MON_motorizing_2 }
 				}
 			}
 			else = {
 				swap_ideas = {
 					add_idea = MON_mechanize_army_heavy
 					remove_idea = MON_mongolian_heavy_tanks
-					remove_idea = MON_motorizing_2
+				}
+				hidden_effect = {
+					remove_ideas = { MON_motorizing_2 }
 				}
 			}
 		}
