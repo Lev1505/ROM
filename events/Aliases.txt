@@ -1,0 +1,166 @@
+add_namespace = aliases
+country_event = {
+	id = aliases.1
+	title = aliases.1.t
+	desc = aliases.1.d
+	is_triggered_only = yes
+	
+	option = {
+		name = aliases.1.a
+		TMN = {
+			transfer_state = 330
+			transfer_state = 835
+			transfer_state = 836
+			transfer_state = 837
+			transfer_state = 839
+			transfer_state = 841
+			transfer_state = 843
+		}
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = TMN
+				}
+				add_core_of = TMN
+				remove_core_of = MON
+			}
+			330 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			835 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			836 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			837 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			839 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			841 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			843 = {
+				add_core_of = TMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+		}
+		YMN = {
+			transfer_state = 817
+			transfer_state = 818
+			transfer_state = 819
+			transfer_state = 820
+			transfer_state = 838
+			transfer_state = 840
+			transfer_state = 842
+			transfer_state = 844
+		}
+		hidden_effect = {
+			817 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			818 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			819 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			820 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			838 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			840 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			842 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			844 = {
+				add_core_of = YMN
+				remove_core_of = MON
+				set_demilitarized_zone = yes
+			}
+			every_state = {
+				limit = {
+					is_neighbor_of = TMN
+					is_core_of = YMN
+				}
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = aliases.2
+	title = aliases.2.t
+	desc = aliases.2.d
+	is_triggered_only = yes
+	
+	option = {
+		name = aliases.2.a
+		YMN = {
+			declare_war_on = {
+				target = TMN
+				type = civil_war
+			}
+			hidden_effect = {
+				add_civil_war_target = TMN
+			}
+		}
+		TMN = {
+			declare_war_on = {
+				target = YMN
+				type = civil_war
+			}
+			hidden_effect = {
+				add_civil_war_target = YMN
+			}
+		}
+	}
+}
+
+country_event = {
+	id = aliases.3
+	title = aliases.3.t
+	desc = aliases.3.d
+	is_triggered_only = yes
+	option = {
+		name = aliases.3.a
+		every_state = {
+			remove_core_of = TMN
+			remove_core_of = YMN
+		}
+	}
+}

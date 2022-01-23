@@ -1,0 +1,8 @@
+created_commune = {
+	enable = { NOT = { THIS = { is_fully_controlled_by = MMN } } }
+	compliance_growth = -0.15
+	resistance_growth = 0.15
+	local_non_core_manpower = -0.15
+	required_garrison_factor = 0.15
+	weekly_manpower = 2000
+}

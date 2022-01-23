@@ -12076,20 +12076,8 @@ country_event = {
 				limit = {
 					has_state_flag = MON_militarist_state
 				}
-				add_core_of = THIS
-				transfer_state = THIS
-				MON_military_administration = { #Portrait_Mongolia_Military_Administration
-					add_country_leader_role = {
-						promote_leader = yes
-						country_leader = {
-							expire = "1965.1.1.1"
-							ideology = oligarchism
-							traits = {}
-						}
-					}
-				}
-				set_stability = 0.3
-				set_war_support = 0.7
+				add_core_of = PREV
+				transfer_state = PREV
 			}
 		}
 		AMN = {
@@ -12097,20 +12085,8 @@ country_event = {
 				limit = {
 					has_state_flag = MON_anarchist_state
 				}
-				add_core_of = THIS
-				transfer_state = THIS
-				MON_labour_commune = { #Portrait_Mongolia_Labour_Commune
-					add_country_leader_role = {
-						promote_leader = yes
-						country_leader = {
-							expire = "1965.1.1.1"
-							ideology = anarchism
-							traits = {}
-						}
-					}
-				}
-				set_stability = 0.7
-				set_war_support = 0.3
+				add_core_of = PREV
+				transfer_state = PREV
 			}
 		}
 	}
@@ -12119,6 +12095,66 @@ country_event = {
 #Japan infiltrates on territories! (Long Civil War between Anarchists and Militarists)
 
 #Civil war ends
+
+#Hidden event (Launch MON_militarist_inf_growing)
+country_event = {
+	id = mongolia.298
+	title = mongolia.298.t
+	desc = mongolia.298.d
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		random_list = {
+			7 = {
+				activate_mission = MON_militarist_inf_growing_817
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_818
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_819
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_820
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_835
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_836
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_837
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_838
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_839
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_840
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_841
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_842
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_843
+			}
+			7 = {
+				activate_mission = MON_militarist_inf_growing_844
+			}
+			2 = {
+				country_event = mongolia.298
+			}
+		}
+	}
+}
 
 country_event = {
 	id = mongolia.300

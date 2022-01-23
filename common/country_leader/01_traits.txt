@@ -158,4 +158,20 @@ leader_traits = {
 		neutrality_drift = -0.05
 		research_speed_factor = 0.05
 	}
+	
+	labour_commune_trait = {
+		random = no
+		production_speed_buildings_factor = 0.25
+		production_factory_start_efficiency_factor = 0.15
+		production_factory_efficiency_gain_factor = 0.05
+		production_factory_max_efficiency_factor = 0.15
+	}
+	
+	militarist_junta_trait = {
+		random = no
+		non_core_manpower = 0.1
+		mobilization_speed = 0.1
+		conscription = 0.05
+		conscription_factor = 0.15
+	}
 }

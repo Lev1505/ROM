@@ -2230,6 +2230,25 @@ MON_sep_category = {
 	}
 }
 
+MON_TH_DEBUG = {
+
+	MON_TUVA_HELP = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = {
+				has_country_flag = MON_TUVA_HELPING
+			}
+		}
+		complete_effect = {
+			set_country_flag = MON_TUVA_HELPING
+		}
+	}
+}
 MON_TUVA_HELP_CAT = {
 	MON_TH_weapons_TAN = { #5 to Mongolia
 		allowed = {
@@ -7872,9 +7891,48 @@ MON_divided_society = {
 		}
 	}
 	
-	MON_glue_leaflets_814 = {
+	MON_anarchists_arrival_842 = {
 		
-		highlight_states = { highlight_state_targets = { state = 814 } }
+		highlight_states = { highlight_state_targets = { state = 842 } }
+		
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			842 = {
+				NOT = {
+					has_state_flag = STATE_anarchists_arrived
+				}
+			}
+		}
+		
+		visible = {
+			842 = {
+				NOT = {
+					has_state_flag = STATE_anarchists_arrived
+				}
+			}
+			has_country_flag = MON_strengthened_society_division
+		}
+		
+		cost = 25
+		
+		days_remove = 7
+		
+		remove_effect = {
+			842 = {
+				set_state_flag = STATE_anarchists_arrived
+			}
+			MON_increase_ai_low = yes
+		}
+	}
+	
+	MON_glue_leaflets_842 = {
+		
+		highlight_states = { highlight_state_targets = { state = 842 } }
 
 		on_map_mode = map_only
 		
@@ -7883,21 +7941,21 @@ MON_divided_society = {
 		}
 		
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MON_divided_society
-				check_variable = {
-					divided_society < 4
+			842 = {
+				NOT = {
+					has_state_flag = STATE_has_leaflets
+					has_state_flag = STATE_fighting_with_militarists
 				}
 			}
 		}
 		
 		visible = {
-			814 = {
+			842 = {
 				NOT = {
 					has_state_flag = STATE_has_leaflets
 				}
+				has_state_flag = STATE_anarchists_arrived
 			}
-			has_country_flag = MON_strengthened_society_division
 		}
 		
 		cost = 25
@@ -7911,25 +7969,16 @@ MON_divided_society = {
 		days_remove = 7
 		
 		remove_effect = {
-			814 = {
+			842 = {
 				set_state_flag = STATE_has_leaflets
 			}
-			custom_effect_tooltip = decrease_ai_1
-			subtract_from_variable = {
-				anarchist_influence = 1
-			}
-			add_to_variable = {
-				gov_inf = 1
-			}
-			subtract_from_variable = {
-				divided_society = 1
-			}
+			MON_increase_ai_low = yes
 		}
 	}
 	
-	MON_strengthen_leaflets_effect_814 = {
+	MON_anarchist_hangout_842 = {
 		
-		highlight_states = { highlight_state_targets = { state = 814 } }
+		highlight_states = { highlight_state_targets = { state = 842 } }
 
 		on_map_mode = map_only
 		
@@ -7938,54 +7987,36 @@ MON_divided_society = {
 		}
 		
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MON_divided_society
-				check_variable = {
-					divided_society < 4
+			842 = {
+				NOT = {
+					has_state_flag = STATE_was_hangout
+					has_state_flag = STATE_fighting_with_militarists
 				}
 			}
 		}
 		
 		visible = {
-			814 = {
+			842 = {
 				NOT = {
-					has_state_flag = STATE_has_anarchists
+					has_state_flag = STATE_was_hangout
 				}
 				has_state_flag = STATE_has_leaflets
 			}
-			has_country_flag = MON_strengthened_society_division
 		}
 		
-		cost = 25
-		
-		complete_effect = {
-			add_to_variable = {
-				divided_society = 1
-			}
-		}
-		
-		days_remove = 7
-		
+		cost = 50
+		days_remove = 15
 		remove_effect = {
-			814 = {
-				set_state_flag = STATE_has_anarchists
+			842 = {
+				set_state_flag = STATE_was_hangout
 			}
-			custom_effect_tooltip = decrease_ai_1
-			subtract_from_variable = {
-				anarchist_influence = 1
-			}
-			add_to_variable = {
-				gov_inf = 1
-			}
-			subtract_from_variable = {
-				divided_society = 1
-			}
+			MON_increase_ai_low = yes
 		}
 	}
 	
-	MON_invite_anarchists_814 = {
+	MON_helping_labours_842 = {
 		
-		highlight_states = { highlight_state_targets = { state = 814 } }
+		highlight_states = { highlight_state_targets = { state = 842 } }
 
 		on_map_mode = map_only
 		
@@ -7994,54 +8025,36 @@ MON_divided_society = {
 		}
 		
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MON_divided_society
-				check_variable = {
-					divided_society < 4
+			842 = {
+				NOT = {
+					has_state_flag = STATE_helped_labours
+					has_state_flag = STATE_fighting_with_militarists
 				}
 			}
 		}
 		
 		visible = {
-			814 = {
+			842 = {
 				NOT = {
-					has_state_flag = STATE_has_influenced_anarchists
+					has_state_flag = STATE_helped_labours
 				}
-				has_state_flag = STATE_has_anarchists
-			}
-			has_country_flag = MON_strengthened_society_division
-		}
-		
-		cost = 25
-		
-		complete_effect = {
-			add_to_variable = {
-				divided_society = 1
+				has_state_flag = STATE_was_hangout
 			}
 		}
 		
-		days_remove = 7
-		
+		cost = 50
+		days_remove = 15
 		remove_effect = {
-			814 = {
-				set_state_flag = STATE_has_influenced_anarchists
+			842 = {
+				set_state_flag = STATE_helped_labours
 			}
-			custom_effect_tooltip = decrease_ai_1
-			subtract_from_variable = {
-				anarchist_influence = 1
-			}
-			add_to_variable = {
-				gov_inf = 1
-			}
-			subtract_from_variable = {
-				divided_society = 1
-			}
+			MON_increase_ai_med = yes
 		}
 	}
 	
-	MON_create_commune_814 = {
+	MON_form_commune_842 = {
 		
-		highlight_states = { highlight_state_targets = { state = 814 } }
+		highlight_states = { highlight_state_targets = { state = 842 } }
 
 		on_map_mode = map_only
 		
@@ -8050,56 +8063,372 @@ MON_divided_society = {
 		}
 		
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MON_divided_society
-				check_variable = {
-					divided_society < 4
+			842 = {
+				NOT = {
+					has_state_flag = MON_anarchist_state
 				}
 			}
+			has_country_flag = MON_fighting_with_militarists
 		}
 		
 		visible = {
-			814 = {
+			842 = {
 				NOT = {
-					has_state_flag = STATE_has_encampment
+					has_state_flag = MON_anarchist_state
 				}
-				has_state_flag = STATE_has_influenced_anarchists
-			}
-			has_country_flag = MON_strengthened_society_division
-		}
-		
-		cost = 25
-		
-		complete_effect = {
-			add_to_variable = {
-				divided_society = 1
+				has_state_flag = STATE_helped_labours
 			}
 		}
 		
-		days_remove = 7
-		
+		cost = 100
+		days_remove = 30
 		remove_effect = {
-			814 = {
-				set_state_flag = STATE_has_encampment
-				#add_province_modifier = {
-				#	static_modifiers = { created_commune }
-				#	province = {
-				#		all_provinces = yes
-				#	}
-				#}
+			842 = {
+				set_state_flag = MON_anarchist_state
 				add_dynamic_modifier = {
 					modifier = created_commune
 				}
 			}
-			custom_effect_tooltip = decrease_ai_1
-			subtract_from_variable = {
-				anarchist_influence = 1
+		}
+	}
+	
+	MON_form_paramilitary_groups_842 = {
+		highlight_states = { highlight_state_targets = { state = 842 } }
+		
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			842 = {
+				NOT = {
+					has_state_flag = STATE_formed_paramilitary_groups
+				}
 			}
-			add_to_variable = {
-				gov_inf = 1
+			has_manpower > 499
+			has_equipment = { infantry_equipment > 499 }
+			command_power > 49
+		}
+		
+		visible = {
+			842 = {
+				NOT = {
+					has_state_flag = STATE_formed_paramilitary_groups
+				}
+				has_state_flag = STATE_anarchists_arrived
 			}
-			subtract_from_variable = {
-				divided_society = 1
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		days_remove = 60
+		complete_effect = {
+			add_manpower = -500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = MON
+			}
+			add_command_power = -50
+		}
+		remove_effect = {
+			842 = {
+				set_state_flag = STATE_formed_paramilitary_groups
+			}
+			custom_effect_tooltip = STATE_formed_paramilitary_groups_tt
+		}
+	}
+	
+	MON_fight_with_militarists_842 = {
+		highlight_states = { highlight_state_targets = { state = 842 } }
+		
+		on_map_mode = map_only
+		
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			NOT = {
+				has_country_flag = MON_fighting_with_militarists
+			}
+			842 = {
+				has_state_flag = STATE_anarchists_arrived
+				NOT = {
+					has_state_flag = MON_militarist_state
+				}
+			}
+		}
+		
+		visible = {
+			842 = {
+				has_state_flag = STATE_militarists_arrived
+				has_state_flag = STATE_anarchists_arrived
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		days_remove = 30
+		
+		complete_effect = {
+			if = {
+				limit = {
+					842 = {
+						NOT = {
+							has_state_flag = STATE_formed_paramilitary_groups
+						}
+					}
+				}
+				set_country_flag = MON_fighting_with_militarists
+			}
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					842 = {
+						OR = {
+							has_state_flag = MON_anarchist_state
+							NOT = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+				}
+				842 = {
+					if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_built_camp
+							}
+							has_state_flag = STATE_militarists_arrived
+						}
+						clr_state_flag = STATE_militarists_arrived
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_was_emergency_council
+							}
+							has_state_flag = STATE_built_camp
+						}
+						clr_state_flag = STATE_built_camp
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_purged_labours
+							}
+							has_state_flag = STATE_was_emergency_council
+						}
+						clr_state_flag = STATE_was_emergency_council
+					}
+					else_if = {
+						limit = {
+							has_state_flag = STATE_purged_labours
+						}
+						clr_state_flag = STATE_purged_labours
+					}
+				}
+			}
+		}
+	}
+	
+	#Mission
+	MON_militarist_inf_growing_842 = {
+		allowed = {
+			original_tag = MON
+		}
+		
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		
+		is_good = yes
+		days_mission_timeout = 30
+		activation = {
+			842 = {
+				has_state_flag = STATE_stopped_militarists
+			}
+		}
+		visible = {
+			always = yes
+		}
+		
+		timeout_effect = {
+			if = {
+				limit = {
+					842 = {
+						has_state_flag = MON_anarchist_state
+					}
+				}
+				842 = {
+					clr_state_flag = STATE_stopped_militarists
+					if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_militarists_arrived
+							}
+						}
+						set_state_flag = STATE_militarists_arrived
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_built_camp
+							}
+							has_state_flag = STATE_militarists_arrived
+						}
+						set_state_flag = STATE_built_camp
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_was_emergency_council
+							}
+							has_state_flag = STATE_built_camp
+						}
+						set_state_flag = STATE_was_emergency_council
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_purged_labours
+							}
+							has_state_flag = STATE_was_emergency_council
+						}
+						set_state_flag = STATE_purged_labours
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_mil_base
+							}
+							has_state_flag = STATE_purged_labours
+						}
+						set_state_flag = STATE_mil_base
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					842 = {
+						NOT = {
+							has_state_flag = MON_anarchist_state
+							has_state_flag = MON_militarist_state
+						}
+						has_state_flag = STATE_anarchists_arrived
+					}
+				}
+				842 = {
+					clr_state_flag = STATE_stopped_militarists
+					if = {
+						limit = {
+							has_state_flag = STATE_anarchists_arrived
+							NOT = {
+								has_state_flag = STATE_has_leaflets
+							}
+						}
+						clr_state_flag = STATE_anarchists_arrived
+					}
+					else_if = {
+						limit = {
+							has_state_flag = STATE_has_leaflets
+							NOT = {
+								has_state_flag = STATE_was_hangout
+							}
+						}
+						clr_state_flag = STATE_has_leaflets
+					}
+					else_if = {
+						limit = {
+							has_state_flag = STATE_was_hangout
+							NOT = {
+								has_state_flag = STATE_helped_labours
+							}
+						}
+						clr_state_flag = STATE_was_hangout
+					}
+					else_if = {
+						limit = {
+							has_state_flag = STATE_helped_labours
+						}
+						clr_state_flag = STATE_helped_labours
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					842 = {
+						NOT = {
+							has_state_flag = MON_anarchist_state
+							has_state_flag = MON_militarist_state
+							has_state_flag = STATE_anarchists_arrived
+						}
+					}
+				}
+				842 = {
+					clr_state_flag = STATE_stopped_militarists
+					if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_militarists_arrived
+							}
+						}
+						set_state_flag = STATE_militarists_arrived
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_built_camp
+							}
+							has_state_flag = STATE_militarists_arrived
+						}
+						set_state_flag = STATE_built_camp
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_was_emergency_council
+							}
+							has_state_flag = STATE_built_camp
+						}
+						set_state_flag = STATE_was_emergency_council
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = STATE_purged_labours
+							}
+							has_state_flag = STATE_was_emergency_council
+						}
+						set_state_flag = STATE_purged_labours
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_state_flag = MON_militarist_state
+							}
+							has_state_flag = STATE_purged_labours
+						}
+						set_state_flag = MON_militarist_state
+					}
+				}
+
+			}
+			hidden_effect = {
+				country_event = {
+					id = mongolia.298
+					days = 7
+				}
 			}
 		}
 	}

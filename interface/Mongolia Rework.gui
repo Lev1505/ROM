@@ -1,0 +1,146 @@
+guiTypes = {
+	#Power Struggle#
+	containerWindowType = {
+		name = "MON_power_struggle_gui"
+		size = { width = 525 height = 340 }
+		position = { x = 0 y = 0 }
+		
+		iconType = {
+			name = "MON_power_struggle_gui_Portrait_1"
+			spriteType = "GFX_MON_Power_Struggle_Khorlogiin_Choibalsan"
+			position = { x = 83 y = 25 }
+		}
+		
+		iconType = {
+			name = "MON_power_struggle_gui_Portrait_2"
+			spriteType = "GFX_MON_Power_Struggle_Anandyn_Amar"
+			position = { x = 283 y = 25 }
+		}
+		
+		iconType = {
+			name = "MON_Power_Struggle_GUI_ProgressBar"
+			spriteType = "GFX_MON_Power_Struggle_GUI_Bar"
+			position = { x = 37 y = 266 }
+			pdx_tooltip = "MON_Power_Struggle_bar_support_tt"
+		}
+
+		iconType = {
+			name = "MON_Power_Struggle_GUI_ProgressBar_Frame"
+			spriteType = "GFX_MON_Power_Struggle_GUI_Bar_Frame"
+			position = { x = 35 y = 265 }
+		}
+		
+		iconType = {
+			name = "MON_Power_Struggle_GUI_Bar_Tick"
+			spriteType = "GFX_MON_Power_Struggle_GUI_Bar_Tick"
+		}
+		
+		instantTextboxType = {
+			name = "MON_Power_Struggle_GUI_ProgressBar_Text_Left"
+			position = { x = 34 y = 300 }
+			font = "hoi_18mbs"
+			text = MON_khorlogiin_choibalsan #"Khorlogiin Choibalsan"
+			maxWidth = 300
+			format = left
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "MON_Power_Struggle_GUI_ProgressBar_Text_Right"
+			position = { x = 188 y = 300 }
+			font = "hoi_18mbs"
+			text = MON_anandyn_amar #"Anandyn Amar"
+			maxWidth = 300
+			format = right
+			alwaystransparent = yes
+		}
+	}
+	
+	#Tuva Help#
+	containerWindowType = {
+	name = "MON_TUVA_HELP_GUI"
+	position = { x = 0 y = 0 }
+	size = { width = 526 height = 372 }
+
+		iconType = { #x*114
+			name = "MON_TH_TUVA_ASSET"
+			position = { x = 183 y = 25 }
+		}
+
+		iconType = {
+			name = "MON_TH_TOP_FLAG" #100*63
+			position = { x = 35 y = 170 }
+		}
+		
+		iconType = {
+			name = "MON_TH_TOP_FRAME"
+			position = { x = 25 y = 164 }
+			spriteType = "GFX_MON_TH_FRAME"
+			#alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "MON_TH_TOP_NAME"
+			position = { x = 120 y = 220 }
+			font = "hoi_24header"
+			text = [getTOPCountryName]
+			maxWidth = 300
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "MON_TH_TOP_VALUE"
+			position = { x = 150 y = 220 }
+			font = "hoi_24header"
+			text = [getTOPInfluence]
+			maxWidth = 300
+			format = right
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "MON_TH_BOT_FLAG"
+			position = { x = 35 y = 271 }
+		}
+		
+		iconType = {
+			name = "MON_TH_BOT_FRAME"
+			position = { x = 25 y = 265 }
+			spriteType = "GFX_MON_TH_FRAME"
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "MON_TH_BOT_NAME"
+			position = { x = 120 y = 320 }
+			font = "hoi_24header"
+			text = [getBOTCountryName]
+			maxWidth = 300
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "MON_TH_BOT_VALUE"
+			position = { x = 150 y = 320 }
+			font = "hoi_24header"
+			text = [getBOTInfluence]
+			maxWidth = 300
+			format = right
+			alwaystransparent = yes
+		}
+	}
+	
+	#After Crisis#
+	containerWindowType = {
+		name = "MON_After_Crisis_GUI"
+		size = { width = 525 height = 340 }
+		position = { x = 0 y = 0 }
+		
+		iconType = {
+			name = "MON_842"
+			position = { x = 35 y = 265 }
+		}
+	}
+}

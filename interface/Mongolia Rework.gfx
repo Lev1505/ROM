@@ -1,0 +1,88 @@
+spriteTypes = {	
+	#Power Struggle#
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_Khorlogiin_Choibalsan"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Khorlogiin_Choibalsan.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_Anandyn_Amar"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Anandyn_Amar.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar_Frame"
+		textureFile = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar_Frame.dds"
+	}
+	spriteType = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar_Tick"
+		textureFile = "gfx/interface/power_struggle_gui/NOV_Election_GUI_Bar_Tick.dds"
+	}
+	progressbartype = {
+		name = "GFX_MON_Power_Struggle_GUI_Bar"
+		textureFile1 = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar.dds"
+		textureFile2 = "gfx/interface/power_struggle_gui/MON_Power_Struggle_GUI_Bar_bg.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 448
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	
+	#Tuva Help#
+	spriteType = {
+		name = "GFX_MON_TH_TUVA_RED"
+		texturefile = "gfx/interface/tuva_help_gui/TUVA_RED.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_TUVA_GREY"
+		texturefile = "gfx/interface/tuva_help_gui/TUVA_GREY.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_FRAME"
+		texturefile = "gfx/interface/tuva_help_gui/very_large_flag_frame.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_MON_FLAG"
+		texturefile = "gfx/interface/tuva_help_gui/MON_FLAG.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_SOV_F_FLAG"
+		texturefile = "gfx/interface/tuva_help_gui/SOV_F_FLAG.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_SOV_C_FLAG"
+		texturefile = "gfx/interface/tuva_help_gui/SOV_C_FLAG.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_SOV_D_FLAG"
+		texturefile = "gfx/interface/tuva_help_gui/SOV_D_FLAG.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_TH_SOV_N_FLAG"
+		texturefile = "gfx/interface/tuva_help_gui/SOV_N_FLAG.dds"
+		transparencecheck = yes
+	}
+	
+	#After Crisis#
+	spriteType = {
+		name = "GFX_842_GREY"
+		textureFile = "gfx/interface/after_crisis_gui/842_GREY.dds"
+	}
+	spriteType = {
+		name = "GFX_842_GREEN"
+		textureFile = "gfx/interface/after_crisis_gui/842_GREEN.dds"
+	}
+	spriteType = {
+		name = "GFX_842_RED"
+		textureFile = "gfx/interface/after_crisis_gui/842_RED.dds"
+	}
+}

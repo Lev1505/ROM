@@ -1,4 +1,4 @@
-
+#Power Struggle
 MON_ps_setup = {
 	if = {
 		limit = {
@@ -73,6 +73,8 @@ MON_ps_clamp_struggle_var = {
 	round_variable = choibalsan_x_axis
 	add_to_variable = { choibalsan_x_axis = 37 }
 }
+
+#Plans
 MON_plan1_setup = {
 	#Flags
 	330 = { set_state_flag = MON_plan_state_flag }
@@ -225,23 +227,198 @@ MON_plan2_clear = {
 }
 
 #After Crisis Effects#
-MON_ace_setup
-MON_increase_ai_low
-MON_increase_ai_med
-MON_increase_ai_high
-MON_decrease_ai_low
-MON_decrease_ai_med
-MON_decrease_ai_high
-MON_increase_mi_low
-MON_increase_mi_med
-MON_increase_mi_high
-MON_decrease_mi_low
-MON_decrease_mi_med
-MON_decrease_mi_high
-MON_ace_clamp_var
-MON_dissolution
+MON_ace_setup = {
+	if = {
+		limit = {
+			has_army_size < 50
+		}
+		set_variable = { MON_militar_inf = 46 }
+	}
+	else_if = {
+		limit = {
+			has_army_size > 50
+		}
+		set_variable = { MON_militar_inf = 54 }
+	}
+	else = {
+		set_variable = { MON_militar_inf = 50 }
+	}
+	MON_ace_clamp_var = yes
+}
+MON_increase_ai_low = {
+	custom_effect_tooltip = MON_increase_ai_low_tt
+	subtract_from_variable = { MON_militar_inf = 2 }
+	MON_ace_clamp_var = yes
+}
+MON_increase_ai_med = {
+	custom_effect_tooltip = MON_increase_ai_med_tt
+	subtract_from_variable = { MON_militar_inf = 4 }
+	MON_ace_clamp_var = yes
+}
+MON_increase_ai_high = {
+	custom_effect_tooltip = MON_increase_ai_high_tt
+	subtract_from_variable = { MON_militar_inf = 8 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_ai_low = {
+	custom_effect_tooltip = MON_decrease_ai_low_tt
+	add_to_variable = { MON_militar_inf = 2 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_ai_med = {
+	custom_effect_tooltip = MON_decrease_ai_med_tt
+	add_to_variable = { MON_militar_inf = 4 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_ai_high = {
+	custom_effect_tooltip = MON_decrease_ai_high_tt
+	add_to_variable = { MON_militar_inf = 8 }
+	MON_ace_clamp_var = yes
+}
+MON_increase_mi_low = {
+	custom_effect_tooltip = MON_increase_mi_low_tt
+	add_to_variable = { MON_militar_inf = 2 }
+	MON_ace_clamp_var = yes
+}
+MON_increase_mi_med = {
+	custom_effect_tooltip = MON_increase_mi_med_tt
+	add_to_variable = { MON_militar_inf = 4 }
+	MON_ace_clamp_var = yes
+}
+MON_increase_mi_high = {
+	custom_effect_tooltip = MON_increase_mi_high_tt
+	add_to_variable = { MON_militar_inf = 8 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_mi_low = {
+	custom_effect_tooltip = MON_decrease_mi_low_tt
+	subtract_from_variable = { MON_militar_inf = 2 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_mi_med = {
+	custom_effect_tooltip = MON_decrease_mi_med_tt
+	subtract_from_variable = { MON_militar_inf = 4 }
+	MON_ace_clamp_var = yes
+}
+MON_decrease_mi_high = {
+	custom_effect_tooltip = MON_decrease_mi_high_tt
+	subtract_from_variable = { MON_militar_inf = 8 }
+	MON_ace_clamp_var = yes
+}
+MON_ace_clamp_var = {
+	clamp_variable = {
+		var = MON_militar_inf
+		min = 0
+		max = 100
+	}
+	
+	set_variable = { MON_anarch_inf = 100 }
+	subtract_from_variable = { MON_anarch_inf = MON_militar_inf }
+}
+MON_dissolution = {
+	every_state = {
+		limit = {
+			has_state_flag = MON_militarist_state
+		}
+		remove_core_of = ROOT
+		MMN = {
+			transfer_state = PREV
+		}
+		add_core_of = MMN
+		set_demilitarized_zone = yes
+	}
+	every_state = {
+		limit = {
+			has_state_flag = MON_anarchist_state
+		}
+		remove_core_of = ROOT
+		AMN = {
+			transfer_state = PREV
+		}
+		add_core_of = AMN
+		set_demilitarized_zone = yes
+	}
+	every_state = {
+		limit = {
+			NOT = {
+				has_state_flag = MON_anarchist_state
+				has_state_flag = MON_militarist_state
+			}
+			is_core_of = ROOT
+		}
+		remove_core_of = ROOT
+		set_state_flag = MON_government_state
+		GMN = {
+			transfer_state = PREV
+		}
+		add_core_of = GMN
+		add_manpower = -5000
+		damage_building = { type = industrial_complex damage = 2.5 }
+		damage_building = { type = arms_factory damage = 2.5 }
+		damage_building = { type = infrastructure damage = 2.5 }
+		set_demilitarized_zone = yes
+	}
+}
+MON_begin_war = {
+	AMN = {
+		inherit_technology = MON
+		division_template = {
+			name = "Anarchists"
+			is_locked = yes
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+			}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = AMN
+			}
+			create_unit = {
+				division = "division_template = \"Anarchists\" start_experience_factor = 0.15"
+				owner = AMN
+				count = 3
+			}
+		}
+		every_state = {
+			limit = {
+				has_state_flag = MON_militarist_state
+				has_state_flag = STATE_anarchists_arrived
+			}
+			create_unit = {
+				division = "division_template = \"Anarchists\" start_experience_factor = 0.15"
+				owner = AMN
+				allow_spawning_on_enemy_provs = yes
+				count = 1
+			}
+		}
+		every_state = {
+			limit = {
+				has_state_flag = MON_militarist_state
+				has_state_flag = STATE_formed_commune
+			}
+			create_unit = {
+				division = "division_template = \"Anarchists\" start_experience_factor = 0.15"
+				owner = AMN
+				allow_spawning_on_enemy_provs = yes
+				count = 2
+			}
+		}
+		declare_war_on = {
+			target = MMN
+			type = civil_war
+		}
+		add_civil_war_target = MMN
+		declare_war_on = {
+			target = GMN
+			type = civil_war
+		}
+		add_civil_war_target = GMN
+	}
+}
 
-
+#Separatists
 MON_separatist_uprising = {
 	set_country_flag = MON_separatist_uprising_happened
 	ALT = {
@@ -374,79 +551,6 @@ MON_separatist_uprising = {
 		}
 	}
 }
-
-#Helping Tannu-Tuva#
-MON_TH_SETUP = {
-	set_variable = { MON_TH_SOV_INF = 100 }
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_mon_inf = {
-	subtract_from_variable = { MON_TH_SOV_INF = 12.5 }
-	custom_effect_tooltip = MON_TH_increase_mon_inf_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_mon_inf_low = {
-	subtract_from_variable = { MON_TH_SOV_INF = 5 }
-	custom_effect_tooltip = MON_TH_increase_mon_inf_low_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_mon_inf_med = {
-	subtract_from_variable = { MON_TH_SOV_INF = 10 }
-	custom_effect_tooltip = MON_TH_increase_mon_inf_med_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_mon_inf_high = {
-	subtract_from_variable = { MON_TH_SOV_INF = 15 }
-	custom_effect_tooltip = MON_TH_increase_mon_inf_high_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_sov_inf = {
-	add_to_variable = { MON_TH_SOV_INF = 12.5 }
-	custom_effect_tooltip = MON_TH_increase_sov_inf_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_increase_sov_inf_high = {
-	add_to_variable = { MON_TH_SOV_INF = 15 }
-	custom_effect_tooltip = MON_TH_increase_sov_inf_high_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_decrease_mon_inf = {
-	add_to_variable = { MON_TH_SOV_INF = 12.5 }
-	custom_effect_tooltip = MON_TH_decrease_mon_inf_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_decrease_mon_inf_high = {
-	add_to_variable = { MON_TH_SOV_INF = 15 }
-	custom_effect_tooltip = MON_TH_decrease_mon_inf_high_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_decrease_sov_inf_low = {
-	subtract_from_variable = { MON_TH_SOV_INF = 5 }
-	custom_effect_tooltip = MON_TH_decrease_sov_inf_low_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_decrease_sov_inf_med = {
-	subtract_from_variable = { MON_TH_SOV_INF = 10 }
-	custom_effect_tooltip = MON_TH_decrease_sov_inf_med_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_decrease_sov_inf_high = {
-	subtract_from_variable = { MON_TH_SOV_INF = 15 }
-	custom_effect_tooltip = MON_TH_decrease_sov_inf_high_tt
-	MON_TH_clamp_var = yes
-}
-MON_TH_clamp_var = {
-	round_variable = MON_TH_SOV_INF
-	clamp_variable = {
-		var = MON_TH_SOV_INF
-		min = 0
-		max = 100
-	}
-	
-	set_variable = { MON_TH_MON_INF = 100 }
-	subtract_from_variable = { MON_TH_MON_INF = MON_TH_SOV_INF }
-}
-
 MON_help_to_seps_effect = {
 	if = {
 		limit = {
@@ -588,10 +692,17 @@ MON_help_to_seps_effect = {
 			has_country_flag = MON_help_to_sep_volunteers_1
 		}
 		MON_create_volunteer_template = yes
-		create_unit = {
-			division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
-			owner = THIS
-			count = 1
+		THIS = {
+			random_state = {
+				limit = {
+					is_owned_by = PREV
+				}
+				create_unit = {
+					division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
+					owner = PREV
+					count = 1
+				}
+			}
 		}
 	}
 	else_if = {
@@ -599,10 +710,17 @@ MON_help_to_seps_effect = {
 			has_country_flag = MON_help_to_sep_volunteers_2
 		}
 		MON_create_volunteer_template = yes
-		create_unit = {
-			division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
-			owner = THIS
-			count = 2
+		THIS = {
+			random_state = {
+				limit = {
+					is_owned_by = PREV
+				}
+				create_unit = {
+					division = "division_template = \"MONGOL VOLUNTEER\" start_experience_factor = 0.2" 
+					owner = PREV
+					count = 2
+				}
+			}
 		}
 	}
 }
@@ -619,413 +737,74 @@ MON_create_volunteer_template = {
 	}
 }
 
-#TEST MECHANIC#
-#Setup#
-MON_tm_setup_var = {
-	set_country_flag = MON_TM_SETUPPED
-	set_variable = { CENTER_POP = 100 }
-	set_variable = { CENTER_FASCI = 20 }
-	set_variable = { CENTER_COMMIE = 40 }
-	set_variable = { CENTER_NEUTRA = 20 }
-	set_variable = { CENTER_DEMO = 20 }
-	set_variable = { EAST_POP = 100 }
-	set_variable = { EAST_FASCI = 20 }
-	set_variable = { EAST_COMMIE = 40 }
-	set_variable = { EAST_NEUTRA = 20 }
-	set_variable = { EAST_DEMO = 20 }
-	set_variable = { WEST_POP = 100 }
-	set_variable = { WEST_FASCI = 20 }
-	set_variable = { WEST_COMMIE = 40 }
-	set_variable = { WEST_NEUTRA = 20 }
-	set_variable = { WEST_DEMO = 20 }
-	MON_tm_clamp_var = yes
+#Helping Tannu-Tuva#
+MON_TH_SETUP = {
+	set_variable = { MON_TH_SOV_INF = 100 }
+	MON_TH_clamp_var = yes
 }
-
-#Increase#
-MON_icf = {
-	add_to_variable = { CENTER_FASCI = 15 }
-	subtract_from_variable = { CENTER_COMMIE = 5 }
-	subtract_from_variable = { CENTER_DEMO = 5 }
-	subtract_from_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_mon_inf = {
+	subtract_from_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_tt
+	MON_TH_clamp_var = yes
 }
-MON_icc = {
-	add_to_variable = { CENTER_COMMIE = 15 }
-	subtract_from_variable = { CENTER_FASCI = 5 }
-	subtract_from_variable = { CENTER_DEMO = 5 }
-	subtract_from_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_mon_inf_low = {
+	subtract_from_variable = { MON_TH_SOV_INF = 5 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_low_tt
+	MON_TH_clamp_var = yes
 }
-MON_icn = {
-	add_to_variable = { CENTER_NEUTRA = 15 }
-	subtract_from_variable = { CENTER_FASCI = 5 }
-	subtract_from_variable = { CENTER_COMMIE = 5 }
-	subtract_from_variable = { CENTER_DEMO = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_mon_inf_med = {
+	subtract_from_variable = { MON_TH_SOV_INF = 10 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_med_tt
+	MON_TH_clamp_var = yes
 }
-MON_icd = {
-	add_to_variable = { CENTER_DEMO = 15 }
-	subtract_from_variable = { CENTER_FASCI = 5 }
-	subtract_from_variable = { CENTER_COMMIE = 5 }
-	subtract_from_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_mon_inf_high = {
+	subtract_from_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_increase_mon_inf_high_tt
+	MON_TH_clamp_var = yes
 }
-MON_ief = {
-	add_to_variable = { EAST_FASCI = 15 }
-	subtract_from_variable = { EAST_COMMIE = 5 }
-	subtract_from_variable = { EAST_DEMO = 5 }
-	subtract_from_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_sov_inf = {
+	add_to_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_increase_sov_inf_tt
+	MON_TH_clamp_var = yes
 }
-MON_iec = {
-	add_to_variable = { EAST_COMMIE = 15 }
-	subtract_from_variable = { EAST_FASCI = 5 }
-	subtract_from_variable = { EAST_DEMO = 5 }
-	subtract_from_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_increase_sov_inf_high = {
+	add_to_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_increase_sov_inf_high_tt
+	MON_TH_clamp_var = yes
 }
-MON_ien = {
-	add_to_variable = { EAST_NEUTRA = 15 }
-	subtract_from_variable = { EAST_FASCI = 5 }
-	subtract_from_variable = { EAST_COMMIE = 5 }
-	subtract_from_variable = { EAST_DEMO = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_decrease_mon_inf = {
+	add_to_variable = { MON_TH_SOV_INF = 12.5 }
+	custom_effect_tooltip = MON_TH_decrease_mon_inf_tt
+	MON_TH_clamp_var = yes
 }
-MON_ied = {
-	add_to_variable = { EAST_DEMO = 15 }
-	subtract_from_variable = { EAST_FASCI = 5 }
-	subtract_from_variable = { EAST_COMMIE = 5 }
-	subtract_from_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_decrease_mon_inf_high = {
+	add_to_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_decrease_mon_inf_high_tt
+	MON_TH_clamp_var = yes
 }
-MON_iwf = {
-	add_to_variable = { WEST_FASCI = 15 }
-	subtract_from_variable = { WEST_COMMIE = 5 }
-	subtract_from_variable = { WEST_DEMO = 5 }
-	subtract_from_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_decrease_sov_inf_low = {
+	subtract_from_variable = { MON_TH_SOV_INF = 5 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_low_tt
+	MON_TH_clamp_var = yes
 }
-MON_iwc = {
-	add_to_variable = { WEST_COMMIE = 15 }
-	subtract_from_variable = { WEST_FASCI = 5 }
-	subtract_from_variable = { WEST_DEMO = 5 }
-	subtract_from_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_decrease_sov_inf_med = {
+	subtract_from_variable = { MON_TH_SOV_INF = 10 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_med_tt
+	MON_TH_clamp_var = yes
 }
-MON_iwn = {
-	add_to_variable = { WEST_NEUTRA = 15 }
-	subtract_from_variable = { WEST_FASCI = 5 }
-	subtract_from_variable = { WEST_COMMIE = 5 }
-	subtract_from_variable = { WEST_DEMO = 5 }
-	MON_tm_clamp_var = yes
+MON_TH_decrease_sov_inf_high = {
+	subtract_from_variable = { MON_TH_SOV_INF = 15 }
+	custom_effect_tooltip = MON_TH_decrease_sov_inf_high_tt
+	MON_TH_clamp_var = yes
 }
-MON_iwd = {
-	add_to_variable = { WEST_DEMO = 15 }
-	subtract_from_variable = { WEST_FASCI = 5 }
-	subtract_from_variable = { WEST_COMMIE = 5 }
-	subtract_from_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-
-#Decrease#
-MON_dcf = {
-	subtract_from_variable = { CENTER_FASCI = 15 }
-	add_to_variable = { CENTER_COMMIE = 5 }
-	add_to_variable = { CENTER_DEMO = 5 }
-	add_to_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dcc = {
-	subtract_from_variable = { CENTER_COMMIE = 15 }
-	add_to_variable = { CENTER_FASCI = 5 }
-	add_to_variable = { CENTER_DEMO = 5 }
-	add_to_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dcn = {
-	subtract_from_variable = { CENTER_NEUTRA = 15 }
-	add_to_variable = { CENTER_COMMIE = 5 }
-	add_to_variable = { CENTER_DEMO = 5 }
-	add_to_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dcd = {
-	subtract_from_variable = { CENTER_DEMO = 15 }
-	add_to_variable = { CENTER_FASCI = 5 }
-	add_to_variable = { CENTER_COMMIE = 5 }
-	add_to_variable = { CENTER_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_def = {
-	subtract_from_variable = { EAST_FASCI = 15 }
-	add_to_variable = { EAST_COMMIE = 5 }
-	add_to_variable = { EAST_DEMO = 5 }
-	add_to_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dec = {
-	subtract_from_variable = { EAST_COMMIE = 15 }
-	add_to_variable = { EAST_FASCI = 5 }
-	add_to_variable = { EAST_DEMO = 5 }
-	add_to_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_den = {
-	subtract_from_variable = { EAST_NEUTRA = 15 }
-	add_to_variable = { EAST_FASCI = 5 }
-	add_to_variable = { EAST_COMMIE = 5 }
-	add_to_variable = { EAST_DEMO = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_ded = {
-	subtract_from_variable = { EAST_DEMO = 15 }
-	add_to_variable = { EAST_FASCI = 5 }
-	add_to_variable = { EAST_COMMIE = 5 }
-	add_to_variable = { EAST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dwf = {
-	subtract_from_variable = { WEST_FASCI = 15 }
-	add_to_variable = { WEST_COMMIE = 5 }
-	add_to_variable = { WEST_DEMO = 5 }
-	add_to_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dwc = {
-	subtract_from_variable = { WEST_COMMIE = 15 }
-	add_to_variable = { WEST_FASCI = 5 }
-	add_to_variable = { WEST_DEMO = 5 }
-	add_to_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dwn = {
-	subtract_from_variable = { WEST_NEUTRA = 15 }
-	add_to_variable = { WEST_FASCI = 5 }
-	add_to_variable = { WEST_COMMIE = 5 }
-	add_to_variable = { WEST_DEMO = 5 }
-	MON_tm_clamp_var = yes
-}
-MON_dwd = {
-	subtract_from_variable = { WEST_DEMO = 15 }
-	add_to_variable = { WEST_FASCI = 5 }
-	add_to_variable = { WEST_COMMIE = 5 }
-	add_to_variable = { WEST_NEUTRA = 5 }
-	MON_tm_clamp_var = yes
-}
-
-#Clamp#
-MON_tm_clamp_var = {
-	set_temp_variable = { CENTER_POP_TMP = CENTER_FASCI }
-	add_to_temp_variable = { CENTER_POP_TMP = CENTER_COMMIE }
-	add_to_temp_variable = { CENTER_POP_TMP = CENTER_NEUTRA }
-	add_to_temp_variable = { CENTER_POP_TMP = CENTER_DEMO }
-	set_variable = { CENTER_MAX = 0 }
-	set_variable = { EAST_MAX = 0 }
-	set_variable = { WEST_MAX = 0 }
-	MON_tm_sort_var = yes
-}
-
-#Sort#
-MON_tm_sort_var = {
-
-	#CENTER#
-	if = {
-		limit = {
-			check_variable = { CENTER_FASCI > CENTER_COMMIE }
-		}
-		if = {
-			limit = {
-				check_variable = { CENTER_FASCI > CENTER_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { CENTER_FASCI > CENTER_NEUTRA }
-				}
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_FASCI }
-			}
-			else = {
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { CENTER_DEMO > CENTER_NEUTRA }
-				}
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_DEMO }
-			}
-			else = {
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_NEUTRA }
-			}
-		}
-	}
-	else = {
-		if = {
-			limit = {
-				check_variable = { CENTER_COMMIE > CENTER_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { CENTER_COMMIE > CENTER_NEUTRA }
-				}
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_COMMIE }
-			}
-			else = {
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { CENTER_DEMO > CENTER_NEUTRA }
-				}
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_DEMO }
-			}
-			else = {
-				clear_variable = CENTER_MAX
-				set_variable = { CENTER_MAX = CENTER_NEUTRA }
-			}
-		}
+MON_TH_clamp_var = {
+	round_variable = MON_TH_SOV_INF
+	clamp_variable = {
+		var = MON_TH_SOV_INF
+		min = 0
+		max = 100
 	}
 	
-	#EAST#
-	if = {
-		limit = {
-			check_variable = { EAST_FASCI > EAST_COMMIE }
-		}
-		if = {
-			limit = {
-				check_variable = { EAST_FASCI > EAST_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { EAST_FASCI > EAST_NEUTRA }
-				}
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_FASCI }
-			}
-			else = {
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { EAST_DEMO > EAST_NEUTRA }
-				}
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_DEMO }
-			}
-			else = {
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_NEUTRA }
-			}
-		}
-	}
-	else = {
-		if = {
-			limit = {
-				check_variable = { EAST_COMMIE > EAST_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { EAST_COMMIE > EAST_NEUTRA }
-				}
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_COMMIE }
-			}
-			else = {
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { EAST_DEMO > EAST_NEUTRA }
-				}
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_DEMO }
-			}
-			else = {
-				clear_variable = EAST_MAX
-				set_variable = { EAST_MAX = EAST_NEUTRA }
-			}
-		}
-	}
-	
-	#WEST#
-	if = {
-		limit = {
-			check_variable = { WEST_FASCI > WEST_COMMIE }
-		}
-		if = {
-			limit = {
-				check_variable = { WEST_FASCI > WEST_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { WEST_FASCI > WEST_NEUTRA }
-				}
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_FASCI }
-			}
-			else = {
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { WEST_DEMO > WEST_NEUTRA }
-				}
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_DEMO }
-			}
-			else = {
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_NEUTRA }
-			}
-		}
-	}
-	else = {
-		if = {
-			limit = {
-				check_variable = { WEST_COMMIE > WEST_DEMO }
-			}
-			if = {
-				limit = {
-					check_variable = { WEST_COMMIE > WEST_NEUTRA }
-				}
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_COMMIE }
-			}
-			else = {
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_NEUTRA }
-			}
-		}
-		else = {
-			if = {
-				limit = {
-					check_variable = { WEST_DEMO > WEST_NEUTRA }
-				}
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_DEMO }
-			}
-			else = {
-				clear_variable = WEST_MAX
-				set_variable = { WEST_MAX = WEST_NEUTRA }
-			}
-		}
-	}
+	set_variable = { MON_TH_MON_INF = 100 }
+	subtract_from_variable = { MON_TH_MON_INF = MON_TH_SOV_INF }
 }

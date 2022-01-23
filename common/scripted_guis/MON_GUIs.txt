@@ -1,4 +1,6 @@
 scripted_gui = {
+	
+	#Power Struggle#
 	MON_Power_Struggle_GUI = {
 		context_type = decision_category
 		window_name = "MON_Power_Struggle_GUI"
@@ -40,34 +42,7 @@ scripted_gui = {
 		}
 	}
 	
-	MON_TEST_MECHANIC_GUI = {
-		context_type = decision_category
-		window_name = "MON_TEST_MECHANIC_GUI"
-		
-		visible = {
-			has_country_flag = MON_TM_SETUPPED
-		}
-		
-		effects = {
-		}
-		
-		triggers = {
-		
-		}
-
-		properties = {
-			MON_CENTER = {
-				image = "[getCENTERController]"
-			}
-			MON_EAST = {
-				image = "[getEASTController]"
-			}
-			MON_WEST = {
-				image = "[getWESTController]"
-			}
-		}
-	}
-	
+	#Tuva Help#
 	MON_TUVA_HELP_GUI = {
 		context_type = decision_category
 		window_name = "MON_TUVA_HELP_GUI"
@@ -92,6 +67,28 @@ scripted_gui = {
 			}
 			MON_TH_TUVA_ASSET = {
 				image = "[getTuva]"
+			}
+		}
+	}
+	
+	#After Crisis#
+	MON_After_Crisis_GUI = {
+		context_type = decision_category
+		window_name = "MON_After_Crisis_GUI"
+		
+		visible = {
+			has_country_flag = 
+		}
+		
+		effects = {
+		}
+		
+		triggers = {
+		}
+		
+		properties = {
+			MON_842 = {
+				image = "[get842Color]"
 			}
 		}
 	}

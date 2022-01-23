@@ -1,0 +1,20 @@
+TMN = {
+	original_tag = MON
+	has_country_flag = MON_tabbik_flag
+}
+YMN = {
+	original_tag = MON
+	has_country_flag = MON_yazik_flag
+}
+AMN = {
+	original_tag = MON
+	has_country_flag = MON_anarchists_flag
+}
+MMN = {
+	original_tag = MON
+	has_country_flag = MON_militarists_flag
+}
+GMN = {
+	original_tag = MON
+	has_country_flag = MON_government_flag
+}

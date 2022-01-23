@@ -1,4 +1,18 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = {
+					is_core_of = MON
+				}
+				remove_core_of = YMN
+				remove_core_of = TMN
+				remove_core_of = AMN
+				remove_core_of = MMN
+				remove_core_of = GMN
+			}
+		}
+	}
 	on_state_control_changed = {
 		effect = {
 			if = {

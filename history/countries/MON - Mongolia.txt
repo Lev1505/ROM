@@ -15,6 +15,122 @@ set_technology = {
 	tech_support = 1
 	gw_artillery = 1
 }
+create_dynamic_country = {
+	original_tag = MON
+	set_country_flag = MON_tabbik_flag
+	create_country_leader = {
+		name = "Sergey Taboritskiy"
+		desc = ""
+		picture = "gfx/leaders/Portrait_Komi_Sergey_Taboritsky_True.dds"
+		expire = "1965.1.1"
+		ideology = fascism_ideology
+		traits = { }
+	}
+	set_politics = {
+		ruling_party = fascism
+	}
+	set_cosmetic_tag = MON_TABBIK
+	set_research_slots = 3
+	reserve_dynamic_country = yes
+}
+create_dynamic_country = {
+	original_tag = MON
+	set_country_flag = MON_yazik_flag
+	create_country_leader = {
+		name = "Dmitriy Yazov"
+		desc = ""
+		picture = "gfx/leaders/Portrait_Omsk_Dmitry_Moyazov.dds"
+		expire = "1965.1.1"
+		ideology = despotism
+		traits = { }
+	}
+	set_politics = {
+		ruling_party = neutrality
+	}
+	set_popularities = {
+		neutrality = 100
+	}
+	set_cosmetic_tag = MON_YAZIK
+	set_research_slots = 3
+	reserve_dynamic_country = yes
+}
+create_dynamic_country = {
+	original_tag = MON
+	set_country_flag = MON_anarchists_flag
+	set_politics = {
+		ruling_party = communism
+	}
+	set_stability = 0.7
+	set_war_support = 0.3
+	set_popularities = {
+		neutrality = 49
+		communism = 51
+	}
+	set_cosmetic_tag = MON_ANARCHIST
+	reserve_dynamic_country = yes
+	recruit_character = MON_labour_commune
+	MON_labour_commune = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				expire = "1965.1.1.1"
+				ideology = anarchist_communism
+				traits = { labour_commune_trait }
+			}
+		}
+	}
+}
+create_dynamic_country = {
+	original_tag = MON
+	set_country_flag = MON_militarists_flag
+	set_politics = {
+		ruling_party = neutrality
+	}
+	set_stability = 0.3
+	set_war_support = 0.7
+	set_popularities = {
+		neutrality = 65
+		fascism = 35
+	}
+	set_cosmetic_tag = MON_MILITARIST
+	reserve_dynamic_country = yes
+	recruit_character = MON_military_administration
+	MON_military_administration = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				expire = "1965.1.1.1"
+				ideology = despotism
+				traits = { militarist_junta_trait }
+			}
+		}
+	}
+}
+create_dynamic_country = {
+	original_tag = MON
+	set_country_flag = MON_government_flag
+	set_politics = {
+		ruling_party = neutrality
+	}
+	set_stability = 0.1
+	set_war_support = 0.1
+	set_popularities = {
+		neutrality = 100
+	}
+	set_cosmetic_tag = MON_GOVERNMENT
+	reserve_dynamic_country = yes
+	recruit_character = MON_collapsed_authority
+	MON_collapsed_authority = {
+		add_country_leader_role = {
+			promote_leader = yes
+			country_leader = {
+				expire = "1965.1.1.1"
+				ideology = despotism
+				traits = {  }
+			}
+		}
+	}
+}
 
 add_ideas = {
 	MON_old_infrastructure

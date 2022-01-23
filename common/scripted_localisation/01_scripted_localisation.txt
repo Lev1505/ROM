@@ -257,3 +257,28 @@ defined_text = {
 		localization_key = "GFX_MON_TH_TUVA_RED"
 	}
 }
+
+defined_text = {
+	name = get842Color
+	text = {
+		trigger = {
+			has_country_flag = MON_anarchist_state
+		}
+		localization_key = "GFX_842_RED"
+	}
+	text = {
+		trigger = {
+			has_country_flag = MON_militarisst_state
+		}
+		localization_key = "GFX_842_GREEN"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = MON_anarchist_state
+				has_country_flag = MON_militarisst_state
+			}
+		}
+		localization_key = "GFX_842_GREY"
+	}
+}

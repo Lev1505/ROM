@@ -85,6 +85,13 @@ MON_sep_category = {
 		}
 	}
 }
+MON_TH_DEBUG = {
+	visible = {
+		NOT = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+	}
+}
 MON_TUVA_HELP_CAT = {
 	visible = {
 		has_country_flag = MON_TUVA_HELPING
