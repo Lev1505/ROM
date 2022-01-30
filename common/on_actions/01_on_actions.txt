@@ -136,28 +136,6 @@ on_actions = {
 					days = 1
 				}
 			}
-			if = { #Anarchists Uprising, 0 stability
-				limit = {
-					original_tag = MON
-					has_stability < 0.005
-					has_idea = MON_crisis_after_plan1
-				}
-				country_event = {
-					id = mongolia.226
-					days = 1
-				}
-			}
-			if = { #Militarist Uprising, 0 war support
-				limit = {
-					original_tag = MON
-					has_war_support < 0.005
-					has_idea = MON_crisis_after_plan1
-				}
-				country_event = {
-					id = mongolia.227
-					days = 1
-				}
-			}
 			if = {
 				limit = {
 					original_tag = MON

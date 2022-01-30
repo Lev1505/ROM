@@ -227,6 +227,25 @@ MON_plan2_clear = {
 }
 
 #After Crisis Effects#
+MON_crisis_after_plan_s_effect = {
+	if = {
+		limit = {
+			has_country_flag = MON_failed_first_plan
+		}
+		add_ideas = MON_crisis_after_plan1_1
+		add_ideas = MON_crisis_after_plan1
+		custom_effect_tooltip = MON_crisis_after_plan1_tt
+	}
+	if = {
+		limit = {
+			has_country_flag = MON_failed_second_plan
+		}
+		add_ideas = MON_crisis_after_plan2_1
+		add_ideas = MON_crisis_after_plan2
+		custom_effect_tooltip = MON_crisis_after_plan2_tt
+	}
+	set_country_flag = MON_crisis_is_going
+}
 MON_ace_setup = {
 	if = {
 		limit = {
@@ -315,6 +334,141 @@ MON_ace_clamp_var = {
 	set_variable = { MON_anarch_inf = 100 }
 	subtract_from_variable = { MON_anarch_inf = MON_militar_inf }
 }
+#Centralized Dissolution#
+MON_c_dissolution = {
+	country_lock_all_division_template = yes
+	every_state = {
+		limit = {
+			is_owned_by = MON
+		}
+		set_demilitarized_zone = yes
+	}
+	MON = {
+		set_cosmetic_tag = MON_ULTRA_ANARCHY
+	}
+	if = {
+		limit = {
+			check_variable = { centralize_level = 100 }
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { centralize_level > 49 }
+			check_variable = { centralize_level < 76 }
+		}
+		AMN = {
+			transfer_state = 836
+			transfer_state = 837
+		}
+		every_state = {
+			limit = {
+				is_owned_by = AMN
+			}
+			add_core_of = AMN
+			remove_core_of = MON
+		}
+		MMN = {
+			transfer_state = 842
+			transfer_state = 844
+		}
+		every_state = {
+			limit = {
+				is_owned_by = MMN
+			}
+			add_core_of = MMN
+			remove_core_of = MON
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { centralize_level > 24 }
+			check_variable = { centralize_level < 51 }
+		}
+		AMN = {
+			transfer_state = 842
+			transfer_state = 843
+			transfer_state = 844
+			transfer_state = 838
+			transfer_state = 817
+			transfer_state = 820
+		}
+		every_state = {
+			limit = {
+				is_owned_by = AMN
+			}
+			add_core_of = AMN
+			remove_core_of = MON
+		}
+		MMN = {
+			transfer_state = 840
+			transfer_state = 841
+			transfer_state = 835
+			transfer_state = 836
+			transfer_state = 837
+			transfer_state = 839
+			transfer_state = 818
+			transfer_state = 819
+		}
+		every_state = {
+			limit = {
+				is_owned_by = MMN
+			}
+			add_core_of = MMN
+			remove_core_of = MON
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { centralize_level < 24 }
+		}
+		AMN = {
+			transfer_state = 842
+			transfer_state = 843
+			transfer_state = 844
+			transfer_state = 838
+			transfer_state = 817
+			transfer_state = 820
+		}
+		every_state = {
+			limit = {
+				is_owned_by = AMN
+			}
+			add_core_of = AMN
+			remove_core_of = MON
+		}
+		MMN = {
+			transfer_state = 840
+			transfer_state = 841
+			transfer_state = 835
+			transfer_state = 836
+			transfer_state = 837
+			transfer_state = 839
+			transfer_state = 818
+			transfer_state = 819
+		}
+		every_state = {
+			limit = {
+				is_owned_by = MMN
+			}
+			add_core_of = MMN
+			remove_core_of = MON
+		}
+		random_other_country = {
+			limit = {
+				NOT = {
+					tag = MON
+				}
+				original_tag = MON
+			}
+			transfer_state = 330
+			330 = {
+				add_core_of = PREV
+				remove_core_of = MON
+			}
+		}
+	}
+}
+#Divided Dissolution#
 MON_dissolution = {
 	every_state = {
 		limit = {
@@ -415,6 +569,99 @@ MON_begin_war = {
 			type = civil_war
 		}
 		add_civil_war_target = GMN
+	}
+	MMN = {
+		inherit_technology = MON
+		division_template = {
+			name = "Militia"
+			is_locked = yes
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+			}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = MMN
+			}
+			create_unit = {
+				division = "division_template = \"Militia\" start_experience_factor = 0.15"
+				owner = MMN
+				count = 3
+			}
+		}
+		every_state = {
+			limit = {
+				has_state_flag = MON_militarist_state
+				has_state_flag = STATE_anarchists_arrived
+			}
+			create_unit = {
+				division = "division_template = \"Militia\" start_experience_factor = 0.15"
+				owner = MMN
+				allow_spawning_on_enemy_provs = yes
+				count = 1
+			}
+		}
+		every_state = {
+			limit = {
+				has_state_flag = MON_militarist_state
+				has_state_flag = STATE_formed_commune
+			}
+			create_unit = {
+				division = "division_template = \"Militia\" start_experience_factor = 0.15"
+				owner = MMN
+				allow_spawning_on_enemy_provs = yes
+				count = 2
+			}
+		}
+		declare_war_on = {
+			target = AMN
+			type = civil_war
+		}
+		add_civil_war_target = AMN
+		declare_war_on = {
+			target = GMN
+			type = civil_war
+		}
+		add_civil_war_target = GMN
+	}
+	if = {
+		limit = {
+			GMN = { exists = yes }
+		}
+		GMN = {
+			inherit_technology = MON
+			division_template = {
+				name = "Loyalists"
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = GMN
+				}
+				create_unit = {
+					division = "division_template = \"Loyalists\" start_experience_factor = 0.15"
+					owner = GMN
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+				}
+			}
+			declare_war_on = {
+				target = AMN
+				type = civil_war
+			}
+			add_civil_war_target = AMN
+			declare_war_on = {
+				target = MMN
+				type = civil_war
+			}
+			add_civil_war_target = MMN
+		}
 	}
 }
 

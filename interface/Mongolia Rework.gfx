@@ -74,15 +74,26 @@ spriteTypes = {
 	
 	#After Crisis#
 	spriteType = {
-		name = "GFX_842_GREY"
-		textureFile = "gfx/interface/after_crisis_gui/842_GREY.dds"
+		name = "GFX_MON_commune"
+		textureFile = "gfx/interface/after_crisis_gui/MON_created_commune.dds"
 	}
 	spriteType = {
-		name = "GFX_842_GREEN"
-		textureFile = "gfx/interface/after_crisis_gui/842_GREEN.dds"
+		name = "GFX_MON_mil_base"
+		textureFile = "gfx/interface/after_crisis_gui/MON_created_base.dds"
 	}
 	spriteType = {
-		name = "GFX_842_RED"
-		textureFile = "gfx/interface/after_crisis_gui/842_RED.dds"
+		name = "GFX_MON_842_GREY"
+		textureFile = "gfx/interface/after_crisis_gui/MON_842_GREY.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_842_GREEN"
+		textureFile = "gfx/interface/after_crisis_gui/MON_842_GREEN.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MON_842_RED"
+		textureFile = "gfx/interface/after_crisis_gui/MON_842_RED.dds"
+		transparencecheck = yes
 	}
 }

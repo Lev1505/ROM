@@ -1,0 +1,90 @@
+
+MON_TH_DEBUG = {
+
+	MON_TUVA_HELP = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = {
+				has_country_flag = MON_TUVA_HELPING
+			}
+		}
+		complete_effect = {
+			set_country_flag = MON_TUVA_HELPING
+		}
+	}
+}
+
+MON_AEC_DEBUG = {
+	MON_launch_divided_society = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = {
+				has_country_flag = MON_debuging_society_division
+			}
+		}
+		complete_effect = {
+			set_country_flag = MON_debuging_society_division
+		}
+	}
+	MON_clear_divided_society = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = MON_debuging_society_division
+		}
+		complete_effect = {
+			set_country_flag = MON_cleared_society_division
+			clr_country_flag = MON_debuging_society_division
+			clr_country_flag = MON_took_control
+			clr_country_flag = MON_strengthened_society_division
+			every_state = {
+				limit = {
+					is_owned_by = MON
+				}
+				clr_state_flag = STATE_anarchists_arrived
+				clr_state_flag = STATE_has_leaflets
+				clr_state_flag = STATE_was_hangout
+				clr_state_flag = STATE_helped_labours
+				clr_state_flag = STATE_formed_commune
+				clr_state_flag = MON_anarchist_state
+				clr_state_flag = STATE_militarists_arrived
+				clr_state_flag = STATE_built_camp
+				clr_state_flag = STATE_was_emergency_council
+				clr_state_flag = STATE_purged_labours
+				clr_state_flag = STATE_built_mil_base
+				clr_state_flag = MON_militarist_state
+				remove_dynamic_modifier = { modifier = created_commune }
+			}
+		}
+	}
+	MON_launch_after_crisis = {
+		allowed = {
+			original_tag = MON
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			NOT = {
+				has_country_flag = MON_debuging_after_crisis
+			}
+		}
+		complete_effect = {
+			set_country_flag = MON_debuging_after_crisis
+		}
+	}
+}

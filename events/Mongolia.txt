@@ -11948,29 +11948,8 @@ country_event = {
 	
 	option = {
 		name = mongolia.224.a
-		if = {
-			limit = {
-				has_country_flag = MON_failed_first_plan
-			}
-			add_ideas = MON_crisis_after_plan1_1
-			add_ideas = MON_crisis_after_plan1
-			custom_effect_tooltip = MON_crisis_after_plan1_tt
-		}
-		if = {
-			limit = {
-				has_country_flag = MON_failed_second_plan
-			}
-			add_ideas = MON_crisis_after_plan2_1
-			add_ideas = MON_crisis_after_plan2
-			custom_effect_tooltip = MON_crisis_after_plan2_tt
-		}
-		set_country_flag = MON_crisis_is_going
-		set_variable = {
-			anarchist_influence = 15
-		}
-		set_variable = {
-			militarist_influence = 15
-		}
+		MON_crisis_after_plan_s_effect = yes
+		MON_ace_setup = yes
 	}
 }
 
@@ -11997,9 +11976,147 @@ country_event = {
 	}
 }
 
-#Anarchists Uprising! (0 stability)
+#Taking Side (Dividing Society)
+country_event = {
+	id = mongolia.226
+	title = mongolia.226.t
+	desc = mongolia.226.d
+	is_triggered_only = yes
+	
+	option = { #Anarchists
+		name = mongolia.226.a
+		set_country_flag = MON_ANARCHIST_PATH
+	}
+	
+	option = { #Militarists
+		name = mongolia.226.b
+		set_country_flag = MON_MILITARIST_PATH
+	}
+}
 
 #Generals are taking states! (0 war support)
+#Hidden event (Launch MON_militarist_inf_growing)
+country_event = {
+	id = mongolia.227
+	title = mongolia.227.t
+	desc = mongolia.227.d
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = MON_ANARCHIST_PATH
+			}
+			random_list = {
+				25 = {
+					modifier = {
+						factor = 0
+						817 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_militarist_inf_growing_817
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						818 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_militarist_inf_growing_818
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						819 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_militarist_inf_growing_819
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						820 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_militarist_inf_growing_820
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = MON_ANARCHIST_PATH
+			}
+			random_list = {
+				25 = {
+					modifier = {
+						factor = 0
+						817 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_anarchist_inf_growing_817
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						818 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_anarchist_inf_growing_818
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						819 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_anarchist_inf_growing_819
+				}
+				25 = {
+					modifier = {
+						factor = 0
+						820 = {
+							OR = {
+								has_state_flag = MON_anarchist_state
+								has_state_flag = MON_militarist_state
+							}
+						}
+					}
+					activate_mission = MON_anarchist_inf_growing_820
+				}
+			}
+		}
+	}
+}
 
 #People Uprising! (Bad reforms)
 country_event = {
@@ -12010,6 +12127,20 @@ country_event = {
 	
 	option = {
 		name = mongolia.228.a
+		kill_country_leader = yes
+		hidden_effect = {
+			MON_collapsed_authority = { #Portrait_Mongolia_Collapsed_Authority
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1.1"
+						ideology = marxism
+						traits = {}
+					}
+				}
+			}
+			load_focus_tree = shattered_ambitions
+		}
 	}
 }
 
@@ -12051,7 +12182,7 @@ country_event = {
 	}
 }
 
-#Taking Side (After Crisis)
+#Civil War after crisis
 country_event = {
 	id = mongolia.231
 	title = mongolia.231.t
@@ -12060,102 +12191,52 @@ country_event = {
 	
 	option = {
 		name = mongolia.231.a
-		kill_country_leader = yes
-		MON_collapsed_authority = { #Portrait_Mongolia_Collapsed_Authority
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					expire = "1965.1.1.1"
-					ideology = marxism
-					traits = {}
-				}
+		MON_dissolution = yes
+		if = {
+			limit = {
+				has_country_flag = MON_ANARCHIST_PATH
+			}
+			AMN = {
+				change_tag_from = MON
 			}
 		}
-		MMN = {
-			every_state = {
-				limit = {
-					has_state_flag = MON_militarist_state
-				}
-				add_core_of = PREV
-				transfer_state = PREV
+		else_if = {
+			limit = {
+				has_country_flag = MON_MILITARIST_PATH
+			}
+			MMN = {
+				change_tag_from = MON
 			}
 		}
-		AMN = {
-			every_state = {
-				limit = {
-					has_state_flag = MON_anarchist_state
-				}
-				add_core_of = PREV
-				transfer_state = PREV
+		else_if = {
+			limit = {
+				has_country_flag = MON_ANARCHIST_PATH
 			}
+			GMN = {
+				change_tag_from = MON
+			}
+		}
+		country_event = {
+			id = mongolia.232
+			days = 15
 		}
 	}
 }
 
-#Japan infiltrates on territories! (Long Civil War between Anarchists and Militarists)
-
-#Civil war ends
-
-#Hidden event (Launch MON_militarist_inf_growing)
+#Civil war begins
 country_event = {
-	id = mongolia.298
-	title = mongolia.298.t
-	desc = mongolia.298.d
+	id = mongolia.232
+	title = mongolia.232.t
+	desc = mongolia.232.d
 	is_triggered_only = yes
 	
-	hidden = yes
-	
-	immediate = {
-		random_list = {
-			7 = {
-				activate_mission = MON_militarist_inf_growing_817
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_818
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_819
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_820
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_835
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_836
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_837
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_838
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_839
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_840
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_841
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_842
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_843
-			}
-			7 = {
-				activate_mission = MON_militarist_inf_growing_844
-			}
-			2 = {
-				country_event = mongolia.298
-			}
-		}
+	option = {
+		name = mongolia.232
+		MON_begin_war = yes
 	}
 }
 
+#Tuva Help
 country_event = {
 	id = mongolia.300
 	title = mongolia.300.t

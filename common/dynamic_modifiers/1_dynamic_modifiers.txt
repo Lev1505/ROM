@@ -1,8 +1,16 @@
 created_commune = {
-	enable = { NOT = { THIS = { is_fully_controlled_by = MMN } } }
+	icon = GFX_MON_commune
+	enable = { always = yes }
+	#enable = { NOT = { THIS = { is_fully_controlled_by = MMN } } }
 	compliance_growth = -0.15
 	resistance_growth = 0.15
 	local_non_core_manpower = -0.15
 	required_garrison_factor = 0.15
 	weekly_manpower = 2000
+}
+mil_base = {
+	icon = GFX_MON_mil_base
+	enable = { always = yes }
+	#enable = { NOT = { THIS = { is_fully_controlled_by = AMN } } }
+	local_manpower = 0.2
 }

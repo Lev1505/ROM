@@ -77,7 +77,7 @@ scripted_gui = {
 		window_name = "MON_After_Crisis_GUI"
 		
 		visible = {
-			has_country_flag = 
+			has_country_flag = MON_debuging_society_division
 		}
 		
 		effects = {

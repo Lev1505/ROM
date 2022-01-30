@@ -1,0 +1,15 @@
+
+MON_TH_DEBUG = {
+	visible = {
+		NOT = {
+			has_country_flag = MON_TUVA_HELPING
+		}
+	}
+}
+MON_AEC_DEBUG = {
+	visible = {
+		NOT = {
+			has_country_flag = MON_crisis_is_going
+		}
+	}
+}

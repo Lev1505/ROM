@@ -262,23 +262,29 @@ defined_text = {
 	name = get842Color
 	text = {
 		trigger = {
-			has_country_flag = MON_anarchist_state
+			842 = {
+				has_state_flag = MON_anarchist_state
+			}
 		}
-		localization_key = "GFX_842_RED"
+		localization_key = "GFX_MON_842_RED"
 	}
 	text = {
 		trigger = {
-			has_country_flag = MON_militarisst_state
+			842 = {
+				has_state_flag = MON_militarist_state
+			}
 		}
-		localization_key = "GFX_842_GREEN"
+		localization_key = "GFX_MON_842_GREEN"
 	}
 	text = {
 		trigger = {
 			NOT = {
-				has_country_flag = MON_anarchist_state
-				has_country_flag = MON_militarisst_state
+				842 = {
+					has_state_flag = MON_anarchist_state
+					has_state_flag = MON_militarist_state
+				}
 			}
 		}
-		localization_key = "GFX_842_GREY"
+		localization_key = "GFX_MON_842_GREY"
 	}
 }

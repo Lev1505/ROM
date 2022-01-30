@@ -1,4 +1,10 @@
 focus_tree = {
+	id = shattered_ambitions
+	country = { factor = 0 }
+	default = no
+}
+
+focus_tree = {
 	id = mongolian_focus
 	country = {
 		factor = 0

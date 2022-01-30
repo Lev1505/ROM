@@ -1477,7 +1477,8 @@
  MON_anarchist_state:0 "Регион подконтролен Анархистам"
  created_commune:0 "Коммуна"
  STATE_formed_paramilitary_groups:0 "Сформированы военизированные формирования"
- STATE_formed_paramilitary_groups_tt:0 "Создание военизированных организация позволит вам одновременно бороться с влиянием милитаристов в регионе и расширять своё влияние в регионе."
+ STATE_formed_paramilitary_groups_tt:0 "Создание военизированных организаций позволит вам одновременно бороться с влиянием милитаристов и расширять своё влияние в регионе."
+ STATE_fighting_with_militarists:0 "Происходит борьба с милитаристами в этом регионе"
  MON_fighting_with_militarists:0 "Происходит борьба с милитаристами в другом регионе"
  MON_built_paramilitary_web:0 "Военизированные формирования связаны между собой"
  MON_built_paramilitary_web_tt:0 "Связь военизированных организаций позволит вам одновременно бороться с влиянием милиатристов в разных регионах."
@@ -1647,23 +1648,6 @@
  MON_sambadondogiin_tserendorj:0 "Самбадондогийн Цэрэндорж"
  MON_mongolian_council:0 "Монгольский Хурал"
  
- #TEST MECHANIC#
- MON_CENTER_tt:0 "§YЦентральная Монголия§!\n\n Популярность §LФашистов§!: [?CENTER_FASCI]\n Популярность §RКоммунистов§!: [?CENTER_COMMIE]\n Популярность §BДемократов§!: [?CENTER_DEMO]\n Популярность §gНейтралов§!: [?CENTER_NEUTRA]\n\n §YПреобладание [getDominatePartyNameCENTER]§!."
- MON_EAST_tt:0 "§YВосточная Монголия§!\n\n Популярность §LФашистов§!: [?EAST_FASCI]\n Популярность §RКоммунистов§!: [?EAST_COMMIE]\n Популярность §BДемократов§!: [?EAST_DEMO]\n Популярность §gНейтралов§!: [?EAST_NEUTRA]\n\n §YПреобладание [getDominatePartyNameEAST]§!."
- MON_WEST_tt:0 "§YЗападная Монголия§!\n\n Популярность §LФашистов§!: [?WEST_FASCI]\n Популярность §RКоммунистов§!: [?WEST_COMMIE]\n Популярность §BДемократов§!: [?WEST_DEMO]\n Популярность §gНейтралов§!: [?WEST_NEUTRA]\n\n §YПреобладание [getDominatePartyNameWEST]§!."
- CENTER_DOM_F_tt:0 "§L[Root.GetFascistParty]§!"
- CENTER_DOM_C_tt:0 "§R[Root.GetCommunistParty]§!"
- CENTER_DOM_N_tt:0 "§g[Root.GetNeutralParty]§!"
- CENTER_DOM_D_tt:0 "§B[Root.GetDemocraticParty]§!"
- EAST_DOM_F_tt:0 "§L[Root.GetFascistParty]§!"
- EAST_DOM_C_tt:0 "§R[Root.GetCommunistParty]§!"
- EAST_DOM_N_tt:0 "§g[Root.GetNeutralParty]§!"
- EAST_DOM_D_tt:0 "§B[Root.GetDemocraticParty]§!"
- WEST_DOM_F_tt:0 "§L[Root.GetFascistParty]§!"
- WEST_DOM_C_tt:0 "§R[Root.GetCommunistParty]§!"
- WEST_DOM_N_tt:0 "§g[Root.GetNeutralParty]§!"
- WEST_DOM_D_tt:0 "§B[Root.GetDemocraticParty]§!"
- 
  #Tuva Help#
  MON_TH_MON_INF_loc:0 "[?MON_TH_MON_INF]"
  
@@ -1698,3 +1682,6 @@
  MON_GOVERNMENT_neutrality:0 "Центральное Правительство Монголии"
  MON_GOVERNMENT_neutrality_DEF:0 "Центральное Правительство Монголии"
  MON_GOVERNMENT_neutrality_ADJ:0 "Монгольск."
+ MON_ULTRA_ANARCHY_neutrality:0 ""
+ MON_ULTRA_ANARCHY_neutrality_DEF:0 ""
+ MON_ULTRA_ANARCHY_neutrality_ADJ:0 ""
