@@ -1,0 +1,32 @@
+state={
+	id=910
+	name="STATE_910"
+	manpower = 2458270
+	resources={
+		oil=2 # was: 4
+	}
+	
+	state_category = large_city
+
+	history={
+		owner = BAY
+		victory_points = {
+		    1149 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+
+		}
+		add_core_of = GRI
+		add_core_of = BAY
+
+	}
+
+	provinces={
+		 11499 519 3690 6934 9655 3679 694 9545 6555 6581 13126
+	}
+
+	local_supplies=0.0 
+}

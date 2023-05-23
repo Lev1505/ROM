@@ -1,0 +1,31 @@
+state={
+	id=917
+	name="STATE_917"
+	manpower = 480742
+	resources={
+		oil=2 # was: 4
+	}
+	
+	state_category = rural
+	history={
+		owner = BUL
+		victory_points = {
+		    9890 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+
+		}
+		add_core_of = GRE
+		add_core_of = YUG
+		add_core_of = BUL
+
+	}
+
+	provinces={
+		 9849 9874 9890
+	}
+
+	local_supplies=0.0 

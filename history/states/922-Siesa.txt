@@ -1,0 +1,29 @@
+state={
+	id=922
+	name="STATE_922"
+	manpower = 381787
+	resources={
+		oil=2 # was: 4
+	}
+	
+	state_category = large_city
+	history={
+		owner = SPR
+		victory_points = {
+		  9903 5
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+
+		}
+		add_core_of = SPR
+
+	}
+
+	provinces={
+		9903 4195 11807 11812 3835 11884 832
+	}
+
+	local_supplies=0.0 
